@@ -193,19 +193,10 @@
             "type": "array",
             "items": {
               "type": "string",
-              "enum": [
-                "FASTA",
-                "TAR",
-                "TXT",
-                "JSON",
-                "ERR",
-                "PDB",
-                "XML",
-                "NF",
-                "NEXUS",
-                "NEWICK",
-                "IMG",
-                null
+              "format":"term",
+              "ontology":"http://w3id.org/oebDataFormats",
+              "ancestors": [
+                "http://www.w3id.org/oebDataFormats#FormatDatasets"
               ]
             }
           },
@@ -213,20 +204,10 @@
             "type": "array",
             "items": {
               "type": "string",
-              "enum": [
-                "tool_statistics",
-                "data_log",
-                "metrics_reference",
-                "nextflow_workflow_config",
-                "nextflow_workflow_main",
-                "assessment",
-                "aggregation",
-                "participant",
-                "public_reference",
-                "input",
-                "report_image",
-                "configuration_file",
-                null
+              "format":"term",
+              "ontology":"http://w3id.org/oebDatasets",
+              "ancestors": [
+                "https://w3id.org/oebDatasets#dataset"
               ]
             }
           },
@@ -379,37 +360,18 @@
             "properties": {
               "file_type": {
                 "type": "string",
-                "enum": [
-                  "FASTA",
-                  "TAR",
-                  "TXT",
-                  "JSON",
-                  "ERR",
-                  "PDB",
-                  "XML",
-                  "NF",
-                  "NEXUS",
-                  "NEWICK",
-                  "IMG",
-                  null
+                "format":"term",
+                "ontology":"http://w3id.org/oebDataFormats",
+                "ancestors": [
+                  "http://www.w3id.org/oebDataFormats#FormatDatasets"
                 ]
               },
               "data_type": {
                 "type": "string",
-                "enum": [
-                  "tool_statistics",
-                  "data_log",
-                  "metrics_reference",
-                  "nextflow_workflow_config",
-                  "nextflow_workflow_main",
-                  "assessment",
-                  "aggregation",
-                  "participant",
-                  "public_reference",
-                  "input",
-                  "report_image",
-                  "configuration_file",
-                  null
+                "format":"term",
+                "ontology":"http://w3id.org/oebDatasets",
+                "ancestors": [
+                  "https://w3id.org/oebDatasets#dataset"
                 ]
               },
               "file_path": {
@@ -641,19 +603,10 @@
             "type": "array",
             "items": {
               "type": "string",
-              "enum": [
-                "FASTA",
-                "TAR",
-                "TXT",
-                "JSON",
-                "ERR",
-                "PDB",
-                "XML",
-                "NF",
-                "NEXUS",
-                "NEWICK",
-                "IMG",
-                null
+              "format":"term",
+              "ontology":"http://w3id.org/oebDataFormats",
+              "ancestors": [
+                "http://www.w3id.org/oebDataFormats#FormatDatasets"
               ]
             }
           },
@@ -661,20 +614,10 @@
             "type": "array",
             "items": {
               "type": "string",
-              "enum": [
-                "tool_statistics",
-                "data_log",
-                "metrics_reference",
-                "nextflow_workflow_config",
-                "nextflow_workflow_main",
-                "assessment",
-                "aggregation",
-                "participant",
-                "public_reference",
-                "input",
-                "report_image",
-                "configuration_file",
-                null
+              "format":"term",
+              "ontology":"http://w3id.org/oebDatasets",
+              "ancestors": [
+                "https://w3id.org/oebDatasets#dataset"
               ]
             }
           },
