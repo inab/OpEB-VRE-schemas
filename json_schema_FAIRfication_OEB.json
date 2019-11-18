@@ -194,7 +194,7 @@
             "items": {
               "type": "string",
               "format":"term",
-              "ontology": "https://w3id.org/oebDatasets",
+              "ontology": "https://w3id.org/oebDataFormats",
               "ancestors": "https://w3id.org/oebDataFormats#FormatDatasets"
             }
           },
@@ -357,7 +357,7 @@
               "file_type": {
                 "type": "string",
                 "format":"term",
-                "ontology": "https://w3id.org/oebDatasets",
+                "ontology": "https://w3id.org/oebDataFormats",
                 "ancestors": "https://w3id.org/oebDataFormats#FormatDatasets"
               },
               "data_type": {
@@ -596,7 +596,7 @@
             "items": {
               "type": "string",
               "format":"term",
-              "ontology": "https://w3id.org/oebDatasets",
+              "ontology": "https://w3id.org/oebDataFormats",
               "ancestors": "https://w3id.org/oebDataFormats#FormatDatasets"
             }
           },
