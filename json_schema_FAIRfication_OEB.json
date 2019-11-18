@@ -364,7 +364,7 @@
                 "type": "string",
                 "format":"term",
                 "ontology":"http://w3id.org/oebDatasets",
-                "ontology":"http://w3id.org/oebDatasets"
+                "ancestors": ["https://w3id.org/oebDatasets#dataset"]
               },
               "file_path": {
                 "type": "string",
@@ -606,7 +606,7 @@
               "type": "string",
               "format":"term",
               "ontology":"http://w3id.org/oebDatasets",
-              "ontology":"http://w3id.org/oebDatasets"
+              "ancestors": ["https://w3id.org/oebDatasets#dataset"]
             }
           },
           "required": {
