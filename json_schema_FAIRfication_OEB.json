@@ -194,7 +194,7 @@
             "items": {
               "type": "string",
               "format":"term",
-              "ontology":"http://w3id.org/oebDataFormats"
+              "ontology":"http://www.w3id.org/oebDataFormats#FormatDatasets"
             }
           },
           "data_type": {
@@ -202,7 +202,7 @@
             "items": {
               "type": "string",
               "format":"term",
-              "ontology":"http://w3id.org/oebDatasets"
+              "ontology":"https://w3id.org/oebDatasets#dataset"
             }
           },
           "required": {
@@ -355,12 +355,12 @@
               "file_type": {
                 "type": "string",
                 "format":"term",
-                "ontology":"http://w3id.org/oebDataFormats"
+                "ontology":"http://www.w3id.org/oebDataFormats#FormatDatasets"
               },
               "data_type": {
                 "type": "string",
                 "format":"term",
-                "ontology":"http://w3id.org/oebDatasets"
+                "ontology":"https://w3id.org/oebDatasets#dataset"
               },
               "file_path": {
                 "type": "string",
@@ -592,7 +592,7 @@
             "items": {
               "type": "string",
               "format":"term",
-              "ontology":"http://w3id.org/oebDataFormats"
+              "ontology":"http://www.w3id.org/oebDataFormats#FormatDatasets"
             }
           },
           "data_type": {
@@ -600,7 +600,7 @@
             "items": {
               "type": "string",
               "format":"term",
-              "ontology":"http://w3id.org/oebDatasets"
+              "ontology":"https://w3id.org/oebDatasets#dataset"
             }
           },
           "required": {
