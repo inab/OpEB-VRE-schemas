@@ -195,7 +195,8 @@
               "type": "string",
               "format":"term",
               "ontology": "https://w3id.org/oebDataFormats",
-              "ancestors": "https://w3id.org/oebDataFormats#FormatDatasets"
+              "ancestors": "https://w3id.org/oebDataFormats#FormatDatasets",
+              "matchType": "label"
             }
           },
           "data_type": {
@@ -204,7 +205,8 @@
               "type": "string",
               "format":"term",
               "ontology": "https://w3id.org/oebDatasets", 
-              "ancestors": "https://w3id.org/oebDatasets#dataset"
+              "ancestors": "https://w3id.org/oebDatasets#dataset",
+              "matchType": "label"
             }
           },
           "required": {
@@ -358,13 +360,15 @@
                 "type": "string",
                 "format":"term",
                 "ontology": "https://w3id.org/oebDataFormats",
-                "ancestors": "https://w3id.org/oebDataFormats#FormatDatasets"
+                "ancestors": "https://w3id.org/oebDataFormats#FormatDatasets",
+                "matchType": "label"
               },
               "data_type": {
                 "type": "string",
                 "format":"term",
                 "ontology": "https://w3id.org/oebDatasets", 
-                "ancestors": "https://w3id.org/oebDatasets#dataset"
+                "ancestors": "https://w3id.org/oebDatasets#dataset",
+                "matchType": "label"
               },
               "file_path": {
                 "type": "string",
@@ -597,7 +601,8 @@
               "type": "string",
               "format":"term",
               "ontology": "https://w3id.org/oebDataFormats",
-              "ancestors": "https://w3id.org/oebDataFormats#FormatDatasets"
+              "ancestors": "https://w3id.org/oebDataFormats#FormatDatasets",
+              "matchType": "label"
             }
           },
           "data_type": {
@@ -606,7 +611,8 @@
               "type": "string",
               "format":"term",
               "ontology": "https://w3id.org/oebDatasets", 
-              "ancestors": "https://w3id.org/oebDatasets#dataset"
+              "ancestors": "https://w3id.org/oebDatasets#dataset",
+              "matchType": "label"
             }
           },
           "required": {
