@@ -194,8 +194,8 @@
             "items": {
               "type": "string",
               "format":"term",
-              "ontology": "https://w3id.org/oebDataFormats",
-              "ancestors": "https://w3id.org/oebDataFormats#FormatDatasets",
+              "ontology": ["http://edamontology.org/EDAM_1.21.owl","https://w3id.org/oebDataFormats"],
+              "ancestors": "https://w3id.org/oebDataFormats/FormatDatasets",
               "matchType": "label"
             }
           },
@@ -205,7 +205,7 @@
               "type": "string",
               "format":"term",
               "ontology": "https://w3id.org/oebDatasets", 
-              "ancestors": "https://w3id.org/oebDatasets#dataset",
+              "ancestors": "https://w3id.org/oebDatasets/dataset",
               "matchType": "label"
             }
           },
@@ -359,15 +359,15 @@
               "file_type": {
                 "type": "string",
                 "format":"term",
-                "ontology": "https://w3id.org/oebDataFormats",
-                "ancestors": "https://w3id.org/oebDataFormats#FormatDatasets",
+                "ontology": ["http://edamontology.org/EDAM_1.21.owl","https://w3id.org/oebDataFormats"],
+                "ancestors": "https://w3id.org/oebDataFormats/FormatDatasets",
                 "matchType": "label"
               },
               "data_type": {
                 "type": "string",
                 "format":"term",
                 "ontology": "https://w3id.org/oebDatasets", 
-                "ancestors": "https://w3id.org/oebDatasets#dataset",
+                "ancestors": "https://w3id.org/oebDatasets/dataset",
                 "matchType": "label"
               },
               "file_path": {
@@ -600,8 +600,8 @@
             "items": {
               "type": "string",
               "format":"term",
-              "ontology": "https://w3id.org/oebDataFormats",
-              "ancestors": "https://w3id.org/oebDataFormats#FormatDatasets",
+              "ontology": ["http://edamontology.org/EDAM_1.21.owl","https://w3id.org/oebDataFormats"],
+              "ancestors": "https://w3id.org/oebDataFormats/FormatDatasets",
               "matchType": "label"
             }
           },
@@ -611,7 +611,7 @@
               "type": "string",
               "format":"term",
               "ontology": "https://w3id.org/oebDatasets", 
-              "ancestors": "https://w3id.org/oebDatasets#dataset",
+              "ancestors": "https://w3id.org/oebDatasets/dataset",
               "matchType": "label"
             }
           },
