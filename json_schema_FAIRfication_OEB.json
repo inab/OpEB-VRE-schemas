@@ -194,7 +194,7 @@
             "items": {
               "type": "string",
               "format":"term",
-              "ontology": ["http://edamontology.org/EDAM_1.21.owl","https://w3id.org/oebDataFormats"],
+              "ontology": "https://w3id.org/oebDataFormats",
               "ancestors": "https://w3id.org/oebDataFormats/FormatDatasets",
               "matchType": "label"
             }
@@ -359,7 +359,7 @@
               "file_type": {
                 "type": "string",
                 "format":"term",
-                "ontology": ["http://edamontology.org/EDAM_1.21.owl","https://w3id.org/oebDataFormats"],
+                "ontology": "https://w3id.org/oebDataFormats",
                 "ancestors": "https://w3id.org/oebDataFormats/FormatDatasets",
                 "matchType": "label"
               },
@@ -600,7 +600,7 @@
             "items": {
               "type": "string",
               "format":"term",
-              "ontology": ["http://edamontology.org/EDAM_1.21.owl","https://w3id.org/oebDataFormats"],
+              "ontology": "https://w3id.org/oebDataFormats",
               "ancestors": "https://w3id.org/oebDataFormats/FormatDatasets",
               "matchType": "label"
             }
