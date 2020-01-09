@@ -194,7 +194,7 @@
             "items": {
               "type": "string",
               "format":"term",
-              "ontology": "https://w3id.org/oebDataFormats",
+              "ontology": "https://raw.githubusercontent.com/inab/OEB-ontologies/master/prueba.owl",
               "ancestors": "https://w3id.org/oebDataFormats/FormatDatasets",
               "matchType": "label"
             }
@@ -204,7 +204,7 @@
             "items": {
               "type": "string",
               "format":"term",
-              "ontology": "https://raw.githubusercontent.com/inab/OEB-ontologies/master/prueba.owl",
+              "ontology": "https://w3id.org/oebDatasets",
               "ancestors": "https://w3id.org/oebDatasets/dataset",
               "matchType": "label"
             }
@@ -359,14 +359,14 @@
               "file_type": {
                 "type": "string",
                 "format":"term",
-                "ontology": "https://w3id.org/oebDataFormats",
+                "ontology": "https://raw.githubusercontent.com/inab/OEB-ontologies/master/prueba.owl",
                 "ancestors": "https://w3id.org/oebDataFormats/FormatDatasets",
                 "matchType": "label"
               },
               "data_type": {
                 "type": "string",
                 "format":"term",
-                "ontology": "https://raw.githubusercontent.com/inab/OEB-ontologies/master/prueba.owl",
+                "ontology": "https://w3id.org/oebDatasets",
                 "ancestors": "https://w3id.org/oebDatasets/dataset",
                 "matchType": "label"
               },
@@ -600,7 +600,7 @@
             "items": {
               "type": "string",
               "format":"term",
-              "ontology": "https://w3id.org/oebDataFormats",
+              "ontology": "https://raw.githubusercontent.com/inab/OEB-ontologies/master/prueba.owl",
               "ancestors": "https://w3id.org/oebDataFormats/FormatDatasets",
               "matchType": "label"
             }
@@ -610,7 +610,7 @@
             "items": {
               "type": "string",
               "format":"term",
-              "ontology": "https://raw.githubusercontent.com/inab/OEB-ontologies/master/prueba.owl",
+              "ontology": "https://w3id.org/oebDatasets",
               "ancestors": "https://w3id.org/oebDatasets/dataset",
               "matchType": "label"
             }
