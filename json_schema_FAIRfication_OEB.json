@@ -194,7 +194,7 @@
             "items": {
               "type": "string",
               "format":"term",
-              "ontology": ["https://raw.githubusercontent.com/edamontology/edamontology/master/EDAM_dev.owl","https://w3id.org/oebDataFormats"],
+              "ontology": "https://raw.githubusercontent.com/edamontology/edamontology/master/EDAM_dev.owl",
               "ancestors": "https://w3id.org/oebDataFormats/FormatDatasets",
               "matchType": "label"
             }
@@ -204,7 +204,7 @@
             "items": {
               "type": "string",
               "format":"term",
-              "ontology": ["https://raw.githubusercontent.com/edamontology/edamontology/master/EDAM_dev.owl","https://w3id.org/oebDatasets"], 
+              "ontology": "https://raw.githubusercontent.com/edamontology/edamontology/master/EDAM_dev.owl",
               "ancestors": "https://w3id.org/oebDatasets/dataset",
               "matchType": "label"
             }
@@ -359,14 +359,14 @@
               "file_type": {
                 "type": "string",
                 "format":"term",
-                "ontology": ["https://raw.githubusercontent.com/edamontology/edamontology/master/EDAM_dev.owl","https://w3id.org/oebDataFormats"],
+                "ontology": "https://raw.githubusercontent.com/edamontology/edamontology/master/EDAM_dev.owl",
                 "ancestors": "https://w3id.org/oebDataFormats/FormatDatasets",
                 "matchType": "label"
               },
               "data_type": {
                 "type": "string",
                 "format":"term",
-                "ontology": ["https://raw.githubusercontent.com/edamontology/edamontology/master/EDAM_dev.owl","https://w3id.org/oebDatasets"], 
+                "ontology": "https://raw.githubusercontent.com/edamontology/edamontology/master/EDAM_dev.owl",
                 "ancestors": "https://w3id.org/oebDatasets/dataset",
                 "matchType": "label"
               },
@@ -600,7 +600,7 @@
             "items": {
               "type": "string",
               "format":"term",
-              "ontology": ["https://raw.githubusercontent.com/edamontology/edamontology/master/EDAM_dev.owl","https://w3id.org/oebDataFormats"],
+              "ontology": "https://raw.githubusercontent.com/edamontology/edamontology/master/EDAM_dev.owl",
               "ancestors": "https://w3id.org/oebDataFormats/FormatDatasets",
               "matchType": "label"
             }
@@ -610,7 +610,7 @@
             "items": {
               "type": "string",
               "format":"term",
-              "ontology": ["https://raw.githubusercontent.com/edamontology/edamontology/master/EDAM_dev.owl","https://w3id.org/oebDatasets"], 
+              "ontology": "https://raw.githubusercontent.com/edamontology/edamontology/master/EDAM_dev.owl",
               "ancestors": "https://w3id.org/oebDatasets/dataset",
               "matchType": "label"
             }
