@@ -204,8 +204,8 @@
             "items": {
               "type": "string",
               "format":"term",
-              "ontology": "https://w3id.org/oebDatasets",
-              "ancestors": "https://w3id.org/oebDatasets/dataset",
+              "ontology": "https://w3id.org/oebDatasets/complete",
+              "ancestors": "https://w3id.org/oebDatasets/complete/dataset",
               "matchType": "label"
             }
           },
@@ -366,8 +366,8 @@
               "data_type": {
                 "type": "string",
                 "format":"term",
-                "ontology": "https://w3id.org/oebDatasets",
-                "ancestors": "https://w3id.org/oebDatasets/dataset",
+                "ontology": "https://w3id.org/oebDatasets/complete",
+                "ancestors": "https://w3id.org/oebDatasets/complete/dataset",
                 "matchType": "label"
               },
               "file_path": {
@@ -610,8 +610,8 @@
             "items": {
               "type": "string",
               "format":"term",
-              "ontology": "https://w3id.org/oebDatasets",
-              "ancestors": "https://w3id.org/oebDatasets/dataset",
+              "ontology": "https://w3id.org/oebDatasets/complete",
+              "ancestors": "https://w3id.org/oebDatasets/complete/dataset",
               "matchType": "label"
             }
           },
