@@ -1,0 +1,48 @@
+{
+  "_id": "validation_listGenes",
+  "_schema": "https://openebench.bsc.es/vre/process-schema",
+  "title": "Validation of a list of Genes",
+  "type": "validation",
+  "owner": "test@bsc.es",
+  "inputs_meta": {
+    "input": {
+      "title": "List of genes to evaluate",
+      "help": "File containing the list of genes to be evaluated. One gene per line.",
+      "data_type": [
+        "participant"
+      ],
+      "file_type": [
+        "TXT"
+      ]
+    },
+    "public_ref_dir": {
+      "title": "Folder where golden data is located",
+      "data_type": [
+        "public_reference"
+      ],
+      "file_type": [
+        "TAR"
+      ]
+    },
+    "participant_id": {
+      "title": "Participant Identifier"
+    },
+    "community_id": {
+      "title": "OpenEBench community Identifier"
+    },
+    "challenges_ids": {
+      "title": "Cancer types",
+      "help": "List of cancer types",
+      "challenges": [
+        {
+          "name": "OEBX4444",
+          "description": "ACC"
+        },
+        {
+          "name": "OEBX5555",
+          "description": "ALL"
+        }
+      ]
+    }
+  }
+}
