@@ -4,6 +4,7 @@
   "title": "Validation of a list of Genes",
   "type": "validation",
   "owner": "test@bsc.es",
+  "status": "public",
   "inputs_meta": {
     "input": {
       "title": "List of genes to evaluate",
