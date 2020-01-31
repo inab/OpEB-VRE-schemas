@@ -30,9 +30,16 @@
       "const": "validation",
       "default": "validation"
     },
-      "owner": {
+    "owner": {
       "type":"string"
-      },
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "private",
+        "public"
+       ]
+    },
     "inputs_meta": {
       "type": "object",
       "properties": {
