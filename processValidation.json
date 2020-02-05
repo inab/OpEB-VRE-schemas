@@ -3,7 +3,12 @@
   "_schema": "https://openebench.bsc.es/vre/process-schema",
   "title": "Validation of a list of Genes",
   "type": "validation",
-  "owner": "test@bsc.es",
+  "container": {
+    "repository": "localhost:5000",
+    "image":"tcga_validation",
+    "tag":"1.0"
+  },
+  "owner": "OpEBUSER5e301d61da6f8",
   "status": "public",
   "inputs_meta": {
     "input": {
