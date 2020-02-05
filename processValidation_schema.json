@@ -32,17 +32,21 @@
     },
     "container": {
       "type": "object",
-      "properties": {
-        "name": {
+      "properties": { 
+        "repository": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^http(s?)://"
+        },
+        "image": {
           "type": "string"
         },
-        "uri": {
-          "type": "string",
-          "format": "uri"
+         "container": {
+          "type": "string"
         }
       },
       "required": [
-        "name", "uri"
+        "image"
       ]
     },
     "owner": {
