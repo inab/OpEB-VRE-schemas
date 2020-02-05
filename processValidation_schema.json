@@ -30,6 +30,21 @@
       "const": "validation",
       "default": "validation"
     },
+    "container": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "uri": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "required": [
+        "name", "uri"
+      ]
+    },
     "owner": {
       "type":"string"
     },
@@ -193,6 +208,7 @@
     "_schema",
     "title",
     "type",
+    "container",
     "owner",
     "inputs_meta"
   ],
