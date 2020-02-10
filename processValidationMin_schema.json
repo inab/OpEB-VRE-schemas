@@ -1,0 +1,215 @@
+{
+  "$id": "https://openebench.bsc.es/vre/process-schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "OEB Benchmarking Workflow: Validation process",
+  "description": "Specify a new OEB validation process",
+  "properties": {
+    "title": {
+      "type": "string",
+      "title": "OEB Process title",
+      "description": "Full name for the new OEB process."
+    },
+    "description": {
+      "type": "string",
+      "title": "OEB Process description",
+      "description": "Short description detailing what the OEB Process does"
+    },
+    "status": {
+      "type": "string",
+      "title": "OEB Process status",
+      "description": "Process visibility policy",
+      "enum": [
+        "private",
+        "public"
+      ],
+      "default": "private"
+    },
+    "container": {
+      "type": "object",
+      "title": "OEB Process Container",
+      "description": "Location of the container implementing the OEB process",
+      "properties": {
+        "image": {
+          "type": "string",
+          "title": "Container Image",
+          "description": "Container image identifier",
+          "format": "uri"
+        }
+      },
+      "required": [
+        "image"
+      ]
+    },
+    "inputs_meta": {
+      "type": "object",
+      "title": "Input data description",
+      "description": "Definition of the different input elements feed into the OEB process.",
+      "properties": {
+        "input": {
+          "type": "object",
+          "title": "Participant's data",
+          "description": "Metadata for the participant input file containing the data to be validated.",
+          "properties": {
+            "label": {
+              "type": "string",
+              "title": "Label",
+              "description": "Name for the participant input as displayed to the researcher at the web site.",
+              "default": "Participant data to evaluate"
+            },
+            "help": {
+              "type": "string",
+              "title": "Help text",
+              "description": "Short informative text explaining the 'Participant Input' element. The text is displayed as a tooltip to the researcher at the web site.",
+              "default": "File containing the results of the method under evaluation"
+            },
+            "file_type": {
+              "type": "array",
+              "title": "Accepted file types",
+              "description": "File formats that might present the 'Participant Input'. Elegible formats: https://w3id.org/oebDataFormats",
+              "items": {
+                "type": "string",
+                "format": "term",
+                "ontology": "https://w3id.org/oebDataFormats",
+                "ancestors": "https://w3id.org/oebDataFormats/FormatDatasets",
+                "matchType": "label"
+              }
+            }
+          },
+          "required": [
+            "label",
+            "file_type"
+          ],
+          "additionalProperties": false
+        },
+        "public_ref_dir": {
+          "type": "object",
+          "title": "Public Reference dataset",
+          "description": "Metadata for the reference dataset",
+          "properties": {
+            "label": {
+              "type": "string",
+              "title": "Label",
+              "description": "Label for the dataset as displayed to the researcher at the web site.",
+              "default": "Public Reference dataset"
+            },
+            "help": {
+              "type": "string",
+              "title": "Help text",
+              "description": "Short informative text explaining the 'Public Reference dataset' element. The text is displayed as a tooltip to the researcher at the web site.",
+              "default": "Folder containing the Public Reference dataset"
+            }
+          },
+          "required": [
+            "label"
+          ],
+          "additionalProperties": false
+        },
+        "participant_id": {
+          "type": "object",
+          "title": "Participant's Identifier",
+          "description": "Description of the 'Participant Identifier' parameter",
+          "properties": {
+            "label": {
+              "type": "string",
+              "title": "Label",
+              "description": "Label for the argument 'participant_id' as displayed to the researcher at the web site.",
+              "default": "Participant Identifier"
+            },
+            "help": {
+              "type": "string",
+              "title": "Help text",
+              "description": "Short informative text explaining the 'Participant Identifier' element. The text is displayed as a tooltip to the researcher at the web site.",
+              "default": "Participant identifier as a label for your results (e.g. 'myMethod'). Format: String with no special characters"
+            }
+          },
+          "required": [
+            "label"
+          ]
+        },
+        "community_id": {
+          "type": "object",
+          "title": "Community Identifier",
+          "description": "Description of the 'Community Identifier' parameter",
+          "properties": {
+            "label": {
+              "type": "string",
+              "title": "Label",
+              "description": "Label for the argument 'community_id' as displayed to the researcher at the web site.",
+              "default": "OpenEBench community identifier"
+            },
+            "help": {
+              "type": "string",
+              "title": "Help text",
+              "description": "Short informative text explaining the 'Community Identifier' element. The text is displayed as a tooltip to the researcher at the web site.",
+              "default": "Scientic community Identifier as registered at OpenEbench https://openebench.bsc.es/scientific"
+            }
+          },
+          "required": [
+            "label"
+          ]
+        },
+        "challenges_ids": {
+          "type": "object",
+          "title": "Challenge Identifiers",
+          "description": "Description of the 'Challenge Identifier' parameter",
+          "properties": {
+            "label": {
+              "type": "string",
+              "title": "Label",
+              "description": "Label for the argument 'challenges_ids' as displayed to the researcher at the web site.",
+              "default": "OpenEBench community Identifier"
+            },
+            "help": {
+              "type": "string",
+              "title": "Help text",
+              "description": "Short informative text explaining the 'Challenge Identifiers' element. The text is displayed as a tooltip to the researcher at the web site.",
+              "default": "List of benchmarking challenges evaluated for the OEB process."
+            },
+            "challenges": {
+              "type": "array",
+              "title": "Benchmarking challenges",
+              "description": "List of challenge events processed by the OEB process",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "description": "Challenge identifier as registered in OpenEBench",
+                    "pattern": "^OEBX[0-9]+$"
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Challenge name displayed to researcher"
+                  }
+                },
+                "required": [
+                  "value",
+                  "description"
+                ]
+              }
+            }
+          },
+          "required": [
+            "label",
+            "challenges"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "input",
+        "public_ref_dir",
+        "participant_id",
+        "community_id",
+        "challenges_ids"
+      ]
+    }
+  },
+  "required": [
+    "title",
+    "container",
+    "inputs_meta"
+  ],
+  "additionalProperties": false
+}

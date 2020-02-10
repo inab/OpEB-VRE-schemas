@@ -2,79 +2,138 @@
   "$id": "https://openebench.bsc.es/vre/process-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
-  "title": "OEB Benchmarking process schema",
-  "description": "Specification of OEB processes for validation, metrics generation and metrics aggregation",
+  "title": "OEB Benchmarking Workflow: Validation process",
+  "description": "Specify a new OEB validation process",
   "properties": {
     "_id": {
       "type": "string",
-      "pattern": "^[a-zA-Z0-9_]+$"
+      "pattern": "^[a-zA-Z0-9_]+$",
+      "title": "OEB Process identifier",
+      "description": "Tag for the new process. Format: no special characters nor spaces allowed",
+      "example": "OEBP00000",
+      "readonly": true
     },
     "_schema": {
       "type": "string",
       "format": "uri",
       "const": "https://openebench.bsc.es/vre/process-schema"
     },
+    "owner": {
+      "type": "string",
+      "title": "Owner",
+      "description": "OEB process author. Corresponds to a VRE user identifier",
+      "readonly": true,
+      "example": "OpEBUSER000"
+    },
     "title": {
-      "type": "string"
+      "type": "string",
+      "title": "OEB Process title",
+      "description": "Full name for the new OEB process."
     },
     "description": {
-      "type": "string"
+      "type": "string",
+      "title": "OEB Process description",
+      "description": "Short description detailing what the OEB Process does"
     },
     "type": {
       "type": "string",
-      "enum": [
-        "validation",
-        "metrics_generation",
-        "metrics_aggregation"
-      ],
+      "title": "OEB Process Type",
+      "description": "Classification of the different benchmarking processes.",
+      "default": "validation",
       "const": "validation",
-      "default": "validation"
+      "readonly": true
+    },
+    "status": {
+      "type": "string",
+      "title": "OEB Process status",
+      "description": "Process visibility policy",
+      "enum": [
+        "private",
+        "public"
+      ],
+      "default": "private"
     },
     "container": {
       "type": "object",
-      "properties": { 
-        "repository": {
+      "title": "OEB Process Container",
+      "description": "Location of the container implementing the OEB process",
+      "properties": {
+        "technology": {
           "type": "string",
-          "format": "uri",
-          "pattern": "^http(s?)://"
+          "title": "Container technology",
+          "description": "Software container in use",
+          "enum": [
+            "docker"
+          ],
+          "default": "docker",
+          "readonly": true
         },
         "image": {
-          "type": "string"
-        },
-         "container": {
-          "type": "string"
+          "type": "string",
+          "title": "Container Image",
+          "description": "Container image identifier",
+          "format": "uri"
         }
       },
       "required": [
         "image"
       ]
     },
-    "owner": {
-      "type":"string"
-    },
-    "status": {
-      "type": "string",
-      "enum": [
-        "private",
-        "public"
-       ]
-    },
     "inputs_meta": {
       "type": "object",
+      "title": "Input data description",
+      "description": "Definition of the different input elements feed into the OEB process.",
       "properties": {
         "input": {
           "type": "object",
+          "title": "Participant's data",
+          "description": "Metadata for the participant input file containing the data to be validated.",
           "properties": {
-            "title": {
+            "name": {
               "type": "string",
+              "title": "Internal identifier",
+              "description": "Identifier internally used by the workflow manager to refer to the 'Participant Input' element.",
+              "const": "input",
+              "default": "input",
+              "readonly": true
+            },
+            "type": {
+              "type": "string",
+              "title": "Type of Input",
+              "description": "Type of input feed into the OEB process",
+              "enum": [
+                "user_file",
+                "challenge_file",
+                "user_dir",
+                "challenge_dir",
+                "string",
+                "integer",
+                "number",
+                "boolean",
+                "enum",
+                "enum_mult",
+                "hidden"
+              ],
+              "default": "user_file",
+              "const": "user_file",
+              "readonly": true
+            },
+            "label": {
+              "type": "string",
+              "title": "Label",
+              "description": "Name for the participant input as displayed to the researcher at the web site.",
               "default": "Participant data to evaluate"
             },
             "help": {
               "type": "string",
+              "title": "Help text",
+              "description": "Short informative text explaining the 'Participant Input' element. The text is displayed as a tooltip to the researcher at the web site.",
               "default": "File containing the results of the method under evaluation"
             },
             "file_type": {
               "type": "array",
+              "title": "Accepted file types",
+              "description": "File formats that might present the 'Participant Input'. Elegible formats: https://w3id.org/oebDataFormats",
               "items": {
                 "type": "string",
                 "format": "term",
@@ -84,16 +143,28 @@
               }
             },
             "data_type": {
+              "type": "array",
+              "title": "Accepted dataset types",
+              "description": "Dataset types that 'Particiapnt Input'  might belong to.",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "participant"
+                ]
+              },
               "const": [
                 "participant"
               ],
               "default": [
                 "participant"
-              ]
+              ],
+              "readonly": true
             }
           },
           "required": [
-            "title",
+            "name",
+            "type",
+            "label",
             "data_type",
             "file_type"
           ],
@@ -101,33 +172,92 @@
         },
         "public_ref_dir": {
           "type": "object",
+          "title": "Public Reference dataset",
+          "description": "Metadata for the reference dataset",
           "properties": {
-            "title": {
+            "name": {
               "type": "string",
+              "title": "Internal Identifier",
+              "description": "Identifier internally used by the workflow manager to refer to the 'Public Reference dataset' element.",
+              "const": "public_ref_dir",
+              "default": "public_ref_dir",
+              "readonly": true
+            },
+            "type": {
+              "type": "string",
+              "title": "Type of Input",
+              "description": "Type of input feed into the OEB process",
+              "enum": [
+                "user_file",
+                "challenge_file",
+                "user_dir",
+                "challenge_dir",
+                "string",
+                "integer",
+                "number",
+                "boolean",
+                "enum",
+                "enum_mult",
+                "hidden"
+              ],
+              "default": "challenge_dir",
+              "const": "challenge_dir",
+              "readonly": true
+            },
+            "label": {
+              "type": "string",
+              "title": "Label",
+              "description": "Label for the dataset as displayed to the researcher at the web site.",
               "default": "Public Reference dataset"
             },
             "help": {
-              "type": "string"
+              "type": "string",
+              "title": "Help text",
+              "description": "Short informative text explaining the 'Public Reference dataset' element. The text is displayed as a tooltip to the researcher at the web site.",
+              "default": "Folder containing the Public Reference dataset"
             },
             "file_type": {
+              "type": "array",
+              "title": "Accepted file types",
+              "description": "File formats that might present the 'Public Reference dataset'. Elegible formats: https://w3id.org/oebDataFormats",
+              "items": {
+                "type": "string",
+                "format": "term",
+                "ontology": "https://w3id.org/oebDataFormats",
+                "ancestors": "https://w3id.org/oebDataFormats/FormatDatasets",
+                "matchType": "label"
+              },
               "const": [
                 "TAR"
               ],
               "default": [
                 "TAR"
-              ]
+              ],
+              "readonly": true
             },
             "data_type": {
+              "type": "array",
+              "title": "Accepted dataset types",
+              "description": "Dataset types that 'Public Reference dataset'  might belong to.",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "public_reference"
+                ]
+              },
               "const": [
                 "public_reference"
               ],
               "default": [
                 "public_reference"
-              ]
+              ],
+              "readonly": true
             }
           },
           "required": [
-            "title",
+            "name",
+            "type",
+            "label",
             "data_type",
             "file_type"
           ],
@@ -135,65 +265,184 @@
         },
         "participant_id": {
           "type": "object",
+          "title": "Participant's Identifier",
+          "description": "Description of the 'Participant Identifier' parameter",
           "properties": {
-            "title": {
+            "name": {
               "type": "string",
+              "title": "Internal Identifier",
+              "description": "Identifier internally used by the workflow manager to refer to the 'Participant's Identifier' element.",
+              "const": "participant_id",
+              "default": "participant_id",
+              "readonly": true
+            },
+            "type": {
+              "type": "string",
+              "title": "Type of Input",
+              "description": "Type of input feed into the OEB process",
+              "enum": [
+                "user_file",
+                "challenge_file",
+                "user_dir",
+                "challenge_dir",
+                "string",
+                "integer",
+                "number",
+                "boolean",
+                "enum",
+                "enum_mult",
+                "hidden"
+              ],
+              "default": "string",
+              "const": "string",
+              "readonly": true
+            },
+            "label": {
+              "type": "string",
+              "title": "Label",
+              "description": "Label for the argument 'participant_id' as displayed to the researcher at the web site.",
               "default": "Participant Identifier"
             },
             "help": {
               "type": "string",
-              "default": "Set a participant identifier as a label for your results (e.g. 'myMethod'). Format: String with no special characters"
+              "title": "Help text",
+              "description": "Short informative text explaining the 'Participant Identifier' element. The text is displayed as a tooltip to the researcher at the web site.",
+              "default": "Participant identifier as a label for your results (e.g. 'myMethod'). Format: String with no special characters"
             }
           },
           "required": [
-            "title"
+            "name",
+            "type",
+            "label"
           ]
         },
         "community_id": {
           "type": "object",
+          "title": "Community Identifier",
+          "description": "Description of the 'Community Identifier' parameter",
           "properties": {
-            "title": {
+            "name": {
               "type": "string",
-              "default": "OpenEBench community Identifier"
+              "title": "Internal Identifier",
+              "description": "Identifier internally used by the workflow manager to refer to the 'Community Identifier' element.",
+              "const": "community_id",
+              "default": "community_id",
+              "readonly": true
+            },
+            "type": {
+              "type": "string",
+              "title": "Type of Input",
+              "description": "Type of input feed into the OEB process",
+              "enum": [
+                "user_file",
+                "challenge_file",
+                "user_dir",
+                "challenge_dir",
+                "string",
+                "integer",
+                "number",
+                "boolean",
+                "enum",
+                "enum_mult",
+                "hidden"
+              ],
+              "default": "string",
+              "const": "string",
+              "readonly": true
+            },
+            "label": {
+              "type": "string",
+              "title": "Label",
+              "description": "Label for the argument 'community_id' as displayed to the researcher at the web site.",
+              "default": "OpenEBench community identifier"
             },
             "help": {
               "type": "string",
+              "title": "Help text",
+              "description": "Short informative text explaining the 'Community Identifier' element. The text is displayed as a tooltip to the researcher at the web site.",
               "default": "Scientic community Identifier as registered at OpenEbench https://openebench.bsc.es/scientific"
             }
           },
           "required": [
-            "title"
+            "name",
+            "type",
+            "label"
           ]
         },
         "challenges_ids": {
           "type": "object",
+          "title": "Challenge Identifiers",
+          "description": "Description of the 'Challenge Identifier' parameter",
           "properties": {
-            "title": {
+            "name": {
               "type": "string",
+              "title": "Internal Identifier",
+              "description": "Identifier internally used by the workflow manager to refer to the 'Challenge Identifiers' element.",
+              "const": "challenges_ids",
+              "default": "challenges_ids",
+              "readonly": true
+            },
+            "type": {
+              "type": "string",
+              "title": "Type of Input",
+              "description": "Type of input feed into the OEB process",
+              "enum": [
+                "user_file",
+                "challenge_file",
+                "user_dir",
+                "challenge_dir",
+                "string",
+                "integer",
+                "number",
+                "boolean",
+                "enum",
+                "enum_mult",
+                "hidden"
+              ],
+              "default": "enum",
+              "const": "enum",
+              "readonly": true
+            },
+            "label": {
+              "type": "string",
+              "title": "Label",
+              "description": "Label for the argument 'challenges_ids' as displayed to the researcher at the web site.",
               "default": "OpenEBench community Identifier"
             },
             "help": {
               "type": "string",
-              "default": "Scientic community Identifier as registered at OpenEbench https://openebench.bsc.es/scientific"
+              "title": "Help text",
+              "description": "Short informative text explaining the 'Challenge Identifiers' element. The text is displayed as a tooltip to the researcher at the web site.",
+              "default": "List of benchmarking challenges evaluated for the OEB process."
             },
             "challenges": {
               "type": "array",
+              "title": "Benchmarking challenges",
+              "description": "List of challenge events processed by the OEB process",
               "items": {
                 "type": "object",
                 "properties": {
-                  "name": {
+                  "value": {
                     "type": "string",
+                    "description": "Challenge identifier as registered in OpenEBench",
                     "pattern": "^OEBX[0-9]+$"
                   },
                   "description": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Challenge name displayed to researcher"
                   }
-                }
+                },
+                "required": [
+                  "value",
+                  "description"
+                ]
               }
             }
           },
           "required": [
-            "title"
+            "name",
+            "label",
+            "challenges"
           ],
           "additionalProperties": false
         }
