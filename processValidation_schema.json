@@ -1,0 +1,220 @@
+{
+  "$id": "https://openebench.bsc.es/vre/process-schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "OEB Benchmarking process schema",
+  "description": "Specification of OEB processes for validation, metrics generation and metrics aggregation",
+  "properties": {
+    "_id": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9_]+$"
+    },
+    "_schema": {
+      "type": "string",
+      "format": "uri",
+      "const": "https://openebench.bsc.es/vre/process-schema"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "validation",
+        "metrics_generation",
+        "metrics_aggregation"
+      ],
+      "const": "validation",
+      "default": "validation"
+    },
+    "container": {
+      "type": "object",
+      "properties": { 
+        "repository": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^http(s?)://"
+        },
+        "image": {
+          "type": "string"
+        },
+         "container": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "image"
+      ]
+    },
+    "owner": {
+      "type":"string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "private",
+        "public"
+       ]
+    },
+    "inputs_meta": {
+      "type": "object",
+      "properties": {
+        "input": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string",
+              "default": "Participant data to evaluate"
+            },
+            "help": {
+              "type": "string",
+              "default": "File containing the results of the method under evaluation"
+            },
+            "file_type": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "term",
+                "ontology": "https://w3id.org/oebDataFormats",
+                "ancestors": "https://w3id.org/oebDataFormats/FormatDatasets",
+                "matchType": "label"
+              }
+            },
+            "data_type": {
+              "const": [
+                "participant"
+              ],
+              "default": [
+                "participant"
+              ]
+            }
+          },
+          "required": [
+            "title",
+            "data_type",
+            "file_type"
+          ],
+          "additionalProperties": false
+        },
+        "public_ref_dir": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string",
+              "default": "Public Reference dataset"
+            },
+            "help": {
+              "type": "string"
+            },
+            "file_type": {
+              "const": [
+                "TAR"
+              ],
+              "default": [
+                "TAR"
+              ]
+            },
+            "data_type": {
+              "const": [
+                "public_reference"
+              ],
+              "default": [
+                "public_reference"
+              ]
+            }
+          },
+          "required": [
+            "title",
+            "data_type",
+            "file_type"
+          ],
+          "additionalProperties": false
+        },
+        "participant_id": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string",
+              "default": "Participant Identifier"
+            },
+            "help": {
+              "type": "string",
+              "default": "Set a participant identifier as a label for your results (e.g. 'myMethod'). Format: String with no special characters"
+            }
+          },
+          "required": [
+            "title"
+          ]
+        },
+        "community_id": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string",
+              "default": "OpenEBench community Identifier"
+            },
+            "help": {
+              "type": "string",
+              "default": "Scientic community Identifier as registered at OpenEbench https://openebench.bsc.es/scientific"
+            }
+          },
+          "required": [
+            "title"
+          ]
+        },
+        "challenges_ids": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string",
+              "default": "OpenEBench community Identifier"
+            },
+            "help": {
+              "type": "string",
+              "default": "Scientic community Identifier as registered at OpenEbench https://openebench.bsc.es/scientific"
+            },
+            "challenges": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "pattern": "^OEBX[0-9]+$"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": [
+            "title"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "input",
+        "public_ref_dir",
+        "participant_id",
+        "community_id",
+        "challenges_ids"
+      ]
+    }
+  },
+  "required": [
+    "_id",
+    "_schema",
+    "title",
+    "type",
+    "container",
+    "owner",
+    "inputs_meta"
+  ],
+  "additionalProperties": false
+}
