@@ -140,7 +140,8 @@
                 "ontology": "https://w3id.org/oebDataFormats",
                 "ancestors": "https://w3id.org/oebDataFormats/FormatDatasets",
                 "matchType": "label"
-              }
+              },
+              "uniqueItems": true
             },
             "data_type": {
               "type": "array",
@@ -152,6 +153,7 @@
                   "participant"
                 ]
               },
+              "uniqueItems": true,
               "const": [
                 "participant"
               ],
@@ -227,6 +229,7 @@
                 "ancestors": "https://w3id.org/oebDataFormats/FormatDatasets",
                 "matchType": "label"
               },
+              "uniqueItems": true,
               "const": [
                 "TAR"
               ],
@@ -245,6 +248,7 @@
                   "public_reference"
                 ]
               },
+              "uniqueItems": true,
               "const": [
                 "public_reference"
               ],
