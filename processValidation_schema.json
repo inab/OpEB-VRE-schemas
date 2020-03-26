@@ -139,7 +139,8 @@
                 "format": "term",
                 "ontology": "https://w3id.org/oebDataFormats",
                 "ancestors": "https://w3id.org/oebDataFormats/FormatDatasets",
-                "matchType": "label"
+                "matchType": "label",
+                "options": {}
               },
               "uniqueItems": true
             },
@@ -227,7 +228,8 @@
                 "format": "term",
                 "ontology": "https://w3id.org/oebDataFormats",
                 "ancestors": "https://w3id.org/oebDataFormats/FormatDatasets",
-                "matchType": "label"
+                "matchType": "label",
+                "options": {}
               },
               "uniqueItems": true,
               "const": [
