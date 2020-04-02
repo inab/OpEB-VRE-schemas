@@ -226,8 +226,8 @@
               "items": {
                 "type": "string",
                 "format": "term",
-                "ontology": "https://w3id.org/oebDataFormats",
-                "ancestors": "https://w3id.org/oebDataFormats/FormatDatasets",
+                "ontology": "https://w3id.org/oebDatasets",
+                "ancestors": "https://w3id.org/oebDatasets/dataset",
                 "matchType": "label",
                 "options": {}
               },
