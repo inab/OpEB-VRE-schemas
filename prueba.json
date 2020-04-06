@@ -25,9 +25,7 @@
     },
     "favorite_color": {
       "type": "string",
-      "format": "url",
-      "title": "favorite url",
-      "default": "www.google.com"
+      "format": "tel"
     },
     "title": {
       "type": "string",
