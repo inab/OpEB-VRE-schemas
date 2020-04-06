@@ -21,8 +21,13 @@
     "owner": {
       "type": "string",
       "title": "Owner",
-      "description": "OEB process author. Corresponds to a VRE user identifier",
-      "format": "color"
+      "description": "OEB process author. Corresponds to a VRE user identifier"
+    },
+    "favorite_color": {
+      "type": "string",
+      "format": "color",
+      "title": "favorite color",
+      "default": "#ffa500"
     },
     "title": {
       "type": "string",
