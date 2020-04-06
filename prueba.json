@@ -22,9 +22,7 @@
       "type": "string",
       "title": "Owner",
       "description": "OEB process author. Corresponds to a VRE user identifier",
-      "readonly": true,
-      "format": "color",
-      "example": "OpEBUSER000"
+      "format": "color"
     },
     "title": {
       "type": "string",
