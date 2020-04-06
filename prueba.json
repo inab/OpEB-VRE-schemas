@@ -25,9 +25,9 @@
     },
     "favorite_color": {
       "type": "string",
-      "format": "color",
-      "title": "favorite color",
-      "default": "#ffa500"
+      "format": "url",
+      "title": "favorite url",
+      "default": "www.google.com"
     },
     "title": {
       "type": "string",
