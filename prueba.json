@@ -26,7 +26,7 @@
     "favorite_color": {
       "type": "string",
       "format": "url",
-      "pattern": "^http(s)?://.+/file[^/]*$",
+      "pattern": "^(http://www.|https://www.|http://|https://)?",
       "title": "favorite url"
     },
     "title": {
