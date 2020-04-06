@@ -24,7 +24,7 @@
       "description": "OEB process author. Corresponds to a VRE user identifier"
     },
     "favorite_color": {
-      "type": "string",
+      "type": "integer",
       "format": "tel",
       "title": "favorite tel"
     },
