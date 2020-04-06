@@ -27,7 +27,7 @@
       "type": "string",
       "format": "url",
       "pattern": "^(http://www.|https://www.|http://|https://)?",
-      "title": "favorite url"
+      "title": "favorite url2"
     },
     "title": {
       "type": "string",
