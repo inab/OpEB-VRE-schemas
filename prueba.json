@@ -25,7 +25,8 @@
     },
     "favorite_color": {
       "type": "string",
-      "format": "tel"
+      "format": "tel",
+      "title": "favorite tel"
     },
     "title": {
       "type": "string",
