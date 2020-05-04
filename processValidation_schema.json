@@ -11,18 +11,21 @@
       "title": "OEB Process identifier",
       "description": "Tag for the new process. Format: no special characters nor spaces allowed",
       "example": "OEBP00000",
+      "minLength": 1,
       "readonly": true,
       "options": { "hidden": true }
     },
     "_schema": {
       "type": "string",
       "format": "uri",
+      "minLength": 1,
       "const": "https://openebench.bsc.es/vre/process-schema",
       "options": { "hidden": true }
     },
     "owner": {
       "type": "string",
       "title": "Owner",
+      "minLength": 1,
       "description": "OEB process author. Corresponds to a VRE user identifier",
       "readonly": true,
       "example": "OpEBUSER000",
@@ -31,6 +34,7 @@
     "title": {
       "type": "string",
       "title": "OEB Process title",
+      "minLength": 1,
       "description": "Full name for the new OEB process."
     },
     "description": {
@@ -41,6 +45,7 @@
     "type": {
       "type": "string",
       "title": "OEB Process Type",
+      "minLength": 1,
       "description": "Classification of the different benchmarking processes.",
       "default": "validation",
       "const": "validation",
@@ -59,6 +64,7 @@
     "container": {
       "type": "object",
       "title": "OEB Process Container",
+      "minLength": 1,
       "description": "Location of the container implementing the OEB process",
       "properties": {
         "technology": {
@@ -86,6 +92,7 @@
       "type": "object",
       "title": "Input data description",
       "description": "Definition of the different input elements feed into the OEB process.",
+      "minLength": 1,
       "properties": {
         "input": {
           "type": "object",
@@ -466,14 +473,5 @@
       ]
     }
   },
-  "required": [
-    "_id",
-    "_schema",
-    "title",
-    "type",
-    "container",
-    "owner",
-    "inputs_meta"
-  ],
   "additionalProperties": false
 }
