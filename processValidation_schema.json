@@ -11,8 +11,8 @@
       "title": "OEB Process identifier",
       "description": "Tag for the new process. Format: no special characters nor spaces allowed",
       "example": "OEBP00000",
-      "minLength": 1,
       "readonly": true,
+      "minLength": 1,
       "options": { "hidden": true }
     },
     "_schema": {
@@ -25,16 +25,16 @@
     "owner": {
       "type": "string",
       "title": "Owner",
-      "minLength": 1,
       "description": "OEB process author. Corresponds to a VRE user identifier",
       "readonly": true,
+      "minLength": 1,
       "example": "OpEBUSER000",
       "options": { "hidden": true }
     },
     "title": {
       "type": "string",
-      "title": "OEB Process title",
       "minLength": 1,
+      "title": "OEB Process title",
       "description": "Full name for the new OEB process."
     },
     "description": {
@@ -44,8 +44,8 @@
     },
     "type": {
       "type": "string",
-      "title": "OEB Process Type",
       "minLength": 1,
+      "title": "OEB Process Type",
       "description": "Classification of the different benchmarking processes.",
       "default": "validation",
       "const": "validation",
@@ -80,13 +80,11 @@
         "image": {
           "type": "string",
           "title": "Container Image",
+          "minLength": 1,
           "description": "Container image identifier",
           "format": "uri"
         }
-      },
-      "required": [
-        "image"
-      ]
+      }
     },
     "inputs_meta": {
       "type": "object",
@@ -97,11 +95,13 @@
         "input": {
           "type": "object",
           "title": "Participant's data",
+          "minLength": 1,
           "description": "Metadata for the participant input file containing the data to be validated.",
           "properties": {
             "name": {
               "type": "string",
               "title": "Internal identifier",
+              "minLength": 1,
               "description": "Identifier internally used by the workflow manager to refer to the 'Participant Input' element.",
               "const": "input",
               "default": "input",
@@ -110,6 +110,7 @@
             "type": {
               "type": "string",
               "title": "Type of Input",
+              "minLength": 1,
               "description": "Type of input feed into the OEB process",
               "enum": [
                 "user_file",
@@ -131,6 +132,7 @@
             "label": {
               "type": "string",
               "title": "Label",
+              "minLength": 1,
               "description": "Name for the participant input as displayed to the researcher at the web site.",
               "default": "Participant data to evaluate"
             },
@@ -143,20 +145,18 @@
             "file_type": {
               "type": "array",
               "title": "Accepted file types",
+              "minLength": 1,
               "description": "File formats that might present the 'Participant Input'. Elegible formats: https://w3id.org/oebDataFormats",
               "items": {
                 "type": "string",
-                "format": "term",
-                "ontology": "https://w3id.org/oebDataFormats",
-                "ancestors": "https://w3id.org/oebDataFormats/FormatDatasets",
-                "matchType": "label",
-                "options": {}
+                "enum": ["PDB"]
               },
               "uniqueItems": true
             },
             "data_type": {
               "type": "array",
               "title": "Accepted dataset types",
+              "minLength": 1,
               "description": "Dataset types that 'Particiapnt Input'  might belong to.",
               "items": {
                 "type": "string",
@@ -174,23 +174,18 @@
               "readonly": true
             }
           },
-          "required": [
-            "name",
-            "type",
-            "label",
-            "data_type",
-            "file_type"
-          ],
           "additionalProperties": false
         },
         "public_ref_dir": {
           "type": "object",
+          "minLength": 1,
           "title": "Public Reference dataset",
           "description": "Metadata for the reference dataset",
           "properties": {
             "name": {
               "type": "string",
               "title": "Internal Identifier",
+              "minLength": 1,
               "description": "Identifier internally used by the workflow manager to refer to the 'Public Reference dataset' element.",
               "const": "public_ref_dir",
               "default": "public_ref_dir",
@@ -199,6 +194,7 @@
             "type": {
               "type": "string",
               "title": "Type of Input",
+              "minLength": 1,
               "description": "Type of input feed into the OEB process",
               "enum": [
                 "user_file",
@@ -220,6 +216,7 @@
             "label": {
               "type": "string",
               "title": "Label",
+              "minLength": 1,
               "description": "Label for the dataset as displayed to the researcher at the web site.",
               "default": "Public Reference dataset"
             },
@@ -232,14 +229,11 @@
             "file_type": {
               "type": "array",
               "title": "Accepted file types",
+              "minLength": 1,
               "description": "File formats that might present the 'Public Reference dataset'. Elegible formats: https://w3id.org/oebDataFormats",
               "items": {
                 "type": "string",
-                "format": "term",
-                "ontology": "https://w3id.org/oebDataFormats",
-                "ancestors": "https://w3id.org/oebDataFormats/FormatDatasets",
-                "matchType": "label",
-                "options": {}
+                "enum": ["PDB"]
               },
               "uniqueItems": true,
               "const": [
@@ -253,6 +247,7 @@
             "data_type": {
               "type": "array",
               "title": "Accepted dataset types",
+              "minLength": 1,
               "description": "Dataset types that 'Public Reference dataset'  might belong to.",
               "items": {
                 "type": "string",
@@ -270,23 +265,18 @@
               "readonly": true
             }
           },
-          "required": [
-            "name",
-            "type",
-            "label",
-            "data_type",
-            "file_type"
-          ],
           "additionalProperties": false
         },
         "participant_id": {
           "type": "object",
           "title": "Participant's Identifier",
+          "minLength": 1,
           "description": "Description of the 'Participant Identifier' parameter",
           "properties": {
             "name": {
               "type": "string",
               "title": "Internal Identifier",
+              "minLength": 1,
               "description": "Identifier internally used by the workflow manager to refer to the 'Participant's Identifier' element.",
               "const": "participant_id",
               "default": "participant_id",
@@ -295,6 +285,7 @@
             "type": {
               "type": "string",
               "title": "Type of Input",
+              "minLength": 1,
               "description": "Type of input feed into the OEB process",
               "enum": [
                 "user_file",
@@ -316,31 +307,29 @@
             "label": {
               "type": "string",
               "title": "Label",
+              "minLength": 1,
               "description": "Label for the argument 'participant_id' as displayed to the researcher at the web site.",
               "default": "Participant Identifier"
             },
             "help": {
               "type": "string",
               "title": "Help text",
+              "minLength": 1,
               "description": "Short informative text explaining the 'Participant Identifier' element. The text is displayed as a tooltip to the researcher at the web site.",
               "default": "Participant identifier as a label for your results (e.g. 'myMethod'). Format: String with no special characters"
             }
-          },
-          "required": [
-            "name",
-            "type",
-            "label",
-            "help"
-          ]
+          }
         },
         "community_id": {
           "type": "object",
           "title": "Community Identifier",
+          "minLength": 1,
           "description": "Description of the 'Community Identifier' parameter",
           "properties": {
             "name": {
               "type": "string",
               "title": "Internal Identifier",
+              "minLength": 1,
               "description": "Identifier internally used by the workflow manager to refer to the 'Community Identifier' element.",
               "const": "community_id",
               "default": "community_id",
@@ -349,6 +338,7 @@
             "type": {
               "type": "string",
               "title": "Type of Input",
+              "minLength": 1,
               "description": "Type of input feed into the OEB process",
               "enum": [
                 "user_file",
@@ -370,6 +360,7 @@
             "label": {
               "type": "string",
               "title": "Label",
+              "minLength": 1,
               "description": "Label for the argument 'community_id' as displayed to the researcher at the web site.",
               "default": "OpenEBench community identifier"
             },
@@ -379,21 +370,18 @@
               "description": "Short informative text explaining the 'Community Identifier' element. The text is displayed as a tooltip to the researcher at the web site.",
               "default": "Scientic community Identifier as registered at OpenEbench https://openebench.bsc.es/scientific"
             }
-          },
-          "required": [
-            "name",
-            "type",
-            "label"
-          ]
+          }
         },
         "challenges_ids": {
           "type": "object",
           "title": "Challenge Identifiers",
+          "minLength": 1,
           "description": "Description of the 'Challenge Identifier' parameter",
           "properties": {
             "name": {
               "type": "string",
               "title": "Internal Identifier",
+              "minLength": 1,
               "description": "Identifier internally used by the workflow manager to refer to the 'Challenge Identifiers' element.",
               "const": "challenges_ids",
               "default": "challenges_ids",
@@ -423,6 +411,7 @@
             "label": {
               "type": "string",
               "title": "Label",
+              "minLength": 1,
               "description": "Label for the argument 'challenges_ids' as displayed to the researcher at the web site.",
               "default": "OpenEBench community Identifier"
             },
@@ -435,42 +424,29 @@
             "challenges": {
               "type": "array",
               "title": "Benchmarking challenges",
+              "minLength": 1,
               "description": "List of challenge events processed by the OEB process",
               "items": {
                 "type": "object",
                 "properties": {
                   "value": {
                     "type": "string",
+                    "minLength": 1,
                     "description": "Challenge identifier as registered in OpenEBench",
                     "pattern": "^OEBX[0-9]+$"
                   },
                   "description": {
                     "type": "string",
+                    "minLength": 1,
                     "description": "Challenge name displayed to researcher"
                   }
-                },
-                "required": [
-                  "value",
-                  "description"
-                ]
+                }
               }
             }
           },
-          "required": [
-            "name",
-            "label",
-            "challenges"
-          ],
           "additionalProperties": false
         }
-      },
-      "required": [
-        "input",
-        "public_ref_dir",
-        "participant_id",
-        "community_id",
-        "challenges_ids"
-      ]
+      }
     }
   },
   "additionalProperties": false
