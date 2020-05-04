@@ -312,17 +312,18 @@
               "description": "Label for the argument 'participant_id' as displayed to the researcher at the web site.",
               "default": "Participant Identifier"
             },
-            "hh": {
+            "help": {
               "type": "string",
-              "title": "hh textt",
-              "description": "hh description",
-              "default": "hh textttt"
+              "title": "Help text",
+              "description": "Short informative text explaining the 'Participant Identifier' element. The text is displayed as a tooltip to the researcher at the web site.",
+              "default": "Participant identifier as a label for your results (e.g. 'myMethod'). Format: String with no special characters"
             }
           },
           "required": [
             "name",
             "type",
-            "label"
+            "label",
+            "help"
           ]
         },
         "community_id": {
