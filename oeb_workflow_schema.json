@@ -31,9 +31,13 @@
       "default": "validation",
       "const": "validation",
       "readonly": true,
-      "item":{
-        "type":"string",
-        "enum":["validation","metrics","consolidation"]
+      "item": {
+        "type": "string",
+        "enum": [
+          "validation",
+          "metrics",
+          "consolidation"
+        ]
       },
       "options": {
         "hidden": true
@@ -65,7 +69,6 @@
       "title": "Title",
       "description": "Name for the new Validation step"
     },
-
     "description": {
       "type": "string",
       "title": "Description",
@@ -105,7 +108,6 @@
         "type": "string"
       }
     },
-    
     "status": {
       "type": "string",
       "title": "OEB Validation status",
@@ -118,52 +120,53 @@
       ],
       "default": "Testing"
     },
-    
-     "infrastructure": {
+    "infrastructure": {
       "type": "object",
       "title": "Infrastructure details",
       "description": "Set the computational resources required by the Valitation step",
       "properties": {
         "cpus": {
           "type": "integer",
-           "title": "CPUs",
-            "description": "Cores required to run the Validation step",
+          "title": "CPUs",
+          "description": "Cores required to run the Validation step",
           "minimum": 1,
           "maximum": 12,
           "default": 1
         },
         "memory": {
           "type": "number",
-          "title":"Memory",
-          "description":"RAM memory in GB required to run the Validation step.",
+          "title": "Memory",
+          "description": "RAM memory in GB required to run the Validation step.",
           "minimum": 0,
           "maximum": 24,
           "default": 4
         },
         "wallTime": {
           "type": "integer",
-          "title":"Walltime",
-          "description":"Maximun time in minutes taken to run the Validation step.",
+          "title": "Walltime",
+          "description": "Maximun time in minutes taken to run the Validation step.",
           "minimum": 5,
           "maximum": 1440,
           "default": 1440
         },
         "clouds": {
           "type": "array",
-          "title":"Cloud infrastructure",
-          "description":"Cloud infrastructure where the Validation is going to be installed",
+          "title": "Cloud infrastructure",
+          "description": "Cloud infrastructure where the Validation is going to be installed",
           "items": {
-              "type": "string",
-              "enum":[
-                "life-bsc"
-              ]
+            "type": "string",
+            "enum": [
+              "life-bsc"
+            ]
           }
-    
-          
         }
       },
       "additionalProperties": false,
-      "required": ["cpus","memory","clouds"]
+      "required": [
+        "cpus",
+        "memory",
+        "clouds"
+      ]
     },
     "nextflow_files": {
       "type": "object",
@@ -184,11 +187,11 @@
         }
       },
       "required": [
-        "workflow_file","config_file"
+        "workflow_file",
+        "config_file"
       ],
       "additionalProperties": false
     },
-    
     "inputs_meta": {
       "type": "object",
       "title": "Input files & arguments",
@@ -324,7 +327,7 @@
               ],
               "default": "dir_community",
               "const": "dir_community",
-             "options": {
+              "options": {
                 "hidden": true
               }
             },
@@ -385,10 +388,7 @@
               ],
               "default": [
                 "public_reference"
-              ],
-              "options": {
-                "hidden": true
-              }
+              ]
             },
             "value": {
               "type": "string",
@@ -417,17 +417,18 @@
               "description": "Identifier internally used by the workflow manager to refer to the 'Participant's Identifier' element.",
               "const": "participant_id",
               "default": "participant_id",
-              "readonly": true
+              "options": {
+                "hidden": true
+              }
             },
             "type": {
               "type": "string",
               "title": "Type of Input",
               "description": "Type of input feed into the OEB Validation",
               "enum": [
-                "user_file",
-                "challenge_file",
-                "user_dir",
-                "challenge_dir",
+                "file_user",
+                "file_community",
+                "dir_community",
                 "string",
                 "integer",
                 "number",
@@ -438,7 +439,9 @@
               ],
               "default": "string",
               "const": "string",
-              "readonly": true
+              "options": {
+                "hidden": true
+              }
             },
             "label": {
               "type": "string",
