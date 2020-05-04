@@ -149,7 +149,11 @@
               "description": "File formats that might present the 'Participant Input'. Elegible formats: https://w3id.org/oebDataFormats",
               "items": {
                 "type": "string",
-                "enum": ["PDB"]
+                "format": "term",
+                "ontology": "https://w3id.org/oebDataFormats",
+                "ancestors": "https://w3id.org/oebDataFormats/FormatDatasets",
+                "matchType": "label",
+                "options": {}
               },
               "uniqueItems": true
             },
@@ -233,7 +237,11 @@
               "description": "File formats that might present the 'Public Reference dataset'. Elegible formats: https://w3id.org/oebDataFormats",
               "items": {
                 "type": "string",
-                "enum": ["PDB"]
+                "format": "term",
+                "ontology": "https://w3id.org/oebDataFormats",
+                "ancestors": "https://w3id.org/oebDataFormats/FormatDatasets",
+                "matchType": "label",
+                "options": {}
               },
               "uniqueItems": true,
               "const": [
