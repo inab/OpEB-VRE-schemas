@@ -312,7 +312,7 @@
               "description": "Label for the argument 'participant_id' as displayed to the researcher at the web site.",
               "default": "Participant Identifier"
             },
-            "help": {
+            "helpi": {
               "type": "string",
               "title": "Help text",
               "description": "Short informative text explaining the 'Participant Identifier' element. The text is displayed as a tooltip to the researcher at the web site.",
