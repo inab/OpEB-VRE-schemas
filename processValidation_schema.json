@@ -237,10 +237,10 @@
               },
               "uniqueItems": true,
               "const": [
-                "TAR"
+                "https://w3id.org/oebDataFormats/TAR"
               ],
               "default": [
-                "TAR"
+                "https://w3id.org/oebDataFormats/TAR"
               ],
               "readonly": true
             },
