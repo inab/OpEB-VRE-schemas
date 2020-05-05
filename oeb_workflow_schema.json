@@ -82,6 +82,7 @@
       "description": "Select the keywords that better define the field of your Validation step",
       "items": {
         "type": "string",
+        "title": "keyword",
         "enum": [
           "phylogenetics",
           "cancer_genomics",
@@ -97,7 +98,8 @@
       "description": "Define a number of keywords describing you Validation step",
       "type": "array",
       "items": {
-        "type": "string"
+        "type": "string",
+        "title": "keyword"
       }
     },
     "status": {
