@@ -120,6 +120,18 @@
               ],
               "default": "user_file",
               "const": "user_file",
+              "options": { "enum_titles": 
+                ["user file",
+                "challenge file",
+                "user dir",
+                "challenge dir",
+                "string",
+                "integer",
+                "number",
+                "boolean",
+                "enum",
+                "enum mult",
+                "hidden"] },
               "readonly": true
             },
             "label": {
@@ -209,6 +221,18 @@
               ],
               "default": "challenge_dir",
               "const": "challenge_dir",
+              "options": { "enum_titles": 
+                ["user file",
+                "challenge file",
+                "user dir",
+                "challenge dir",
+                "string",
+                "integer",
+                "number",
+                "boolean",
+                "enum",
+                "enum mult",
+                "hidden"] },
               "readonly": true
             },
             "label": {
@@ -305,6 +329,18 @@
               ],
               "default": "string",
               "const": "string",
+              "options": { "enum_titles": 
+                ["user file",
+                "challenge file",
+                "user dir",
+                "challenge dir",
+                "string",
+                "integer",
+                "number",
+                "boolean",
+                "enum",
+                "enum mult",
+                "hidden"] },
               "readonly": true
             },
             "label": {
@@ -358,6 +394,18 @@
               ],
               "default": "string",
               "const": "string",
+              "options": { "enum_titles": 
+                ["user file",
+                "challenge file",
+                "user dir",
+                "challenge dir",
+                "string",
+                "integer",
+                "number",
+                "boolean",
+                "enum",
+                "enum mult",
+                "hidden"] },
               "readonly": true
             },
             "label": {
@@ -411,6 +459,18 @@
               ],
               "default": "enum",
               "const": "enum",
+              "options": { "enum_titles": 
+                ["user file",
+                "challenge file",
+                "user dir",
+                "challenge dir",
+                "string",
+                "integer",
+                "number",
+                "boolean",
+                "enum",
+                "enum mult",
+                "hidden"] },
               "readonly": true
             },
             "label": {
