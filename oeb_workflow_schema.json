@@ -11,7 +11,6 @@
       "title": "Step identifier",
       "description": "Tag for the new Validation. Format: no special characters nor spaces allowed",
       "example": "OEBP00000",
-      "readonly": true,
       "options": {
         "hidden": true
       }
@@ -49,7 +48,6 @@
       "description": "External WFs are elegible to be run by partipants.",
       "default": true,
       "const": true,
-      "readonly": true,
       "options": {
         "hidden": true
       }
@@ -58,7 +56,6 @@
       "type": "string",
       "title": "Owner",
       "description": "OEB Validation author. Corresponds to a VRE user identifier",
-      "readonly": true,
       "example": "OpEBUSER000",
       "options": {
         "hidden": true
@@ -170,7 +167,7 @@
     },
     "nextflow_files": {
       "type": "object",
-      "title": "Nextflow Files",
+      "title": "Nextflow files",
       "description": "Location of the nextflow files implementing the Validation step",
       "properties": {
         "workflow_file": {
@@ -208,7 +205,6 @@
               "description": "Identifier internally used by Nextflow to refer to the 'Participant Input' element.",
               "const": "input",
               "default": "input",
-              "readonly": true,
               "options": {
                 "hidden": true
               }
@@ -231,9 +227,20 @@
               ],
               "default": "file_user",
               "const": "file_user",
-              "readonly": true,
-              "options": {
-                "hidden": true
+              "options": { 
+                "enum_titles": 
+                  ["user file",
+                  "challenge file",
+                  "user dir",
+                  "challenge dir",
+                  "string",
+                  "integer",
+                  "number",
+                  "boolean",
+                  "enum",
+                  "enum mult",
+                  "hidden"],
+                "hidden": true 
               }
             },
             "label": {
@@ -327,8 +334,20 @@
               ],
               "default": "dir_community",
               "const": "dir_community",
-              "options": {
-                "hidden": true
+              "options": { 
+                "enum_titles": 
+                  ["user file",
+                  "challenge file",
+                  "user dir",
+                  "challenge dir",
+                  "string",
+                  "integer",
+                  "number",
+                  "boolean",
+                  "enum",
+                  "enum mult",
+                  "hidden"],
+                "hidden": true 
               }
             },
             "label": {
@@ -363,10 +382,10 @@
               },
               "uniqueItems": true,
               "const": [
-                "TAR"
+                "https://w3id.org/oebDataFormats/TAR"
               ],
               "default": [
-                "TAR"
+                "https://w3id.org/oebDataFormats/TAR"
               ],
               "options": {
                 "hidden": true
@@ -439,8 +458,20 @@
               ],
               "default": "string",
               "const": "string",
-              "options": {
-                "hidden": true
+              "options": { 
+                "enum_titles": 
+                  ["user file",
+                  "challenge file",
+                  "user dir",
+                  "challenge dir",
+                  "string",
+                  "integer",
+                  "number",
+                  "boolean",
+                  "enum",
+                  "enum mult",
+                  "hidden"],
+                "hidden": true 
               }
             },
             "label": {
@@ -494,7 +525,21 @@
               ],
               "default": "string",
               "const": "string",
-              "readonly": true
+              "options": { 
+                "enum_titles": 
+                  ["user file",
+                  "challenge file",
+                  "user dir",
+                  "challenge dir",
+                  "string",
+                  "integer",
+                  "number",
+                  "boolean",
+                  "enum",
+                  "enum mult",
+                  "hidden"],
+                "hidden": true 
+              }
             },
             "label": {
               "type": "string",
@@ -547,7 +592,21 @@
               ],
               "default": "enum",
               "const": "enum",
-              "readonly": true
+              "options": { 
+                "enum_titles": 
+                  ["user file",
+                  "challenge file",
+                  "user dir",
+                  "challenge dir",
+                  "string",
+                  "integer",
+                  "number",
+                  "boolean",
+                  "enum",
+                  "enum mult",
+                  "hidden"],
+                "hidden": true 
+              }
             },
             "label": {
               "type": "string",
