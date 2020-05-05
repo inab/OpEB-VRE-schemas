@@ -11,8 +11,7 @@
       "title": "OEB Process identifier",
       "description": "Tag for the new process. Format: no special characters nor spaces allowed",
       "example": "OEBP00000",
-      "readonly": true,
-      "options": { "hidden": true }
+      "readonly": true
     },
     "_schema": {
       "type": "string",
