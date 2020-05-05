@@ -149,6 +149,7 @@
           "description": "Cloud infrastructure where the Validation is going to be installed",
           "items": {
             "type": "string",
+            "title": "Cloud infrastructure",
             "enum": [
               "life-bsc"
             ]
