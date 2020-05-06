@@ -152,7 +152,8 @@
             "title": "Cloud infrastructure",
             "enum": [
               "life-bsc"
-            ]
+            ],
+            "default": "life-bsc"
           }
         }
       },
