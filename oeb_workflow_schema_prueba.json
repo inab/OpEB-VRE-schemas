@@ -1,0 +1,673 @@
+{
+  "$id": "https://openebench.bsc.es/vre/Validation-schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "OEB Benchmarking Validation Workflow",
+  "description": "Specify a new OEB validation WF using a Nextflow",
+  "properties": {
+    "_id": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9_]+$",
+      "title": "Step identifier",
+      "description": "Tag for the new Validation. Format: no special characters nor spaces allowed",
+      "example": "OEBP00000",
+      "options": {
+        "hidden": true
+      }
+    },
+    "_schema": {
+      "type": "string",
+      "format": "uri",
+      "const": "https://openebench.bsc.es/vre/Validation-schema",
+      "options": {
+        "hidden": true
+      }
+    },
+    "type": {
+      "type": "string",
+      "title": "Benchmarking Workflow Type",
+      "description": "Classification of the different benchmarking worflow types",
+      "default": "validation",
+      "const": "validation",
+      "readonly": true,
+      "item": {
+        "type": "string",
+        "enum": [
+          "validation",
+          "metrics",
+          "consolidation"
+        ]
+      },
+      "options": {
+        "hidden": true
+      }
+    },
+    "external": {
+      "type": "boolean",
+      "title": "External Benchmarking Workflow",
+      "description": "External WFs are elegible to be run by partipants.",
+      "default": true,
+      "const": true,
+      "options": {
+        "hidden": true
+      }
+    },
+    "owner": {
+      "type": "string",
+      "title": "Owner",
+      "description": "OEB Validation author. Corresponds to a VRE user identifier",
+      "example": "OpEBUSER000",
+      "options": {
+        "hidden": true
+      }
+    },
+    "title": {
+      "type": "string",
+      "title": "Title",
+      "description": "Name for the new Validation step"
+    },
+    "description": {
+      "type": "string",
+      "title": "Description",
+      "description": "Short description detailing what the OEB Validation does"
+    },
+    "description_long": {
+      "type": "string",
+      "title": "Long description",
+      "description": "A longer description detailing what the OEB Validation does"
+    },
+    "keyword1s": {
+      "type": "array",
+      "title": "Keywords",
+      "description": "A longer description detailing what the OEB Validation does"
+    },
+    "keywords": {
+      "type": "array",
+      "title": "Generic keywords",
+      "description": "Select the keywords that better define the field of your Validation step",
+      "items": {
+        "type": "string",
+        "enum": [
+          "phylogenetics",
+          "cancer_genomics",
+          "pharmacogenomics",
+          "3D_modeling",
+          "other"
+        ]
+      },
+      "default": "other"
+    },
+    "keywords_tool": {
+      "title": "Custom keywords",
+      "description": "Define a number of keywords describing you Validation step",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "type": "string",
+      "title": "OEB Validation status",
+      "description": "Select a visibility policy",
+      "enum": [
+        "Coming soon",
+        "Active",
+        "Disabled",
+        "Testing"
+      ],
+      "default": "Testing"
+    },
+    "infrastructure": {
+      "type": "object",
+      "title": "Infrastructure details",
+      "description": "Set the computational resources required by the Valitation step",
+      "properties": {
+        "cpus": {
+          "type": "integer",
+          "title": "CPUs",
+          "description": "Cores required to run the Validation step",
+          "minimum": 1,
+          "maximum": 12,
+          "default": 1
+        },
+        "memory": {
+          "type": "number",
+          "title": "Memory",
+          "description": "RAM memory in GB required to run the Validation step.",
+          "minimum": 0,
+          "maximum": 24,
+          "default": 4
+        },
+        "wallTime": {
+          "type": "integer",
+          "title": "Walltime",
+          "description": "Maximun time in minutes taken to run the Validation step.",
+          "minimum": 5,
+          "maximum": 1440,
+          "default": 1440
+        },
+        "clouds": {
+          "type": "array",
+          "title": "Cloud infrastructure",
+          "description": "Cloud infrastructure where the Validation is going to be installed",
+          "items": {
+            "type": "string",
+            "enum": [
+              "life-bsc"
+            ]
+          }
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "cpus",
+        "memory",
+        "clouds"
+      ]
+    },
+    "nextflow_files": {
+      "type": "object",
+      "title": "Nextflow files",
+      "description": "Location of the nextflow files implementing the Validation step",
+      "properties": {
+        "workflow_file": {
+          "type": "string",
+          "title": "Workflow file",
+          "description": "Main workflow file in nextflow format (*.nf).",
+          "format": "file"
+        },
+        "config_file": {
+          "type": "string",
+          "title": "Configuration file",
+          "description": "Configuration file in nextflow format",
+          "format": "file"
+        }
+      },
+      "required": [
+        "workflow_file",
+        "config_file"
+      ],
+      "additionalProperties": false
+    },
+    "inputs_meta": {
+      "type": "object",
+      "title": "Input files & arguments",
+      "description": "Definition of the different input elements feed into the OEB Validation.",
+      "properties": {
+        "input": {
+          "type": "object",
+          "title": "(1) input (participant's data)",
+          "description": "Metadata for the participant input file containing the data to be validated.",
+          "properties": {
+            "name": {
+              "type": "string",
+              "title": "Internal identifier",
+              "description": "Identifier internally used by Nextflow to refer to the 'Participant Input' element.",
+              "const": "input",
+              "default": "input",
+              "options": {
+                "hidden": true
+              }
+            },
+            "type": {
+              "type": "string",
+              "title": "Type of input",
+              "description": "Type of input feed into the OEB Validation",
+              "enum": [
+                "file_user",
+                "file_community",
+                "dir_community",
+                "string",
+                "integer",
+                "number",
+                "boolean",
+                "enum",
+                "enum_mult",
+                "hidden"
+              ],
+              "default": "file_user",
+              "const": "file_user",
+              "options": { 
+                "enum_titles": 
+                  ["user file",
+                  "challenge file",
+                  "user dir",
+                  "challenge dir",
+                  "string",
+                  "integer",
+                  "number",
+                  "boolean",
+                  "enum",
+                  "enum mult",
+                  "hidden"],
+                "hidden": true 
+              }
+            },
+            "label": {
+              "type": "string",
+              "title": "Label",
+              "description": "Name for the participant input as displayed to the researcher at the web site.",
+              "default": "Participant data to evaluate"
+            },
+            "help": {
+              "type": "string",
+              "title": "Help text",
+              "description": "Short informative text explaining the 'Participant Input' element. The text is displayed as a tooltip to the researcher at the web site.",
+              "default": "File containing the results of the method under evaluation"
+            },
+            "file_type": {
+              "type": "array",
+              "title": "Accepted file types",
+              "description": "File formats that might present the 'Participant Input'. Elegible formats: https://w3id.org/oebDataFormats",
+              "items": {
+                "type": "string",
+                "format": "term",
+                "ontology": "https://w3id.org/oebDataFormats",
+                "ancestors": "https://w3id.org/oebDataFormats/FormatDatasets",
+                "matchType": "label",
+                "options": {}
+              },
+              "uniqueItems": true
+            },
+            "data_type": {
+              "type": "array",
+              "title": "Accepted dataset types",
+              "description": "Dataset types that 'Particiapnt Input'  might belong to.",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "participant"
+                ]
+              },
+              "uniqueItems": true,
+              "const": [
+                "participant"
+              ],
+              "default": [
+                "participant"
+              ],
+              "readonly": true,
+              "options": {
+                "hidden": true
+              }
+            }
+          },
+          "required": [
+            "name",
+            "type",
+            "label",
+            "data_type",
+            "file_type"
+          ],
+          "additionalProperties": false
+        },
+        "public_ref_dir": {
+          "type": "object",
+          "title": "Public Reference dataset",
+          "description": "Metadata for the reference dataset",
+          "properties": {
+            "name": {
+              "type": "string",
+              "title": "Internal Identifier",
+              "description": "Identifier internally used by the workflow manager to refer to the 'Public Reference dataset' element.",
+              "const": "public_ref_dir",
+              "default": "public_ref_dir",
+              "options": {
+                "hidden": true
+              }
+            },
+            "type": {
+              "type": "string",
+              "title": "Type of Input",
+              "description": "Type of input feed into the OEB Validation",
+              "enum": [
+                "file_user",
+                "file_community",
+                "dir_community",
+                "string",
+                "integer",
+                "number",
+                "boolean",
+                "enum",
+                "enum_mult",
+                "hidden"
+              ],
+              "default": "dir_community",
+              "const": "dir_community",
+              "options": { 
+                "enum_titles": 
+                  ["user file",
+                  "challenge file",
+                  "user dir",
+                  "challenge dir",
+                  "string",
+                  "integer",
+                  "number",
+                  "boolean",
+                  "enum",
+                  "enum mult",
+                  "hidden"],
+                "hidden": true 
+              }
+            },
+            "label": {
+              "type": "string",
+              "title": "Label",
+              "description": "Label for the dataset as displayed to the researcher at the web site.",
+              "const": "Public Reference dataset",
+              "options": {
+                "hidden": true
+              }
+            },
+            "help": {
+              "type": "string",
+              "title": "Help text",
+              "description": "Short informative text explaining the 'Public Reference dataset' element. The text is displayed as a tooltip to the researcher at the web site.",
+              "const": "Folder containing the Public Reference dataset",
+              "options": {
+                "hidden": true
+              }
+            },
+            "file_type": {
+              "type": "array",
+              "title": "Accepted file types",
+              "description": "File formats that might present the 'Public Reference dataset'. Elegible formats: https://w3id.org/oebDataFormats",
+              "items": {
+                "type": "string",
+                "format": "term",
+                "ontology": "https://w3id.org/oebDataFormats",
+                "ancestors": "https://w3id.org/oebDataFormats/FormatDatasets",
+                "matchType": "label",
+                "options": {}
+              },
+              "uniqueItems": true,
+              "const": [
+                "https://w3id.org/oebDataFormats/TAR"
+              ],
+              "default": [
+                "https://w3id.org/oebDataFormats/TAR"
+              ],
+              "options": {
+                "hidden": true
+              }
+            },
+            "data_type": {
+              "type": "array",
+              "title": "Accepted dataset types",
+              "description": "Dataset types that 'Public Reference dataset'  might belong to.",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "public_reference"
+                ]
+              },
+              "uniqueItems": true,
+              "const": [
+                "public_reference"
+              ],
+              "default": [
+                "public_reference"
+              ]
+            },
+            "value": {
+              "type": "string",
+              "title": "TAR file",
+              "description": "Upload the reference dataset",
+              "format": "file"
+            }
+          },
+          "required": [
+            "name",
+            "type",
+            "label",
+            "data_type",
+            "file_type"
+          ],
+          "additionalProperties": false
+        },
+        "participant_id": {
+          "type": "object",
+          "title": "Participant's Identifier",
+          "description": "Description of the 'Participant Identifier' parameter",
+          "properties": {
+            "name": {
+              "type": "string",
+              "title": "Internal Identifier",
+              "description": "Identifier internally used by the workflow manager to refer to the 'Participant's Identifier' element.",
+              "const": "participant_id",
+              "default": "participant_id",
+              "options": {
+                "hidden": true
+              }
+            },
+            "type": {
+              "type": "string",
+              "title": "Type of Input",
+              "description": "Type of input feed into the OEB Validation",
+              "enum": [
+                "file_user",
+                "file_community",
+                "dir_community",
+                "string",
+                "integer",
+                "number",
+                "boolean",
+                "enum",
+                "enum_mult",
+                "hidden"
+              ],
+              "default": "string",
+              "const": "string",
+              "options": { 
+                "enum_titles": 
+                  ["user file",
+                  "challenge file",
+                  "user dir",
+                  "challenge dir",
+                  "string",
+                  "integer",
+                  "number",
+                  "boolean",
+                  "enum",
+                  "enum mult",
+                  "hidden"],
+                "hidden": true 
+              }
+            },
+            "label": {
+              "type": "string",
+              "title": "Label",
+              "description": "Label for the argument 'participant_id' as displayed to the researcher at the web site.",
+              "default": "Participant Identifier"
+            },
+            "help": {
+              "type": "string",
+              "title": "Help text",
+              "description": "Short informative text explaining the 'Participant Identifier' element. The text is displayed as a tooltip to the researcher at the web site.",
+              "default": "Participant identifier as a label for your results (e.g. 'myMethod'). Format: String with no special characters"
+            }
+          },
+          "required": [
+            "name",
+            "type",
+            "label"
+          ]
+        },
+        "community_id": {
+          "type": "object",
+          "title": "Community Identifier",
+          "description": "Description of the 'Community Identifier' parameter",
+          "properties": {
+            "name": {
+              "type": "string",
+              "title": "Internal Identifier",
+              "description": "Identifier internally used by the workflow manager to refer to the 'Community Identifier' element.",
+              "const": "community_id",
+              "default": "community_id",
+              "readonly": true
+            },
+            "type": {
+              "type": "string",
+              "title": "Type of Input",
+              "description": "Type of input feed into the OEB Validation",
+              "enum": [
+                "user_file",
+                "challenge_file",
+                "user_dir",
+                "challenge_dir",
+                "string",
+                "integer",
+                "number",
+                "boolean",
+                "enum",
+                "enum_mult",
+                "hidden"
+              ],
+              "default": "string",
+              "const": "string",
+              "options": { 
+                "enum_titles": 
+                  ["user file",
+                  "challenge file",
+                  "user dir",
+                  "challenge dir",
+                  "string",
+                  "integer",
+                  "number",
+                  "boolean",
+                  "enum",
+                  "enum mult",
+                  "hidden"],
+                "hidden": true 
+              }
+            },
+            "label": {
+              "type": "string",
+              "title": "Label",
+              "description": "Label for the argument 'community_id' as displayed to the researcher at the web site.",
+              "default": "OpenEBench community identifier"
+            },
+            "help": {
+              "type": "string",
+              "title": "Help text",
+              "description": "Short informative text explaining the 'Community Identifier' element. The text is displayed as a tooltip to the researcher at the web site.",
+              "default": "Scientic community Identifier as registered at OpenEbench https://openebench.bsc.es/scientific"
+            }
+          },
+          "required": [
+            "name",
+            "type",
+            "label"
+          ]
+        },
+        "challenges_ids": {
+          "type": "object",
+          "title": "Challenge Identifiers",
+          "description": "Description of the 'Challenge Identifier' parameter",
+          "properties": {
+            "name": {
+              "type": "string",
+              "title": "Internal Identifier",
+              "description": "Identifier internally used by the workflow manager to refer to the 'Challenge Identifiers' element.",
+              "const": "challenges_ids",
+              "default": "challenges_ids",
+              "readonly": true
+            },
+            "type": {
+              "type": "string",
+              "title": "Type of Input",
+              "description": "Type of input feed into the OEB Validation",
+              "enum": [
+                "user_file",
+                "challenge_file",
+                "user_dir",
+                "challenge_dir",
+                "string",
+                "integer",
+                "number",
+                "boolean",
+                "enum",
+                "enum_mult",
+                "hidden"
+              ],
+              "default": "enum",
+              "const": "enum",
+              "options": { 
+                "enum_titles": 
+                  ["user file",
+                  "challenge file",
+                  "user dir",
+                  "challenge dir",
+                  "string",
+                  "integer",
+                  "number",
+                  "boolean",
+                  "enum",
+                  "enum mult",
+                  "hidden"],
+                "hidden": true 
+              }
+            },
+            "label": {
+              "type": "string",
+              "title": "Label",
+              "description": "Label for the argument 'challenges_ids' as displayed to the researcher at the web site.",
+              "default": "OpenEBench community Identifier"
+            },
+            "help": {
+              "type": "string",
+              "title": "Help text",
+              "description": "Short informative text explaining the 'Challenge Identifiers' element. The text is displayed as a tooltip to the researcher at the web site.",
+              "default": "List of benchmarking challenges evaluated for the OEB Validation."
+            },
+            "challenges": {
+              "type": "array",
+              "title": "Benchmarking challenges",
+              "description": "List of challenge events Validationed by the OEB Validation",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "description": "Challenge identifier as registered in OpenEBench",
+                    "pattern": "^OEBX[0-9]+$"
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Challenge name displayed to researcher"
+                  }
+                },
+                "required": [
+                  "value",
+                  "description"
+                ]
+              }
+            }
+          },
+          "required": [
+            "name",
+            "label",
+            "challenges"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "input",
+        "public_ref_dir",
+        "participant_id",
+        "community_id",
+        "challenges_ids"
+      ]
+    }
+  },
+  "required": [
+    "_id",
+    "_schema",
+    "title",
+    "type",
+    "owner",
+    "inputs_meta"
+  ],
+  "additionalProperties": false
+}
