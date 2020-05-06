@@ -153,10 +153,7 @@
             "enum": [
               "life-bsc"
             ]
-          }, 
-          "default": [
-            "life-bsc"
-          ]
+          }
         }
       },
       "additionalProperties": false,
