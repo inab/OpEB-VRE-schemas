@@ -767,7 +767,7 @@
             "data_type": {
               "type": "array",
               "title": "Accepted dataset types",
-              "description": "Dataset types that 'Particiapnt Input'  might belong to.",
+              "description": "Dataset types that 'Workflow Statistics'  might belong to.",
               "items": {
                 "type": "string",
                 "format": "term",
@@ -788,7 +788,7 @@
             "compressed": {
               "type": "array",
               "title": "Accepted dataset types",
-              "description": "Dataset types that 'Particiapnt Input'  might belong to.",
+              "description": "Dataset types that 'Workflow Statistics'  might belong to.",
               "items": {
                 "type": "string",
                 "enum": ["gzip"]
