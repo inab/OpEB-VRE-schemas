@@ -11,6 +11,7 @@
       "title": "Step identifier",
       "description": "Tag for the new Validation. Format: no special characters nor spaces allowed",
       "example": "OEBP00000",
+      "format": "select",
       "options": {
         "hidden": true
       }
