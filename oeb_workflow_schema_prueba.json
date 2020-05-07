@@ -286,10 +286,7 @@
               ],
               "default": [
                 "https://w3id.org/oebDatasets/participant"
-              ],
-              "options": {
-                "hidden": true
-              }
+              ]
             }
           },
           "required": [
