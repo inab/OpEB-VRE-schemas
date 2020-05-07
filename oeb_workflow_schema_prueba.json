@@ -205,7 +205,8 @@
               "title": "Internal identifier",
               "description": "Identifier internally used by Nextflow to refer to the 'Participant Input' element.",
               "const": "input",
-              "default": "input"
+              "default": "input",
+              "readonly": true
             },
             "type": {
               "type": "string",
@@ -307,7 +308,8 @@
               "title": "Internal Identifier",
               "description": "Identifier internally used by the workflow manager to refer to the 'Public Reference dataset' element.",
               "const": "public_ref_dir",
-              "default": "public_ref_dir"
+              "default": "public_ref_dir",
+              "readonly": true
             },
             "type": {
               "type": "string",
@@ -428,7 +430,8 @@
               "title": "Internal Identifier",
               "description": "Identifier internally used by the workflow manager to refer to the 'Participant's Identifier' element.",
               "const": "participant_id",
-              "default": "participant_id"
+              "default": "participant_id",
+              "readonly": true
             },
             "type": {
               "type": "string",
