@@ -418,6 +418,7 @@
             "data_type",
             "file_type"
           ],
+          "options": { "hidden":true},
           "additionalProperties": false
         },
         "participant_id": {
