@@ -274,19 +274,22 @@
               "description": "Dataset types that 'Particiapnt Input'  might belong to.",
               "items": {
                 "type": "string",
-                "enum": [
-                  "participant",
-                  "prueba"
-                ]
+                "format": "term",
+                "ontology": "https://w3id.org/oebDatasets",
+                "ancestors": "https://w3id.org/oebDatasets/datasets",
+                "matchType": "label",
+                "options": {}
               },
               "uniqueItems": true,
               "const": [
-                "participant"
+                "https://w3id.org/oebDatasets/participant"
               ],
               "default": [
-                "participant"
+                "https://w3id.org/oebDatasets/participant"
               ],
-              "readonly": true
+              "options": {
+                "hidden": true
+              }
             }
           },
           "required": [
@@ -392,17 +395,22 @@
               "description": "Dataset types that 'Public Reference dataset'  might belong to.",
               "items": {
                 "type": "string",
-                "enum": [
-                  "public_reference"
-                ]
+                "format": "term",
+                "ontology": "https://w3id.org/oebDatasets",
+                "ancestors": "https://w3id.org/oebDatasets/datasets",
+                "matchType": "label",
+                "options": {}
               },
               "uniqueItems": true,
               "const": [
-                "public_reference"
+                "https://w3id.org/oebDatasets/public_reference"
               ],
               "default": [
-                "public_reference"
-              ]
+                "https://w3id.org/oebDatasets/public_reference"
+              ],
+              "options": {
+                "hidden": true
+              }
             },
             "value": {
               "type": "string",
