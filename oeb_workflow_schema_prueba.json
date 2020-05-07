@@ -790,9 +790,10 @@
             "type": "array",
             "title": "Accepted dataset types",
             "description": "Dataset types that 'Particiapnt Input'  might belong to.",
-            "enum": [
-              "gzip"
-            ],
+            "items": {
+              "type": "string",
+              "enum": ["gzip"]
+            },
             "uniqueItems": true,
             "const": [
               "gzip"
