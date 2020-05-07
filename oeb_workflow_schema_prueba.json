@@ -786,6 +786,7 @@
               "title": "Accepted dataset types",
               "description": "Compressed type that 'Workflow Statistics'  might belong to.",
               "items": {
+                "type": "string",
                 "enum": ["gzip"]
               },
               "format":"select",
