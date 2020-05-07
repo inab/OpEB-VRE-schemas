@@ -784,24 +784,24 @@
                 "https://w3id.org/oebDatasets/workflow_stats"
               ],
               "readonly": true
-            }
-          },
-          "compressed": {
-            "type": "array",
-            "title": "Accepted dataset types",
-            "description": "Dataset types that 'Particiapnt Input'  might belong to.",
-            "items": {
-              "type": "string",
-              "enum": ["gzip"]
             },
-            "uniqueItems": true,
-            "const": [
-              "gzip"
-            ],
-            "default": [
-              "gzip"
-            ],
-            "readonly": true
+            "compressed": {
+              "type": "array",
+              "title": "Accepted dataset types",
+              "description": "Dataset types that 'Particiapnt Input'  might belong to.",
+              "items": {
+                "type": "string",
+                "enum": ["gzip"]
+              },
+              "uniqueItems": true,
+              "const": [
+                "gzip"
+              ],
+              "default": [
+                "gzip"
+              ],
+              "readonly": true
+            }
           },
           "required": [
             "name",
