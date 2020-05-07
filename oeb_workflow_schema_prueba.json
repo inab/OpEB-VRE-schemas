@@ -155,7 +155,8 @@
             "enum": [
               "life-bsc"
             ]
-          }
+          },
+          "uniqueItems": true
         }
       },
       "additionalProperties": false,
