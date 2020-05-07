@@ -793,11 +793,7 @@
                 "type": "string",
                 "enum": ["gzip"]
               },
-              "uniqueItems": true,
               "const": [
-                "gzip"
-              ],
-              "default": [
                 "gzip"
               ],
               "readonly": true
