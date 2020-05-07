@@ -788,18 +788,18 @@
             "compressed": {
               "type": "array",
               "title": "Accepted dataset types",
-              "description": "Dataset types that 'Workflow Statistics'  might belong to.",
+              "description": "Compressed type that 'Workflow Statistics'  might belong to.",
               "items": {
                 "type": "string",
-                "enum": ["gzip"]
+                "format":"term",
+                "enum": ["gzip"],
+                "options": {}
               },
-              "const": [
-                "gzip"
-              ],
               "default": [
                 "gzip"
               ],
-              "readonly": true
+              "readonly": true,
+              "uniqueItems": true
             }
           },
           "required": [
