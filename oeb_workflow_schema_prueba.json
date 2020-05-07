@@ -153,8 +153,7 @@
           "items": {
             "type": "string",
             "enum": [
-              "life-bsc",
-              "prueba"
+              "life-bsc"
             ]
           },
           "uniqueItems": true
