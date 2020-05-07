@@ -156,6 +156,7 @@
               "life-bsc"
             ]
           },
+          "format": "select",
           "uniqueItems": true
         }
       },
@@ -790,10 +791,9 @@
               "title": "Accepted dataset types",
               "description": "Compressed type that 'Workflow Statistics'  might belong to.",
               "items": {
-                "oneOf": [
-                  {"type":"string", "enum": ["gzip"]}
-                ]
+                "enum": ["gzip"]
               },
+              "format":"select",
               "readonly": true,
               "uniqueItems": true
             }
