@@ -789,9 +789,11 @@
               "type": "array",
               "title": "Accepted dataset types",
               "description": "Compressed type that 'Workflow Statistics'  might belong to.",
-              "oneOf": [
-                {"type":"string", "enum": ["gzip"]}
-              ],
+              "items": {
+                "oneOf": [
+                  {"type":"string", "enum": ["gzip"]}
+                ]
+              },
               "readonly": true,
               "uniqueItems": true
             }
