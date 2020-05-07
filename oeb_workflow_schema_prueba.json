@@ -277,7 +277,8 @@
               "items": {
                 "type": "string",
                 "enum": [
-                  "participant"
+                  "participant",
+                  "prueba"
                 ]
               },
               "uniqueItems": true,
