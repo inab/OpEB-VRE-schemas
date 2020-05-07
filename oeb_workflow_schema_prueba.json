@@ -76,11 +76,6 @@
       "title": "Long description",
       "description": "A longer description detailing what the OEB Validation does"
     },
-    "keyword1s": {
-      "type": "array",
-      "title": "Keywords",
-      "description": "A longer description detailing what the OEB Validation does"
-    },
     "keywords": {
       "type": "array",
       "title": "Generic keywords",
@@ -795,7 +790,8 @@
               },
               "format":"select",
               "readonly": true,
-              "uniqueItems": true
+              "uniqueItems": true,
+              "default": ["gzip"]
             }
           },
           "required": [
