@@ -195,7 +195,7 @@
       "properties": {
         "input": {
           "type": "object",
-          "title": "(1) input (participant's data)",
+          "title": "File: input (participant's data)",
           "description": "Metadata for the participant input file containing the data to be validated.",
           "properties": {
             "name": {
@@ -301,7 +301,7 @@
         },
         "public_ref_dir": {
           "type": "object",
-          "title": "Public Reference dataset",
+          "title": "File: Public Reference dataset",
           "description": "Metadata for the reference dataset",
           "properties": {
             "name": {
@@ -429,7 +429,7 @@
         },
         "participant_id": {
           "type": "object",
-          "title": "Participant's Identifier",
+          "title": "Argument: Participant's Identifier",
           "description": "Description of the 'Participant Identifier' parameter",
           "properties": {
             "name": {
@@ -495,7 +495,7 @@
         },
         "community_id": {
           "type": "object",
-          "title": "Community Identifier",
+          "title": "Argument: Community Identifier",
           "description": "Description of the 'Community Identifier' parameter",
           "properties": {
             "name": {
