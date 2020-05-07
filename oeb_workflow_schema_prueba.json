@@ -661,6 +661,160 @@
         "community_id",
         "challenges_ids"
       ]
+    },
+    "outputs_meta": {
+      "type": "object",
+      "title": "Output results",
+      "description": "Definition of the different output elements the OEB Validation generate.",
+      "properties": {
+        "validation_results": {
+          "type": "object",
+          "title": "Validation Result",
+          "description": "Metrics derivated from the given input data",
+          "properties": {
+            "name": {
+              "type": "string",
+              "title": "Internal identifier",
+              "description": "Identifier internally used by Nextflow to refer to the 'Validation Results' element.",
+              "const": "validation_results_id",
+              "default": "validation_results_id",
+              "readonly": true
+            },
+            "file_type": {
+              "type": "array",
+              "title": "Accepted file types",
+              "description": "File formats that might present the 'Participant Input'. Elegible formats: https://w3id.org/oebDataFormats",
+              "items": {
+                "type": "string",
+                "format": "term",
+                "ontology": "https://w3id.org/oebDataFormats",
+                "ancestors": "https://w3id.org/oebDataFormats/FormatDatasets",
+                "matchType": "label",
+                "options": {}
+              },
+              "uniqueItems": true,
+              "const": [
+                "http://edamontology.org/format_3464"
+              ],
+              "default": [
+                "http://edamontology.org/format_3464"
+              ],
+              "readonly": true
+            },
+            "data_type": {
+              "type": "array",
+              "title": "Accepted dataset types",
+              "description": "Dataset types that 'Particiapnt Input'  might belong to.",
+              "items": {
+                "type": "string",
+                "format": "term",
+                "ontology": "https://w3id.org/oebDatasets",
+                "ancestors": "https://w3id.org/oebDatasets/dataset",
+                "matchType": "label",
+                "options": {}
+              },
+              "uniqueItems": true,
+              "const": [
+                "https://w3id.org/oebDatasets/validation"
+              ],
+              "default": [
+                "https://w3id.org/oebDatasets/validation"
+              ],
+              "readonly": true
+            }
+          },
+          "required": [
+            "name",
+            "data_type",
+            "file_type"
+          ],
+          "additionalProperties": false
+        },
+        "tar_nf_stats": {
+          "type": "object",
+          "title": "Workflow Statistics",
+          "description": "Execution monitoring and logging data",
+          "properties": {
+            "name": {
+              "type": "string",
+              "title": "Internal identifier",
+              "description": "Identifier internally used by Nextflow to refer to the 'Workflow Statistics' element.",
+              "const": "tar_nf_stats_id",
+              "default": "tar_nf_stats_id",
+              "readonly": true
+            },
+            "file_type": {
+              "type": "array",
+              "title": "Accepted file types",
+              "description": "File formats that might present the 'Workflow Statistics'. Elegible formats: https://w3id.org/oebDataFormats",
+              "items": {
+                "type": "string",
+                "format": "term",
+                "ontology": "https://w3id.org/oebDataFormats",
+                "ancestors": "https://w3id.org/oebDataFormats/FormatDatasets",
+                "matchType": "label",
+                "options": {}
+              },
+              "uniqueItems": true,
+              "const": [
+                "https://w3id.org/oebDataFormats/TAR"
+              ],
+              "default": [
+                "https://w3id.org/oebDataFormats/TAR"
+              ],
+              "readonly": true
+            },
+            "data_type": {
+              "type": "array",
+              "title": "Accepted dataset types",
+              "description": "Dataset types that 'Particiapnt Input'  might belong to.",
+              "items": {
+                "type": "string",
+                "format": "term",
+                "ontology": "https://w3id.org/oebDatasets",
+                "ancestors": "https://w3id.org/oebDatasets/dataset",
+                "matchType": "label",
+                "options": {}
+              },
+              "uniqueItems": true,
+              "const": [
+                "https://w3id.org/oebDatasets/workflow_stats"
+              ],
+              "default": [
+                "https://w3id.org/oebDatasets/workflow_stats"
+              ],
+              "readonly": true
+            }
+          },
+          "compressed": {
+            "type": "array",
+            "title": "Accepted dataset types",
+            "description": "Dataset types that 'Particiapnt Input'  might belong to.",
+            "enum": [
+              "gzip"
+            ],
+            "uniqueItems": true,
+            "const": [
+              "gzip"
+            ],
+            "default": [
+              "gzip"
+            ],
+            "readonly": true
+          },
+          "required": [
+            "name",
+            "data_type",
+            "file_type",
+            "compressed"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "validation_results",
+        "tar_nf_stats"
+      ]
     }
   },
   "required": [
@@ -669,7 +823,8 @@
     "title",
     "type",
     "owner",
-    "inputs_meta"
+    "inputs_meta",
+    "outputs_meta"
   ],
   "additionalProperties": false
 }
