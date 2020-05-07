@@ -276,7 +276,7 @@
                 "type": "string",
                 "format": "term",
                 "ontology": "https://w3id.org/oebDatasets",
-                "ancestors": "https://w3id.org/oebDatasets/datasets",
+                "ancestors": "https://w3id.org/oebDatasets/dataset",
                 "matchType": "label",
                 "options": {}
               },
@@ -394,7 +394,7 @@
                 "type": "string",
                 "format": "term",
                 "ontology": "https://w3id.org/oebDatasets",
-                "ancestors": "https://w3id.org/oebDatasets/datasets",
+                "ancestors": "https://w3id.org/oebDatasets/dataset",
                 "matchType": "label",
                 "options": {}
               },
