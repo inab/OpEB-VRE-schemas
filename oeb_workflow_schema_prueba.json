@@ -796,6 +796,9 @@
               "const": [
                 "gzip"
               ],
+              "default": [
+                "gzip"
+              ],
               "readonly": true
             }
           },
