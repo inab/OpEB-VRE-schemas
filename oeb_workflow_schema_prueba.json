@@ -343,27 +343,20 @@
                   "boolean",
                   "enum",
                   "enum mult",
-                  "hidden"],
-                "hidden": true 
+                  "hidden"]
               }
             },
             "label": {
               "type": "string",
               "title": "Label",
               "description": "Label for the dataset as displayed to the researcher at the web site.",
-              "const": "Public Reference dataset",
-              "options": {
-                "hidden": true
-              }
+              "const": "Public Reference dataset"
             },
             "help": {
               "type": "string",
               "title": "Help text",
               "description": "Short informative text explaining the 'Public Reference dataset' element. The text is displayed as a tooltip to the researcher at the web site.",
-              "const": "Folder containing the Public Reference dataset",
-              "options": {
-                "hidden": true
-              }
+              "const": "Folder containing the Public Reference dataset"
             },
             "file_type": {
               "type": "array",
@@ -383,10 +376,7 @@
               ],
               "default": [
                 "https://w3id.org/oebDataFormats/TAR"
-              ],
-              "options": {
-                "hidden": true
-              }
+              ]
             },
             "data_type": {
               "type": "array",
@@ -406,10 +396,7 @@
               ],
               "default": [
                 "https://w3id.org/oebDatasets/public_reference"
-              ],
-              "options": {
-                "hidden": true
-              }
+              ]
             },
             "value": {
               "type": "string",
@@ -425,7 +412,6 @@
             "data_type",
             "file_type"
           ],
-          "options": { "hidden":true},
           "additionalProperties": false
         },
         "participant_id": {
