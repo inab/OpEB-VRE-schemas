@@ -64,6 +64,7 @@
     "title": {
       "type": "string",
       "title": "Title",
+      "minLength": 1,
       "description": "Name for the new Validation step"
     },
     "description": {
