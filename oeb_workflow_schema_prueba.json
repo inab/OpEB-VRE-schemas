@@ -797,7 +797,8 @@
       "required": [
         "validation_results",
         "tar_nf_stats"
-      ]
+      ],
+      "minLength": 1
     }
   },
   "required": [
