@@ -274,6 +274,7 @@
                 "matchType": "label",
                 "options": {}
               },
+              "format":"select",
               "uniqueItems": true,
               "minItems": 1
             },
