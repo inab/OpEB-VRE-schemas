@@ -7,7 +7,6 @@
   "properties": {
     "_id": {
       "type": "string",
-      "pattern": "^[a-zA-Z0-9_]+$",
       "title": "Step identifier",
       "description": "Tag for the new Validation. Format: no special characters nor spaces allowed",
       "example": "OEBP00000",
