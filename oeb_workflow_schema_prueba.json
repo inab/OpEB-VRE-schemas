@@ -913,9 +913,11 @@
           "hola",
           "que",
           "tal"
-        ]
+        ],
+        "default": ["hola"]
       },
       "uniqueItems": true,
+      "additionalItems": false,
       "format": "select",
       "minItems": 1
     }
