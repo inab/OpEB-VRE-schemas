@@ -122,6 +122,18 @@
       ],
       "default": "Testing"
     },
+    "workflow_manager": {
+      "type": "string",
+      "title": "Workflow manager",
+      "description": "Select a workflow manager",
+      "enum": [
+        "Nextflow"
+      ],
+      "default": ["Nextflow"],
+      "const": ["Nextflow"],
+      "minLength": 1,
+      "uniqueItems": true
+    },
     "infrastructure": {
       "type": "object",
       "title": "Infrastructure details",
@@ -162,7 +174,9 @@
             ]
           },
           "format": "select",
-          "uniqueItems": true
+          "uniqueItems": true,
+          "const": ["life-bsc"],
+          "default": ["life-bsc"]
         }
       },
       "additionalProperties": false,
@@ -183,7 +197,7 @@
         "workflow_file": {
           "type": "object",
           "title": "Workflow file",
-          "description": "Main workflow file",
+          "description": "Main workflow file Git",
           "properties": {
             "workflow_gitURL": {
               "type": "string",
@@ -206,6 +220,7 @@
         "config_file": {
           "type": "object",
           "title": "Configuration file",
+          "description": "Configuration file Git",
           "properties": {
             "config_gitURL": {
               "type": "string",
@@ -244,7 +259,7 @@
           "properties": {
             "name": {
               "type": "string",
-              "title": "Internal identifier",
+              "title": "Nextflow Parameter Identifier",
               "description": "Identifier internally used by Nextflow to refer to the 'Participant Input' element.",
               "const": "input",
               "default": "input",
@@ -356,8 +371,8 @@
           "properties": {
             "name": {
               "type": "string",
-              "title": "Internal Identifier",
-              "description": "Identifier internally used by the workflow manager to refer to the 'Public Reference dataset' element.",
+              "title": "Nextflow Parameter Identifier",
+              "description": "Identifier internally used by Nextflow to refer to the 'Public Reference dataset' element.",
               "const": "public_ref_dir",
               "default": "public_ref_dir",
               "minLength": 1,
@@ -394,7 +409,8 @@
                   "boolean",
                   "enum",
                   "enum mult",
-                  "hidden"]
+                  "hidden"],
+                "hidden": true
               }
             },
             "label": {
@@ -402,13 +418,17 @@
               "title": "Label",
               "description": "Label for the dataset as displayed to the researcher at the web site.",
               "const": "Public Reference dataset",
-              "minLength": 1
+              "default": "Public Reference dataset",
+              "minLength": 1,
+              "options": {"hidden": true}
             },
             "help": {
               "type": "string",
               "title": "Help text",
               "description": "Short informative text explaining the 'Public Reference dataset' element. The text is displayed as a tooltip to the researcher at the web site.",
-              "const": "Folder containing the Public Reference dataset"
+              "const": "Folder containing the Public Reference dataset",
+              "default": "Folder containing the Public Reference dataset",
+              "options": {"hidden": true}
             },
             "file_type": {
               "type": "array",
@@ -429,7 +449,8 @@
               "default": [
                 "https://w3id.org/oebDataFormats/TAR"
               ],
-              "minItems": 1
+              "minItems": 1,
+              "options": {"hidden": true}
             },
             "data_type": {
               "type": "array",
@@ -450,7 +471,8 @@
               "default": [
                 "https://w3id.org/oebDatasets/public_reference"
               ],
-              "minItems": 1
+              "minItems": 1,
+              "options": {"hidden": true}
             },
             "value": {
               "type": "string",
@@ -477,8 +499,8 @@
           "properties": {
             "name": {
               "type": "string",
-              "title": "Internal Identifier",
-              "description": "Identifier internally used by the workflow manager to refer to the 'Participant's Identifier' element.",
+              "title": "Nextflow Parameter Identifier",
+              "description": "Identifier internally used by nextflow to refer to the 'Participant's Identifier' element.",
               "const": "participant_id",
               "default": "participant_id",
               "readonly": true,
@@ -546,8 +568,8 @@
           "properties": {
             "name": {
               "type": "string",
-              "title": "Internal Identifier",
-              "description": "Identifier internally used by the workflow manager to refer to the 'Community Identifier' element.",
+              "title": "Nextflow Parameter Identifier",
+              "description": "Identifier internally used by Nextflow to refer to the 'Community Identifier' element.",
               "const": "community_id",
               "default": "community_id",
               "minLength": 1,
@@ -616,8 +638,8 @@
           "properties": {
             "name": {
               "type": "string",
-              "title": "Internal Identifier",
-              "description": "Identifier internally used by the workflow manager to refer to the 'Challenge Identifiers' element.",
+              "title": "Nextflow Parameter Identifier",
+              "description": "Identifier internally used by Nextflow to refer to the 'Challenge Identifiers' element.",
               "const": "challenges_ids",
               "default": "challenges_ids",
               "readonly": true,
@@ -683,7 +705,6 @@
                   "value": {
                     "type": "string",
                     "description": "Challenge identifier as registered in OpenEBench",
-                    "pattern": "^OEBX[0-9]+$",
                     "minLength": 1
                   },
                   "description": {
@@ -877,7 +898,8 @@
         "validation_results",
         "tar_nf_stats"
       ],
-      "minLength": 1
+      "minLength": 1,
+      "options": {"hidden": true}
     }
   },
   "required": [
