@@ -122,8 +122,8 @@
         "Community available"
       ],
       "default": ["Testing"],
-      "minLength": 2,
-      "uniqueItems": true
+      "uniqueItems": true,
+      "additionalItems": false
     },
     "workflow_manager": {
       "type": "string",
