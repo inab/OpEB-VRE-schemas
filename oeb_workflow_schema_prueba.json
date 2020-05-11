@@ -41,6 +41,7 @@
           "consolidation"
         ]
       },
+      "uniqueItems": true,
       "options": {
         "hidden": true
       }
@@ -174,8 +175,8 @@
               "life-bsc"
             ]
           },
-          "format": "select",
           "uniqueItems": true,
+          "format": "select",
           "const": ["life-bsc"],
           "default": ["life-bsc"]
         }
@@ -610,6 +611,7 @@
                   "hidden"],
                 "hidden": true 
               },
+              "uniqueItems": true,
               "minLength": 1
             },
             "label": {
