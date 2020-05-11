@@ -903,23 +903,6 @@
       ],
       "minLength": 1,
       "options": {"hidden": true}
-    },
-    "prueba": {
-      "type": "array",
-      "title": "Prueba Esther",
-      "items": {
-        "type": "string",
-        "enum": [
-          "hola",
-          "que",
-          "tal"
-        ],
-        "default": ["hola"]
-      },
-      "uniqueItems": true,
-      "additionalItems": false,
-      "format": "select",
-      "minItems": 1
     }
   },
   "required": [
@@ -931,8 +914,7 @@
     "inputs_meta",
     "outputs_meta",
     "workflow_manager",
-    "status",
-    "prueba"
+    "status"
   ],
   "additionalProperties": false
 }
