@@ -96,6 +96,7 @@
           "other"
         ]
       },
+      "uniqueItems": true,
       "default": "other",
       "format": "select"
     },
