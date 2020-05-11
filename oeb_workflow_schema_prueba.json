@@ -121,7 +121,7 @@
         "Testing",
         "Community available"
       ],
-      "default": ["Testing"],
+      "default": ["Coming soon"],
       "uniqueItems": true
     },
     "workflow_manager": {
