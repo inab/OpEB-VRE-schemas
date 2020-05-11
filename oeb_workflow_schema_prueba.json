@@ -120,7 +120,8 @@
         "Testing",
         "Community available"
       ],
-      "default": "Testing"
+      "default": "Testing",
+      "uniqueItems": true
     },
     "workflow_manager": {
       "type": "string",
