@@ -115,14 +115,11 @@
       "title": "OEB Validation status",
       "description": "Select a visibility policy",
       "enum": [
-        "Coming soon",
-        "Public",
-        "Private",
-        "Testing",
-        "Community available"
+        "Coming soon"
       ],
       "default": ["Coming soon"],
       "const": ["Coming soon"],
+      "minLength": 2,
       "uniqueItems": true
     },
     "workflow_manager": {
