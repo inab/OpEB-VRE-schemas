@@ -915,6 +915,7 @@
           "tal"
         ]
       },
+      "uniqueItems": true,
       "format": "select",
       "minItems": 1
     }
