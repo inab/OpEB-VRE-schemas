@@ -96,7 +96,8 @@
           "other"
         ]
       },
-      "default": "other"
+      "default": "other",
+      "format": "select"
     },
     "keywords_tool": {
       "title": "Custom keywords",
@@ -113,9 +114,10 @@
       "description": "Select a visibility policy",
       "enum": [
         "Coming soon",
-        "Active",
-        "Disabled",
-        "Testing"
+        "Public",
+        "Private",
+        "Testing",
+        "Community available"
       ],
       "default": "Testing"
     },
@@ -167,7 +169,10 @@
         "cpus",
         "memory",
         "clouds"
-      ]
+      ],
+      "options": {
+        "hidden": true
+      }
     },
     "nextflow_files": {
       "type": "object",
@@ -419,13 +424,15 @@
               "type": "string",
               "title": "TAR file",
               "description": "Upload the reference dataset",
-              "format": "file"
+              "format": "file",
+              "minLength": 1
             }
           },
           "required": [
             "name",
             "type",
             "label",
+            "value",
             "data_type",
             "file_type"
           ],
@@ -601,6 +608,7 @@
                 "enum_mult",
                 "hidden"
               ],
+              "minLength": 1,
               "default": "enum",
               "const": "enum",
               "options": { 
@@ -663,6 +671,7 @@
           "required": [
             "name",
             "label",
+            "type",
             "challenges"
           ],
           "additionalProperties": false
