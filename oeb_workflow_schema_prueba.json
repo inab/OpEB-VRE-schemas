@@ -123,7 +123,8 @@
           "Testing",
           "Community available"
         ],
-        "default": ["Testing"]
+        "default": ["Testing"],
+        "format": "select"
       },
       "uniqueItems": true,
       "additionalItems": false
