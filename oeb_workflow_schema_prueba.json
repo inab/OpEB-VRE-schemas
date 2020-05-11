@@ -181,18 +181,49 @@
       "description": "Location of the nextflow files implementing the Validation step",
       "properties": {
         "workflow_file": {
-          "type": "string",
+          "type": "object",
           "title": "Workflow file",
-          "minLength": 1,
-          "description": "Main workflow file in nextflow format (*.nf).",
-          "format": "file"
+          "description": "Main workflow file",
+          "properties": {
+            "workflow_gitURL": {
+              "type": "string",
+              "title": "Git URL",
+              "minLength": 1
+            },
+            "workflow_gitTag": {
+              "type": "string",
+              "title": "Git Tag",
+              "minLength": 1,
+              "default": "master"
+            }
+          },
+          "required": [ 
+            "workflow_gitURL", 
+            "workflow_gitTag"
+          ],
+          "minLength": 1
         },
         "config_file": {
-          "type": "string",
+          "type": "object",
           "title": "Configuration file",
-          "minLength": 1,
-          "description": "Configuration file in nextflow format",
-          "format": "file"
+          "properties": {
+            "config_gitURL": {
+              "type": "string",
+              "title": "Git URL",
+              "minLength": 1
+            },
+            "config_gitTag": {
+              "type": "string",
+              "title": "Git Tag",
+              "minLength": 1,
+              "default": "master"
+            }
+          },
+          "required": [ 
+            "config_gitURL", 
+            "config_gitTag"
+          ],
+          "minLength": 1
         }
       },
       "required": [
