@@ -122,6 +122,7 @@
         "Community available"
       ],
       "default": ["Testing"],
+      "const": ["Private","Testing"],
       "minLength": 2,
       "uniqueItems": true
     },
