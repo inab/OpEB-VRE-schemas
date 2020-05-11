@@ -111,17 +111,20 @@
       }
     },
     "status": {
-      "type": "string",
+      "type": "array",
       "title": "OEB Validation status",
       "description": "Select a visibility policy",
-      "enum": [
-        "Coming soon",
-        "Public",
-        "Private",
-        "Testing",
-        "Community available"
-      ],
-      "default": ["Testing"],
+      "items": {
+        "type": "string",
+        "enum": [
+          "Coming soon",
+          "Public",
+          "Private",
+          "Testing",
+          "Community available"
+        ],
+        "default": ["Testing"]
+      },
       "uniqueItems": true,
       "additionalItems": false
     },
