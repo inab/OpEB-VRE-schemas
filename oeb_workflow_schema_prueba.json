@@ -131,7 +131,7 @@
       ],
       "default": ["Nextflow"],
       "const": ["Nextflow"],
-      "minLength": 1,
+      "minLength": 2,
       "uniqueItems": true
     },
     "infrastructure": {
@@ -909,7 +909,8 @@
     "type",
     "owner",
     "inputs_meta",
-    "outputs_meta"
+    "outputs_meta",
+    "workflow_manager"
   ],
   "additionalProperties": false
 }
