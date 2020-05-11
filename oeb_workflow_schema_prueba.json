@@ -329,7 +329,6 @@
                 "matchType": "label",
                 "options": {}
               },
-              "format":"select",
               "uniqueItems": true,
               "minItems": 1
             },
@@ -904,6 +903,20 @@
       ],
       "minLength": 1,
       "options": {"hidden": true}
+    },
+    "prueba": {
+      "type": "array",
+      "title": "Prueba Esther",
+      "items": {
+        "type": "string",
+        "enum": [
+          "hola",
+          "que",
+          "tal"
+        ]
+      },
+      "format": "select",
+      "minItems": 1
     }
   },
   "required": [
@@ -915,7 +928,8 @@
     "inputs_meta",
     "outputs_meta",
     "workflow_manager",
-    "status"
+    "status",
+    "prueba"
   ],
   "additionalProperties": false
 }
