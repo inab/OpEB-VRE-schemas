@@ -121,7 +121,8 @@
         "Testing",
         "Community available"
       ],
-      "default": "Testing",
+      "default": ["Testing"],
+      "minLength": 1,
       "uniqueItems": true
     },
     "workflow_manager": {
