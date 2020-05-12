@@ -329,7 +329,6 @@
                 "matchType": "label",
                 "options": {}
               },
-              "uniqueItems": true,
               "minItems": 1
             },
             "data_type": {
@@ -344,7 +343,6 @@
                 "matchType": "label",
                 "options": {}
               },
-              "uniqueItems": true,
               "const": [
                 "https://w3id.org/oebDatasets/participant"
               ],
