@@ -3,7 +3,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
   "title": "OEB Benchmarking Validation Workflow",
-  "description": "Specify a new OEB validation WF using a Nextflow",
+  "description": "Specify a new OEB validation WF using a Nextflow.",
   "properties": {
     "_id": {
       "type": "string",
@@ -28,7 +28,7 @@
     "type": {
       "type": "string",
       "title": "Benchmarking Workflow Type",
-      "description": "Classification of the different benchmarking worflow types",
+      "description": "Classification of the different benchmarking worflow types.",
       "default": "validation",
       "const": "validation",
       "minLength": 1,
@@ -60,7 +60,7 @@
       "type": "string",
       "title": "Owner",
       "minLength": 1,
-      "description": "OEB Validation author. Corresponds to a VRE user identifier",
+      "description": "OEB Validation author. Corresponds to a VRE user identifier.",
       "example": "OpEBUSER000",
       "options": {
         "hidden": true
@@ -70,22 +70,22 @@
       "type": "string",
       "title": "Title",
       "minLength": 1,
-      "description": "Name for the new Validation step"
+      "description": "Name for the new Validation step."
     },
     "description": {
       "type": "string",
       "title": "Description",
-      "description": "Short description detailing what the OEB Validation does"
+      "description": "Short description detailing what the OEB Validation does."
     },
     "description_long": {
       "type": "string",
       "title": "Long description",
-      "description": "A longer description detailing what the OEB Validation does"
+      "description": "A longer description detailing what the OEB Validation does."
     },
     "keywords": {
       "type": "array",
       "title": "Generic keywords",
-      "description": "Select the keywords that better define the field of your Validation step",
+      "description": "Select the keywords that better define the field of your Validation step.",
       "items": {
         "type": "string",
         "title": "keyword",
@@ -103,7 +103,7 @@
     },
     "keywords_tool": {
       "title": "Custom keywords",
-      "description": "Define a number of keywords describing you Validation step",
+      "description": "Define a number of keywords describing you Validation step.",
       "type": "array",
       "items": {
         "title":"Custom keyword",
@@ -113,7 +113,7 @@
     "status": {
       "type": "string",
       "title": "OEB Validation status",
-      "description": "Select a visibility policy",
+      "description": "Select a visibility policy.",
       "enum": [
         "Coming soon",
         "Public",
@@ -128,7 +128,7 @@
     "workflow_manager": {
       "type": "string",
       "title": "Workflow manager",
-      "description": "Select a workflow manager",
+      "description": "Select a workflow manager.",
       "enum": [
         "Nextflow"
       ],
@@ -140,12 +140,12 @@
     "infrastructure": {
       "type": "object",
       "title": "Infrastructure details",
-      "description": "Set the computational resources required by the Valitation step",
+      "description": "Set the computational resources required by the Valitation step.",
       "properties": {
         "cpus": {
           "type": "integer",
           "title": "CPUs",
-          "description": "Cores required to run the Validation step",
+          "description": "Cores required to run the Validation step.",
           "minimum": 1,
           "maximum": 12,
           "default": 1
@@ -169,7 +169,7 @@
         "clouds": {
           "type": "array",
           "title": "Cloud infrastructure",
-          "description": "Cloud infrastructure where the Validation is going to be installed",
+          "description": "Cloud infrastructure where the Validation is going to be installed.",
           "items": {
             "type": "string",
             "enum": [
@@ -195,12 +195,12 @@
     "nextflow_files": {
       "type": "object",
       "title": "Nextflow files",
-      "description": "Location of the nextflow files implementing the Validation step",
+      "description": "Location of the nextflow files implementing the Validation step.",
       "properties": {
         "workflow_file": {
           "type": "object",
           "title": "Workflow file",
-          "description": "Main workflow file Git",
+          "description": "Main workflow file Git.",
           "properties": {
             "workflow_gitURL": {
               "type": "string",
@@ -223,7 +223,7 @@
         "config_file": {
           "type": "object",
           "title": "Configuration file",
-          "description": "Configuration file Git",
+          "description": "Configuration file Git.",
           "properties": {
             "config_gitURL": {
               "type": "string",
@@ -272,7 +272,7 @@
             "type": {
               "type": "string",
               "title": "Type of input",
-              "description": "Type of input feed into the OEB Validation",
+              "description": "Type of input feed into the OEB Validation.",
               "enum": [
                 "file_user",
                 "file_community",
@@ -320,7 +320,7 @@
             "file_type": {
               "type": "array",
               "title": "Accepted file types",
-              "description": "File formats that might present the 'Participant Input'. Elegible formats: https://w3id.org/oebDataFormats",
+              "description": "File formats that might present the 'Participant Input'. Elegible formats: https://w3id.org/oebDataFormats.",
               "items": {
                 "type": "string",
                 "format": "term",
@@ -371,7 +371,7 @@
         "public_ref_dir": {
           "type": "object",
           "title": "File: Public Reference dataset",
-          "description": "Metadata for the reference dataset",
+          "description": "Metadata for the reference dataset.",
           "properties": {
             "name": {
               "type": "string",
@@ -437,7 +437,7 @@
             "file_type": {
               "type": "array",
               "title": "Accepted file types",
-              "description": "File formats that might present the 'Public Reference dataset'. Elegible formats: https://w3id.org/oebDataFormats",
+              "description": "File formats that might present the 'Public Reference dataset'. Elegible formats: https://w3id.org/oebDataFormats.",
               "items": {
                 "type": "string",
                 "format": "term",
@@ -501,7 +501,7 @@
         "participant_id": {
           "type": "object",
           "title": "Argument: Participant's Identifier",
-          "description": "Description of the 'Participant Identifier' parameter",
+          "description": "Description of the 'Participant Identifier' parameter.",
           "properties": {
             "name": {
               "type": "string",
@@ -515,7 +515,7 @@
             "type": {
               "type": "string",
               "title": "Type of Input",
-              "description": "Type of input feed into the OEB Validation",
+              "description": "Type of input feed into the OEB Validation.",
               "enum": [
                 "file_user",
                 "file_community",
@@ -570,7 +570,7 @@
         "community_id": {
           "type": "object",
           "title": "Argument: Community Identifier",
-          "description": "Description of the 'Community Identifier' parameter",
+          "description": "Description of the 'Community Identifier' parameter.",
           "properties": {
             "name": {
               "type": "string",
@@ -584,7 +584,7 @@
             "type": {
               "type": "string",
               "title": "Type of Input",
-              "description": "Type of input feed into the OEB Validation",
+              "description": "Type of input feed into the OEB Validation.",
               "enum": [
                 "user_file",
                 "challenge_file",
@@ -641,7 +641,7 @@
         "challenges_ids": {
           "type": "object",
           "title": "Challenge Identifiers",
-          "description": "Description of the 'Challenge Identifier' parameter",
+          "description": "Description of the 'Challenge Identifier' parameter.",
           "properties": {
             "name": {
               "type": "string",
@@ -655,7 +655,7 @@
             "type": {
               "type": "string",
               "title": "Type of Input",
-              "description": "Type of input feed into the OEB Validation",
+              "description": "Type of input feed into the OEB Validation.",
               "enum": [
                 "user_file",
                 "challenge_file",
@@ -704,19 +704,19 @@
             "challenges": {
               "type": "array",
               "title": "Benchmarking challenges",
-              "description": "List of challenge events Validationed by the OEB Validation",
+              "description": "List of challenge events Validationed by the OEB Validation.",
               "items": {
                 "type": "object",
                 "title": "Challenge",
                 "properties": {
                   "value": {
                     "type": "string",
-                    "description": "Challenge identifier as registered in OpenEBench",
+                    "description": "Challenge identifier as registered in OpenEBench.",
                     "minLength": 1
                   },
                   "description": {
                     "type": "string",
-                    "description": "Challenge name displayed to researcher",
+                    "description": "Challenge name displayed to researcher.",
                     "minLength": 1
                   }
                 },
@@ -754,7 +754,7 @@
         "validation_results": {
           "type": "object",
           "title": "Validation Result",
-          "description": "Metrics derivated from the given input data",
+          "description": "Metrics derivated from the given input data.",
           "properties": {
             "name": {
               "type": "string",
@@ -768,7 +768,7 @@
             "file_type": {
               "type": "array",
               "title": "Accepted file types",
-              "description": "File formats that might present the 'Participant Input'. Elegible formats: https://w3id.org/oebDataFormats",
+              "description": "File formats that might present the 'Participant Input'. Elegible formats: https://w3id.org/oebDataFormats.",
               "items": {
                 "type": "string",
                 "format": "term",
@@ -823,7 +823,7 @@
         "tar_nf_stats": {
           "type": "object",
           "title": "Workflow Statistics",
-          "description": "Execution monitoring and logging data",
+          "description": "Execution monitoring and logging data.",
           "properties": {
             "name": {
               "type": "string",
@@ -837,7 +837,7 @@
             "file_type": {
               "type": "array",
               "title": "Accepted file types",
-              "description": "File formats that might present the 'Workflow Statistics'. Elegible formats: https://w3id.org/oebDataFormats",
+              "description": "File formats that might present the 'Workflow Statistics'. Elegible formats: https://w3id.org/oebDataFormats.",
               "items": {
                 "type": "string",
                 "format": "term",
@@ -926,6 +926,6 @@
   ],
   "additionalProperties": false,
   "format": "categories",
-  "basicCategoryTitle": "1) Generic Information",
+  "basicCategoryTitle": "STEP 1: Generic Information",
   "show_errors": "interaction"
 }
