@@ -229,6 +229,7 @@
           "properties": {
             "config_gitURL": {
               "type": "string",
+              "title": "Git URL",
               "description": "Configuration File's Git repository link.",
               "minLength": 1
             },
