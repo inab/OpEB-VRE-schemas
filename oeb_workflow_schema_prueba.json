@@ -108,8 +108,7 @@
       "items": {
         "title":"Custom keyword",
         "type": "string"
-      },
-      "categoryTitle": "Main"
+      }
     },
     "status": {
       "type": "string",
@@ -917,7 +916,5 @@
     "workflow_manager",
     "status"
   ],
-  "additionalProperties": false,
-  "format": "categories",
-  "basicCategoryTitle": "Main"
+  "additionalProperties": false
 }
