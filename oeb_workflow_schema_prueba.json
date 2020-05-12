@@ -916,7 +916,5 @@
     "workflow_manager",
     "status"
   ],
-  "additionalProperties": false,
-  "disable_collapse": true,
-  "disable_edit_json": true
+  "additionalProperties": false
 }
