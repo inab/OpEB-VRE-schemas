@@ -487,10 +487,21 @@
             },
             "value": {
               "type": "string",
+              "format": "url",
               "title": "TAR file",
               "description": "Upload the reference dataset",
-              "format": "file",
-              "minLength": 1
+              "options": {
+                "upload": {
+                  "upload_handler": "testUploadHandler"
+                }
+              },
+              "minLength": 1,
+              "links": [
+                {
+                  "href": "{{self}}",
+                  "rel": "view"
+                }
+              ]
             }
           },
           "required": [
@@ -916,27 +927,6 @@
       ],
       "minLength": 1,
       "options": {"hidden": true}
-    },
-    "upload_custom_link": {
-      "type": "string",
-      "format": "url",
-      "title": "Image Upload field",
-      "description": "Upload restricted to JPEG and PNG image files. (Using custom link?)",
-      "options": {
-        "upload": {
-          "mime_type": [
-            "image/png",
-            "image/jpeg"
-          ],
-          "upload_handler": "testUploadHandler"
-        }
-      },
-      "links": [
-        {
-          "href": "{{self}}",
-          "rel": "view"
-        }
-      ]
     }
   },
   "required": [
