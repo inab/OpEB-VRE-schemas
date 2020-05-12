@@ -926,6 +926,6 @@
   ],
   "additionalProperties": false,
   "format": "categories",
-  "basicCategoryTitle": "Generic Information",
+  "basicCategoryTitle": "1) Generic Information",
   "show_errors": "interaction"
 }
