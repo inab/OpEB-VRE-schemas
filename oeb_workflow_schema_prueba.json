@@ -916,5 +916,6 @@
     "workflow_manager",
     "status"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "disable_properties": true
 }
