@@ -329,6 +329,8 @@
                 "matchType": "label",
                 "options": {}
               },
+              "format": "select",
+              "uniqueItems": true,
               "minItems": 1
             },
             "data_type": {
@@ -343,6 +345,8 @@
                 "matchType": "label",
                 "options": {}
               },
+              "format": "select",
+              "uniqueItems": true,
               "const": [
                 "https://w3id.org/oebDatasets/participant"
               ],
@@ -442,6 +446,7 @@
                 "matchType": "label",
                 "options": {}
               },
+              "format": "select",
               "uniqueItems": true,
               "const": [
                 "https://w3id.org/oebDataFormats/TAR"
@@ -464,6 +469,7 @@
                 "matchType": "label",
                 "options": {}
               },
+              "format": "select",
               "uniqueItems": true,
               "const": [
                 "https://w3id.org/oebDatasets/public_reference"
@@ -771,6 +777,7 @@
                 "matchType": "label",
                 "options": {}
               },
+              "format": "select",
               "uniqueItems": true,
               "const": [
                 "http://edamontology.org/format_3464"
@@ -793,6 +800,7 @@
                 "matchType": "label",
                 "options": {}
               },
+              "format": "select",
               "uniqueItems": true,
               "const": [
                 "https://w3id.org/oebDatasets/validation"
@@ -838,6 +846,7 @@
                 "matchType": "label",
                 "options": {}
               },
+              "format": "select",
               "uniqueItems": true,
               "const": [
                 "https://w3id.org/oebDataFormats/TAR"
@@ -860,6 +869,7 @@
                 "matchType": "label",
                 "options": {}
               },
+              "format": "select",
               "uniqueItems": true,
               "const": [
                 "https://w3id.org/oebDatasets/workflow_stats"
