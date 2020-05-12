@@ -916,5 +916,7 @@
     "workflow_manager",
     "status"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "format": "categories",
+  "basicCategoryTitle": "Generic Information"
 }
