@@ -108,7 +108,8 @@
       "items": {
         "title":"Custom keyword",
         "type": "string"
-      }
+      },
+      "categoryTitle": "Main"
     },
     "status": {
       "type": "string",
