@@ -205,12 +205,14 @@
             "workflow_gitURL": {
               "type": "string",
               "title": "Git URL",
+              "description": "Workflow's Git repository link.",
               "minLength": 1
             },
             "workflow_gitTag": {
               "type": "string",
               "title": "Git Tag",
               "minLength": 1,
+              "description": "Workflows's Git branch/tag.",
               "default": "master"
             }
           },
@@ -227,13 +229,14 @@
           "properties": {
             "config_gitURL": {
               "type": "string",
-              "title": "Git URL",
+              "description": "Configuration File's Git repository link.",
               "minLength": 1
             },
             "config_gitTag": {
               "type": "string",
               "title": "Git Tag",
               "minLength": 1,
+              "description": "Configuration File's Git branch/tag.",
               "default": "master"
             }
           },
