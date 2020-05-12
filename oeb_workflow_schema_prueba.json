@@ -917,5 +917,6 @@
     "status"
   ],
   "additionalProperties": false,
-  "disable_properties": true
+  "disable_collapse": true,
+  "disable_edit_json": true
 }
