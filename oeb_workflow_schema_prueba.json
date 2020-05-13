@@ -515,21 +515,15 @@
             },
             "value": {
               "type": "string",
-              "format": "url",
+              "format": "file",
               "title": "TAR file",
               "description": "Upload the reference dataset",
               "options": {
-                "upload": {
-                  "upload_handler": "testUploadHandler",
-                  "auto_upload": true
+                "inputAttributes": {
+                  "id":  "fileTar"
                 }
               },
-              "links": [
-                {
-                  "href": "{{self}}",
-                  "rel": "view"
-                }
-              ]
+              "minLength": 1
             }
           },
           "required": [
