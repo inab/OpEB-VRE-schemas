@@ -492,10 +492,10 @@
               "description": "Upload the reference dataset",
               "options": {
                 "upload": {
-                  "upload_handler": "testUploadHandler"
+                  "upload_handler": "testUploadHandler",
+                  "auto_upload": true
                 }
               },
-              "minLength": 1,
               "links": [
                 {
                   "href": "{{self}}",
