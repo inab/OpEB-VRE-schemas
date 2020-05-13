@@ -9,7 +9,6 @@
       "type": "string",
       "title": "Step identifier",
       "description": "Tag for the new Validation. Format: no special characters nor spaces allowed",
-      "example": "OEBP00000",
       "minLength": 1,
       "format": "select",
       "options": {
@@ -61,7 +60,6 @@
       "title": "Owner",
       "minLength": 1,
       "description": "OEB Validation author. Corresponds to a VRE user identifier.",
-      "example": "OpEBUSER000",
       "options": {
         "hidden": true
       }
@@ -73,8 +71,7 @@
       "description": "Name for the new Validation step.",
       "options": {
         "inputAttributes": {
-          "placeholder":  "The title of validation here...",
-          "class": "myclass"
+          "placeholder":  "The title of validation here..."
         }
       }
     },
