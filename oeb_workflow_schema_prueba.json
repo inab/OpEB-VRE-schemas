@@ -70,7 +70,13 @@
       "type": "string",
       "title": "Title",
       "minLength": 1,
-      "description": "Name for the new Validation step."
+      "description": "Name for the new Validation step.",
+      "options": {
+        "inputAttributes": {
+          "placeholder":  "The title of validation here...",
+          "class": "myclass"
+        }
+      }
     },
     "description": {
       "type": "string",
