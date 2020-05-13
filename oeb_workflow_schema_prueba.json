@@ -519,6 +519,9 @@
               "title": "TAR file",
               "description": "Upload the reference dataset",
               "options": {
+                "upload": {
+                  "mime_type": "application/x-tar*"
+                },
                 "inputAttributes": {
                   "accept":  "application/x-tar"
                 }
