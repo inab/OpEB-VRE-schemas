@@ -71,19 +71,29 @@
       "description": "Name for the new Validation step.",
       "options": {
         "inputAttributes": {
-          "placeholder":  "The title of validation here..."
+          "placeholder":  "The title here..."
         }
       }
     },
     "description": {
       "type": "string",
       "title": "Description",
-      "description": "Short description detailing what the OEB Validation does."
+      "description": "Short description detailing what the OEB Validation does.",
+      "options": {
+        "inputAttributes": {
+          "placeholder":  "The short description here..."
+        }
+      }
     },
     "description_long": {
       "type": "string",
       "title": "Long description",
-      "description": "A longer description detailing what the OEB Validation does."
+      "description": "A longer description detailing what the OEB Validation does.",
+      "options": {
+        "inputAttributes": {
+          "placeholder":  "The long description here..."
+        }
+      }
     },
     "keywords": {
       "type": "array",
@@ -110,7 +120,12 @@
       "type": "array",
       "items": {
         "title":"Custom keyword",
-        "type": "string"
+        "type": "string",
+        "options": {
+          "inputAttributes": {
+            "placeholder":  "Ex. 2D_modeling"
+          }
+        }
       }
     },
     "status": {
@@ -209,6 +224,11 @@
               "type": "string",
               "title": "Git URL",
               "format": "url",
+              "options": {
+                "inputAttributes": {
+                  "placeholder":  "Example: https://github.com/nextflow/workflow.git"
+                }
+              },
               "description": "Workflow's Git repository link.",
               "minLength": 1
             },
@@ -234,6 +254,11 @@
             "config_gitURL": {
               "type": "string",
               "title": "Git URL",
+              "options": {
+                "inputAttributes": {
+                  "placeholder":  "Example: https://github.com/nextflow/config.git"
+                }
+              },
               "description": "Configuration File's Git repository link.",
               "minLength": 1
             },
@@ -731,12 +756,22 @@
                   "value": {
                     "type": "string",
                     "description": "Challenge identifier as registered in OpenEBench.",
-                    "minLength": 1
+                    "minLength": 1,
+                    "options": {
+                      "inputAttributes": {
+                        "placeholder":  "The value of challenge identifier here..."
+                      }
+                    }
                   },
                   "description": {
                     "type": "string",
                     "description": "Challenge name displayed to researcher.",
-                    "minLength": 1
+                    "minLength": 1,
+                    "options": {
+                      "inputAttributes": {
+                        "placeholder":  "The description of challenge here..."
+                      }
+                    }
                   }
                 },
                 "required": [
