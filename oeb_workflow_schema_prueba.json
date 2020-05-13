@@ -520,7 +520,7 @@
               "description": "Upload the reference dataset",
               "options": {
                 "inputAttributes": {
-                  "id":  "fileTar"
+                  "accept":  ".tar"
                 }
               },
               "minLength": 1
