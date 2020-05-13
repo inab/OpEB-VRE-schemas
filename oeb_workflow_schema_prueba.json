@@ -523,6 +523,9 @@
                   "accept":  ".tar"
                 }
               },
+              "media": {
+                "binaryEncoding": "base64"
+              },
               "minLength": 1
             }
           },
