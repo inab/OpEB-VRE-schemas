@@ -524,7 +524,8 @@
                 }
               },
               "media": {
-                "binaryEncoding": "base64"
+                "binaryEncoding": "base64",
+                "type": "application/x-tar"
               },
               "minLength": 1
             }
