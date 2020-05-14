@@ -129,18 +129,27 @@
       }
     },
     "status": {
-      "type": "string",
+      "type": "number",
       "title": "OEB Validation status",
       "description": "Select a visibility policy.",
       "enum": [
-        "Coming soon",
-        "Public",
-        "Private",
-        "Testing",
-        "Community available"
+        0,
+        1,
+        2,
+        3,
+        4
       ],
-      "default": ["Coming soon"],
-      "minLength": 2,
+      "options": { 
+        "enum_titles": [
+          "Coming soon",
+          "Public",
+          "Private",
+          "Testing",
+          "Community available"
+        ]
+      },
+      "default": [1],
+      "minLength": 1,
       "uniqueItems": true
     },
     "workflow_manager": {
