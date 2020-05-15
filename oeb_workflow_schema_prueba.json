@@ -148,7 +148,7 @@
           "Community available"
         ]
       },
-      "default": [1],
+      "default": [3],
       "minLength": 1,
       "uniqueItems": true
     },
