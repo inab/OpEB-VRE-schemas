@@ -965,7 +965,6 @@
     }
   },
   "required": [
-    "_id",
     "_schema",
     "title",
     "type",
