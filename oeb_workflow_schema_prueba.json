@@ -5,16 +5,6 @@
   "title": "OEB Benchmarking Validation Workflow",
   "description": "Specify a new OEB validation WF using a Nextflow.",
   "properties": {
-    "_id": {
-      "type": "string",
-      "title": "Step identifier",
-      "description": "Tag for the new Validation. Format: no special characters nor spaces allowed",
-      "minLength": 1,
-      "format": "select",
-      "options": {
-        "hidden": true
-      }
-    },
     "_schema": {
       "type": "string",
       "format": "uri",
