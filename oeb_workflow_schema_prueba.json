@@ -854,10 +854,10 @@
               "format": "select",
               "uniqueItems": true,
               "const": [
-                "https://w3id.org/oebDatasets/validation"
+                "https://w3id.org/oebDatasets/validated_participant"
               ],
               "default": [
-                "https://w3id.org/oebDatasets/validation"
+                "https://w3id.org/oebDatasets/validated_participant"
               ],
               "readonly": true,
               "minItems": 1
