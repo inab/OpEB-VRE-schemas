@@ -361,6 +361,9 @@
                 "matchType": "label",
                 "options": {}
               },
+              "default": [
+                "http://edamontology.org/format_1476"
+              ],
               "format": "select",
               "uniqueItems": true,
               "minItems": 1
