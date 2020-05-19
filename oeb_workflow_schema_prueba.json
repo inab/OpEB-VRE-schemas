@@ -755,6 +755,7 @@
                 "properties": {
                   "value": {
                     "type": "string",
+                    "title": "Value",
                     "description": "Challenge identifier as registered in OpenEBench.",
                     "minLength": 1,
                     "options": {
@@ -765,6 +766,7 @@
                   },
                   "description": {
                     "type": "string",
+                    "title": "Description",
                     "description": "Challenge name displayed to researcher.",
                     "minLength": 1,
                     "options": {
