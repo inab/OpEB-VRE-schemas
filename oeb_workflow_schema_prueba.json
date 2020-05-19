@@ -520,11 +520,6 @@
               "format": "file",
               "title": "TAR file",
               "description": "Upload the reference dataset",
-              "options": {
-                "inputAttributes": {
-                  "accept":  "application/x-tar"
-                }
-              },
               "media": {
                 "binaryEncoding": "base64",
                 "type": "application/x-tar"
