@@ -58,10 +58,21 @@
       "type": "string",
       "title": "Title (*)",
       "minLength": 1,
-      "description": "Name for the new Validation step.",
+      "description": "Title for the new Validation step.",
       "options": {
         "inputAttributes": {
           "placeholder":  "The title here..."
+        }
+      }
+    },
+    "name": {
+      "type": "string",
+      "title": "Name (*)",
+      "minLength": 1,
+      "description": "Name for the new Validation step.",
+      "options": {
+        "inputAttributes": {
+          "placeholder":  "The name here..."
         }
       }
     },
@@ -936,6 +947,7 @@
   "required": [
     "_schema",
     "title",
+    "name",
     "type",
     "owner",
     "inputs_meta",
