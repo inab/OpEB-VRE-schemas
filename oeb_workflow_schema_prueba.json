@@ -222,7 +222,7 @@
             "workflow_gitURL": {
               "type": "string",
               "title": "Git URL (*)",
-              "description": "Workflow's Git repository link. The name of the file has to be 'main.nf'.",
+              "description": "Workflow's Git repository link. There have to be 'main.nf' and 'nextflow.config' files.",
               "format": "url",
               "options": {
                 "inputAttributes": {
@@ -244,41 +244,10 @@
             "workflow_gitTag"
           ],
           "minLength": 1
-        },
-        "config_file": {
-          "type": "object",
-          "title": "Configuration file",
-          "description": "Configuration file Git.",
-          "properties": {
-            "config_gitURL": {
-              "type": "string",
-              "title": "Git URL (*)",
-              "options": {
-                "inputAttributes": {
-                  "placeholder":  "Example: https://github.com/nextflow/config.git"
-                }
-              },
-              "description": "onfiguration File's Git repository link. The name of the file has to be 'nextflow.config'.",
-              "minLength": 1
-            },
-            "config_gitTag": {
-              "type": "string",
-              "title": "Git Tag (*)",
-              "minLength": 1,
-              "description": "Configuration File's Git branch/tag.",
-              "default": "master"
-            }
-          },
-          "required": [ 
-            "config_gitURL", 
-            "config_gitTag"
-          ],
-          "minLength": 1
         }
       },
       "required": [
-        "workflow_file",
-        "config_file"
+        "workflow_file"
       ],
       "additionalProperties": false
     },
