@@ -67,10 +67,6 @@
           "title": "Contact",
           "minLength": 1
         },
-        "url": {
-          "type": "string",
-          "title": "URL"
-        },
         "user": {
           "type": "string",
           "title": "User"
