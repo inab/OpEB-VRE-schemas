@@ -46,10 +46,42 @@
       }
     },
     "owner": {
-      "type": "string",
+      "type": "object",
       "title": "Owner",
       "minLength": 1,
       "description": "OEB Validation author. Corresponds to a VRE user identifier.",
+      "properties": {
+        "institution": {
+          "type": "string",
+          "title": "Institution",
+          "minLength": 1
+        },
+        "author": {
+          "type": "string",
+          "title": "Author",
+          "minLength": 1
+        },
+        "contact": {
+          "type": "string",
+          "format": "email",
+          "title": "Contact",
+          "minLength": 1
+        },
+        "url": {
+          "type": "string",
+          "title": "URL"
+        },
+        "user": {
+          "type": "string",
+          "title": "User"
+        }
+      },
+      "required": [
+        "author",
+        "institution",
+        "contact"
+      ],
+      "additionalProperties": false,
       "options": {
         "hidden": true
       }
