@@ -157,30 +157,6 @@
         }
       }
     },
-    "status": {
-      "type": "number",
-      "title": "OEB Validation status",
-      "description": "Select a visibility policy.",
-      "enum": [
-        0,
-        1,
-        2,
-        3,
-        4
-      ],
-      "options": { 
-        "enum_titles": [
-          "Coming soon",
-          "Public",
-          "Private",
-          "Testing",
-          "Community available"
-        ]
-      },
-      "default": [3],
-      "minLength": 1,
-      "uniqueItems": true
-    },
     "workflow_manager": {
       "type": "string",
       "title": "Workflow manager",
@@ -980,8 +956,7 @@
     "owner",
     "inputs_meta",
     "outputs_meta",
-    "workflow_manager",
-    "status"
+    "workflow_manager"
   ],
   "additionalProperties": false,
   "format": "categories",
