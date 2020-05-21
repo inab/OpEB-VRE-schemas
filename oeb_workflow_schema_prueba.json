@@ -693,8 +693,8 @@
                 "hidden"
               ],
               "minLength": 1,
-              "default": "enum",
-              "const": "enum",
+              "default": "enum_mult",
+              "const": "enum_mult",
               "options": { 
                 "enum_titles": 
                   ["user file",
@@ -795,8 +795,8 @@
               "type": "string",
               "title": "Internal identifier",
               "description": "Identifier internally used by Nextflow to refer to the 'Validation Results' element.",
-              "const": "validation_results_id",
-              "default": "validation_results_id",
+              "const": "validation_results",
+              "default": "validation_results",
               "minLength": 1,
               "readonly": true
             },
@@ -864,8 +864,8 @@
               "type": "string",
               "title": "Internal identifier",
               "description": "Identifier internally used by Nextflow to refer to the 'Workflow Statistics' element.",
-              "const": "tar_nf_stats_id",
-              "default": "tar_nf_stats_id",
+              "const": "tar_nf_stats",
+              "default": "tar_nf_stats",
               "readonly": true,
               "minLength": 1
             },
