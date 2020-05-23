@@ -5,15 +5,6 @@
   "title": "OEB Benchmarking Validation Workflow",
   "description": "Specify a new OEB validation WF using a Nextflow.",
   "properties": {
-    "_schema": {
-      "type": "string",
-      "format": "uri",
-      "minLength": 1,
-      "const": "https://openebench.bsc.es/vre/Validation-schema",
-      "options": {
-        "hidden": true
-      }
-    },
     "type": {
       "type": "string",
       "title": "Benchmarking Workflow Type",
@@ -949,7 +940,6 @@
     }
   },
   "required": [
-    "_schema",
     "title",
     "name",
     "type",
