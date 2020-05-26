@@ -60,13 +60,21 @@
         },
         "user": {
           "type": "string",
-          "title": "User"
+          "title": "User",
+          "minLength": 1
+        },
+        "oeb_community": {
+          "type": "string",
+          "title": "oeb_community",
+          "minLength": 1
         }
       },
       "required": [
         "author",
         "institution",
-        "contact"
+        "contact",
+        "user",
+        "oeb_community"
       ],
       "additionalProperties": false,
       "options": {
