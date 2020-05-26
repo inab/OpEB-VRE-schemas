@@ -65,16 +65,14 @@
         },
         "oeb_community": {
           "type": "string",
-          "title": "oeb_community",
-          "minLength": 1
+          "title": "oeb_community"
         }
       },
       "required": [
         "author",
         "institution",
         "contact",
-        "user",
-        "oeb_community"
+        "user"
       ],
       "additionalProperties": false,
       "options": {
