@@ -572,7 +572,7 @@
           "properties": {
             "name": {
               "type": "string",
-              "title": "Internal identifier",
+              "title": "Nextflow Parameter Identifier (*)",
               "description": "Identifier internally used by Nextflow to refer to the 'Validation Results' element.",
               "const": "validation_results",
               "default": "validation_results",
@@ -603,7 +603,7 @@
             "name": {
               "type": "string",
               "title": "Nextflow Parameter Identifier (*)",
-              "description": "Identifier internally used by nextflow to refer to the 'Participant's Identifier' element.",
+              "description": "Identifier internally used by nextflow to refer to the 'Exit Code' element.",
               "const": "exit_code",
               "default": "exit_code",
               "readonly": true,
