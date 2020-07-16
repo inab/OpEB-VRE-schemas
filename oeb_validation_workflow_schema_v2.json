@@ -333,8 +333,7 @@
                   "boolean",
                   "enum",
                   "enum mult",
-                  "hidden"],
-                "hidden": true
+                  "hidden"]
               }
             },
             "value": {
