@@ -594,8 +594,7 @@
             "name",
             "value"
           ],
-          "additionalProperties": false,
-          "minLength": 1
+          "additionalProperties": false
         },
         "exit_code": {
           "type": "object",
@@ -622,7 +621,8 @@
           "required": [
             "name",
             "value"
-          ]
+          ],
+          "additionalProperties": false
         }
       },
       "required": [
