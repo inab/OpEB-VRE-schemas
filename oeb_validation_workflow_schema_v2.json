@@ -131,7 +131,8 @@
             "Private",
             "Testing",
             "Community available"]
-      }
+      },
+      "readonly": true
     },
     "infrastructure": {
       "type": "object",
