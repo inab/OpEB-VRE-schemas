@@ -121,9 +121,9 @@
         3,
         4
       ],
-      "default": 3,
+      "default": "3",
       "minLength": 1,
-      "const": 3,
+      "const": "3",
       "options": { 
         "enum_titles": 
           ["Coming soon",
