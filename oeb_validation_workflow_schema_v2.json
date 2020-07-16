@@ -129,8 +129,8 @@
             "Testing",
             "Community available"]
       },
-      "default": [3],
-      "const": [3],
+      "default": ["Testing"],
+      "const": ["Testing"],
       "minLength": 1,
       "uniqueItems": true
     },
