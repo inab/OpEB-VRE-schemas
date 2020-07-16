@@ -110,6 +110,30 @@
       "minLength": 2,
       "uniqueItems": true
     },
+    "publication_status": {
+      "type": "string",
+      "title": "Publication Status",
+      "description": "Status to select which users can see the process.",
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "options": { 
+        "enum_titles": 
+          ["Coming soon",
+            "Public",
+            "Private",
+            "Testing",
+            "Community available"]
+      },
+      "default": [3],
+      "const": [3],
+      "minLength": 1,
+      "uniqueItems": true
+    },
     "infrastructure": {
       "type": "object",
       "title": "Infrastructure details",
