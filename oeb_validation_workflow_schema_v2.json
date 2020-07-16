@@ -579,76 +579,57 @@
               "minLength": 1,
               "readonly": true
             },
-            "file_type": {
-              "type": "array",
-              "title": "Accepted file types",
-              "description": "File formats that might present the 'Participant Input'. Elegible formats: https://w3id.org/oebDataFormats.",
-              "items": {
-                "type": "string",
-                "format": "term",
-                "ontology": "https://w3id.org/oebDataFormats",
-                "ancestors": "https://w3id.org/oebDataFormats/FormatDatasets",
-                "matchType": "label",
-                "options": {}
+            "value": {
+              "type": "string",
+              "format": "file",
+              "title": "Validation Results Sample (*)",
+              "description": "Upload the validation results sample",
+              "media": {
+                "binaryEncoding": "base64"
               },
-              "format": "select",
-              "uniqueItems": true,
-              "const": [
-                "http://edamontology.org/format_3464"
-              ],
-              "default": [
-                "http://edamontology.org/format_3464"
-              ],
-              "readonly": true,
-              "minItems": 1
-            },
-            "data_type": {
-              "type": "array",
-              "title": "Accepted dataset types",
-              "description": "Dataset types that 'Particiapnt Input'  might belong to.",
-              "items": {
-                "type": "string",
-                "format": "term",
-                "ontology": "https://w3id.org/oebDatasets",
-                "ancestors": "https://w3id.org/oebDatasets/dataset",
-                "matchType": "label",
-                "options": {}
-              },
-              "format": "select",
-              "uniqueItems": true,
-              "const": [
-                "https://w3id.org/oebDatasets/validated_participant"
-              ],
-              "default": [
-                "https://w3id.org/oebDatasets/validated_participant"
-              ],
-              "readonly": true,
-              "minItems": 1
+              "minLength": 1
             }
           },
           "required": [
             "name",
-            "data_type",
-            "file_type"
+            "value"
           ],
           "additionalProperties": false,
           "minLength": 1
         },
         "exit_code": {
-          "type": "string",
-          "title": "Exit code",
-          "description": "Code to know if the metrics step has to start",
-          "minLength": 1,
-          "readonly": true,
-          "options": {"hidden": true}
+          "type": "object",
+          "title": "Exit code (*)",
+          "properties": {
+            "name": {
+              "type": "string",
+              "title": "Nextflow Parameter Identifier (*)",
+              "description": "Identifier internally used by nextflow to refer to the 'Participant's Identifier' element.",
+              "const": "exit_code",
+              "default": "exit_code",
+              "readonly": true,
+              "minLength": 1
+            },
+            "value": {
+              "type": "string",
+              "title": "Sample (*)",
+              "const": "1",
+              "default": "1",
+              "minLength": 1,
+              "readonly": true
+            }
+          },
+          "required": [
+            "name",
+            "value"
+          ]
         }
       },
       "required": [
         "validation_results",
         "exit_code"
       ],
-      "minLength": 1,
-      "options": {"hidden": true}
+      "minLength": 1
     }
   },
   "required": [
