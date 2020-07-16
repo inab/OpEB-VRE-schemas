@@ -138,28 +138,12 @@
           "minimum": 5,
           "maximum": 1440,
           "default": 1440
-        },
-        "clouds": {
-          "type": "array",
-          "title": "Cloud infrastructure",
-          "description": "Cloud infrastructure where the Validation is going to be installed.",
-          "items": {
-            "type": "string",
-            "enum": [
-              "life-bsc"
-            ]
-          },
-          "uniqueItems": true,
-          "format": "select",
-          "const": ["life-bsc"],
-          "default": ["life-bsc"]
         }
       },
       "additionalProperties": false,
       "required": [
         "cpus",
-        "memory",
-        "clouds"
+        "memory"
       ],
       "options": {
         "hidden": true
@@ -658,7 +642,6 @@
     }
   },
   "required": [
-    "title",
     "name",
     "type",
     "owner",
