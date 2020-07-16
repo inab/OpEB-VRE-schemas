@@ -121,8 +121,8 @@
         3,
         4
       ],
-      "default": 3,
-      "const": 3,
+      "default": "Testing",
+      "const": "Testing",
       "options": { 
         "enum_titles": 
           ["Coming soon",
@@ -133,7 +133,8 @@
           ]
       },
       "minLength": 2,
-      "uniqueItems": true
+      "uniqueItems": true,
+      "additionalProperties": false
     },
     "infrastructure": {
       "type": "object",
@@ -333,7 +334,8 @@
                   "boolean",
                   "enum",
                   "enum mult",
-                  "hidden"]
+                  "hidden"],
+                "hidden": true
               }
             },
             "value": {
