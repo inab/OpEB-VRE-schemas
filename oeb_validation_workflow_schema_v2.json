@@ -1,0 +1,673 @@
+{
+  "$id": "https://openebench.bsc.es/vre/Validation-schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "OEB Benchmarking Validation Workflow",
+  "description": "Specify a new OEB validation WF using a Nextflow.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "title": "Benchmarking Workflow Type",
+      "description": "Classification of the different benchmarking worflow types.",
+      "default": "validation",
+      "const": "validation",
+      "minLength": 1,
+      "readonly": true,
+      "item": {
+        "type": "string",
+        "enum": [
+          "validation",
+          "metrics",
+          "consolidation"
+        ]
+      },
+      "uniqueItems": true,
+      "options": {
+        "hidden": true
+      }
+    },
+    "external": {
+      "type": "boolean",
+      "title": "External Benchmarking Workflow",
+      "description": "External WFs are elegible to be run by partipants.",
+      "default": true,
+      "const": true,
+      "options": {
+        "hidden": true
+      }
+    },
+    "owner": {
+      "type": "object",
+      "title": "Owner",
+      "minLength": 1,
+      "description": "OEB Validation author. Corresponds to a VRE user identifier.",
+      "properties": {
+        "institution": {
+          "type": "string",
+          "title": "Institution"
+        },
+        "author": {
+          "type": "string",
+          "title": "Author",
+          "minLength": 1
+        },
+        "contact": {
+          "type": "string",
+          "format": "email",
+          "title": "Contact",
+          "minLength": 1
+        },
+        "user": {
+          "type": "string",
+          "title": "User",
+          "minLength": 1
+        },
+        "oeb_community": {
+          "type": "string",
+          "title": "oeb_community"
+        }
+      },
+      "required": [
+        "author",
+        "contact",
+        "user"
+      ],
+      "additionalProperties": false,
+      "options": {
+        "hidden": true
+      }
+    },
+    "name": {
+      "type": "string",
+      "title": "Name (*)",
+      "minLength": 1,
+      "description": "Name for the new Validation step.",
+      "options": {
+        "inputAttributes": {
+          "placeholder":  "The name here..."
+        }
+      }
+    },
+    "description": {
+      "type": "string",
+      "title": "Description",
+      "description": "Short description detailing what the OEB Validation does.",
+      "options": {
+        "inputAttributes": {
+          "placeholder":  "The short description here..."
+        }
+      }
+    },
+    "workflow_manager": {
+      "type": "string",
+      "title": "Workflow manager",
+      "description": "Select a workflow manager.",
+      "enum": [
+        "Nextflow"
+      ],
+      "default": ["Nextflow"],
+      "const": ["Nextflow"],
+      "minLength": 2,
+      "uniqueItems": true
+    },
+    "infrastructure": {
+      "type": "object",
+      "title": "Infrastructure details",
+      "description": "Set the computational resources required by the Valitation step.",
+      "properties": {
+        "cpus": {
+          "type": "integer",
+          "title": "CPUs",
+          "description": "Cores required to run the Validation step.",
+          "minimum": 1,
+          "maximum": 12,
+          "default": 1
+        },
+        "memory": {
+          "type": "number",
+          "title": "Memory",
+          "description": "RAM memory in GB required to run the Validation step.",
+          "minimum": 0,
+          "maximum": 24,
+          "default": 4
+        },
+        "wallTime": {
+          "type": "integer",
+          "title": "Walltime",
+          "description": "Maximun time in minutes taken to run the Validation step.",
+          "minimum": 5,
+          "maximum": 1440,
+          "default": 1440
+        },
+        "clouds": {
+          "type": "array",
+          "title": "Cloud infrastructure",
+          "description": "Cloud infrastructure where the Validation is going to be installed.",
+          "items": {
+            "type": "string",
+            "enum": [
+              "life-bsc"
+            ]
+          },
+          "uniqueItems": true,
+          "format": "select",
+          "const": ["life-bsc"],
+          "default": ["life-bsc"]
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "cpus",
+        "memory",
+        "clouds"
+      ],
+      "options": {
+        "hidden": true
+      }
+    },
+    "nextflow_files": {
+      "type": "object",
+      "title": "Nextflow files",
+      "description": "Location of the nextflow files implementing the Validation step.",
+      "properties": {
+        "workflow_file": {
+          "type": "object",
+          "title": "Workflow file",
+          "description": "Main workflow file Git.",
+          "properties": {
+            "workflow_gitURL": {
+              "type": "string",
+              "title": "Git URL (*)",
+              "description": "Workflow's Git repository link. There have to be 'main.nf' and 'nextflow.config' files.",
+              "format": "url",
+              "options": {
+                "inputAttributes": {
+                  "placeholder":  "Example: https://github.com/nextflow/workflow.git"
+                }
+              },
+              "minLength": 1
+            },
+            "workflow_gitTag": {
+              "type": "string",
+              "title": "Git Tag (*)",
+              "minLength": 1,
+              "description": "Workflows's Git branch/tag.",
+              "default": "master"
+            }
+          },
+          "required": [ 
+            "workflow_gitURL", 
+            "workflow_gitTag"
+          ],
+          "minLength": 1
+        }
+      },
+      "required": [
+        "workflow_file"
+      ],
+      "additionalProperties": false
+    },
+    "inputs_meta": {
+      "type": "object",
+      "title": "Input files & arguments",
+      "description": "Definition of the different input elements feed into the OEB Validation.",
+      "properties": {
+        "input": {
+          "type": "object",
+          "title": "File: input (participant's data)",
+          "description": "Metadata for the participant input file containing the data to be validated.",
+          "properties": {
+            "name": {
+              "type": "string",
+              "title": "Nextflow Parameter Identifier",
+              "description": "Identifier internally used by Nextflow to refer to the 'Participant Input' element.",
+              "const": "input",
+              "default": "input",
+              "minLength": 1,
+              "readonly": true
+            },
+            "type": {
+              "type": "string",
+              "title": "Type of input",
+              "description": "Type of input feed into the OEB Validation.",
+              "enum": [
+                "file_user",
+                "file_community",
+                "dir_community",
+                "string",
+                "integer",
+                "number",
+                "boolean",
+                "enum",
+                "enum_mult",
+                "hidden"
+              ],
+              "default": "file_user",
+              "const": "file_user",
+              "options": { 
+                "enum_titles": 
+                  ["user file",
+                  "challenge file",
+                  "user dir",
+                  "challenge dir",
+                  "string",
+                  "integer",
+                  "number",
+                  "boolean",
+                  "enum",
+                  "enum mult",
+                  "hidden"],
+                "hidden": true 
+              },
+              "minLength": 1
+            },
+            "value": {
+              "type": "string",
+              "format": "file",
+              "title": "Input Sample (*)",
+              "description": "Upload the Input sample",
+              "media": {
+                "binaryEncoding": "base64"
+              },
+              "minLength": 1
+            }
+          },
+          "required": [
+            "name",
+            "type",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        "public_ref_dir": {
+          "type": "object",
+          "title": "File: Public Reference dataset",
+          "description": "Metadata for the reference dataset.",
+          "properties": {
+            "name": {
+              "type": "string",
+              "title": "Nextflow Parameter Identifier (*)",
+              "description": "Identifier internally used by Nextflow to refer to the 'Public Reference dataset' element.",
+              "const": "public_ref_dir",
+              "default": "public_ref_dir",
+              "minLength": 1,
+              "readonly": true
+            },
+            "type": {
+              "type": "string",
+              "title": "Type of Input",
+              "description": "Type of input feed into the OEB Validation",
+              "enum": [
+                "file_user",
+                "file_community",
+                "dir_community",
+                "string",
+                "integer",
+                "number",
+                "boolean",
+                "enum",
+                "enum_mult",
+                "hidden"
+              ],
+              "default": "dir_community",
+              "minLength": 1,
+              "const": "dir_community",
+              "options": { 
+                "enum_titles": 
+                  ["user file",
+                  "challenge file",
+                  "user dir",
+                  "challenge dir",
+                  "string",
+                  "integer",
+                  "number",
+                  "boolean",
+                  "enum",
+                  "enum mult",
+                  "hidden"],
+                "hidden": true
+              }
+            },
+            "value": {
+              "type": "string",
+              "format": "file",
+              "title": "Public Reference datasets Sample (*)",
+              "description": "Upload the reference dataset sample",
+              "media": {
+                "binaryEncoding": "base64"
+              },
+              "minLength": 1
+            }
+          },
+          "required": [
+            "name",
+            "type",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        "participant_id": {
+          "type": "object",
+          "title": "Argument: Participant's Identifier",
+          "description": "Description of the 'Participant Identifier' parameter.",
+          "properties": {
+            "name": {
+              "type": "string",
+              "title": "Nextflow Parameter Identifier (*)",
+              "description": "Identifier internally used by nextflow to refer to the 'Participant's Identifier' element.",
+              "const": "participant_id",
+              "default": "participant_id",
+              "readonly": true,
+              "minLength": 1
+            },
+            "type": {
+              "type": "string",
+              "title": "Type of Input",
+              "description": "Type of input feed into the OEB Validation.",
+              "enum": [
+                "file_user",
+                "file_community",
+                "dir_community",
+                "string",
+                "integer",
+                "number",
+                "boolean",
+                "enum",
+                "enum_mult",
+                "hidden"
+              ],
+              "minLength": 1,
+              "default": "string",
+              "const": "string",
+              "options": { 
+                "enum_titles": 
+                  ["user file",
+                  "challenge file",
+                  "user dir",
+                  "challenge dir",
+                  "string",
+                  "integer",
+                  "number",
+                  "boolean",
+                  "enum",
+                  "enum mult",
+                  "hidden"],
+                "hidden": true 
+              }
+            },
+            "value": {
+              "type": "string",
+              "title": "Sample (*)",
+              "description": "Write the participant identifier sample",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "name",
+            "type",
+            "value"
+          ]
+        },
+        "community_id": {
+          "type": "object",
+          "title": "Argument: Community Identifier",
+          "description": "Description of the 'Community Identifier' parameter.",
+          "properties": {
+            "name": {
+              "type": "string",
+              "title": "Nextflow Parameter Identifier (*)",
+              "description": "Identifier internally used by Nextflow to refer to the 'Community Identifier' element.",
+              "const": "community_id",
+              "default": "community_id",
+              "minLength": 1,
+              "readonly": true
+            },
+            "type": {
+              "type": "string",
+              "title": "Type of Input",
+              "description": "Type of input feed into the OEB Validation.",
+              "enum": [
+                "user_file",
+                "challenge_file",
+                "user_dir",
+                "challenge_dir",
+                "string",
+                "integer",
+                "number",
+                "boolean",
+                "enum",
+                "enum_mult",
+                "hidden"
+              ],
+              "default": "string",
+              "const": "string",
+              "options": { 
+                "enum_titles": 
+                  ["user file",
+                  "challenge file",
+                  "user dir",
+                  "challenge dir",
+                  "string",
+                  "integer",
+                  "number",
+                  "boolean",
+                  "enum",
+                  "enum mult",
+                  "hidden"],
+                "hidden": true 
+              },
+              "uniqueItems": true,
+              "minLength": 1
+            },
+            "value": {
+              "type": "string",
+              "title": "Sample (*)",
+              "description": "Write the community identifier sample",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "name",
+            "type",
+            "value"
+          ]
+        },
+        "challenges_ids": {
+          "type": "object",
+          "title": "Challenge Identifiers",
+          "description": "Description of the 'Challenge Identifier' parameter.",
+          "properties": {
+            "name": {
+              "type": "string",
+              "title": "Nextflow Parameter Identifier (*)",
+              "description": "Identifier internally used by Nextflow to refer to the 'Challenge Identifiers' element.",
+              "const": "challenges_ids",
+              "default": "challenges_ids",
+              "readonly": true,
+              "minLength": 1
+            },
+            "type": {
+              "type": "string",
+              "title": "Type of Input",
+              "description": "Type of input feed into the OEB Validation.",
+              "enum": [
+                "user_file",
+                "challenge_file",
+                "user_dir",
+                "challenge_dir",
+                "string",
+                "integer",
+                "number",
+                "boolean",
+                "enum",
+                "enum_mult",
+                "hidden"
+              ],
+              "minLength": 1,
+              "default": "enum_mult",
+              "const": "enum_mult",
+              "options": { 
+                "enum_titles": 
+                  ["user file",
+                  "challenge file",
+                  "user dir",
+                  "challenge dir",
+                  "string",
+                  "integer",
+                  "number",
+                  "boolean",
+                  "enum",
+                  "enum mult",
+                  "hidden"],
+                "hidden": true 
+              }
+            },
+            "challenges": {
+              "type": "array",
+              "title": "Benchmarking challenges",
+              "description": "List of challenge events Validationed by the OEB Validation.",
+              "items": {
+                "type": "object",
+                "title": "Challenge",
+                "properties": {
+                  "value": {
+                    "type": "string",
+                    "title": "Sample (*)",
+                    "description": "Challenge identifier as registered in OpenEBench.",
+                    "minLength": 1,
+                    "options": {
+                      "inputAttributes": {
+                        "placeholder":  "The value of challenge identifier here..."
+                      }
+                    }
+                  }
+                },
+                "required": [
+                  "value"
+                ]
+              },
+              "minItems": 1
+            }
+          },
+          "required": [
+            "name",
+            "type",
+            "challenges"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "input",
+        "public_ref_dir",
+        "participant_id",
+        "community_id",
+        "challenges_ids"
+      ],
+      "minLength": 1
+    },
+    "outputs_meta": {
+      "type": "object",
+      "title": "Output results",
+      "description": "Definition of the different output elements the OEB Validation generate.",
+      "properties": {
+        "validation_results": {
+          "type": "object",
+          "title": "Validation Result",
+          "description": "Metrics derivated from the given input data.",
+          "properties": {
+            "name": {
+              "type": "string",
+              "title": "Internal identifier",
+              "description": "Identifier internally used by Nextflow to refer to the 'Validation Results' element.",
+              "const": "validation_results",
+              "default": "validation_results",
+              "minLength": 1,
+              "readonly": true
+            },
+            "file_type": {
+              "type": "array",
+              "title": "Accepted file types",
+              "description": "File formats that might present the 'Participant Input'. Elegible formats: https://w3id.org/oebDataFormats.",
+              "items": {
+                "type": "string",
+                "format": "term",
+                "ontology": "https://w3id.org/oebDataFormats",
+                "ancestors": "https://w3id.org/oebDataFormats/FormatDatasets",
+                "matchType": "label",
+                "options": {}
+              },
+              "format": "select",
+              "uniqueItems": true,
+              "const": [
+                "http://edamontology.org/format_3464"
+              ],
+              "default": [
+                "http://edamontology.org/format_3464"
+              ],
+              "readonly": true,
+              "minItems": 1
+            },
+            "data_type": {
+              "type": "array",
+              "title": "Accepted dataset types",
+              "description": "Dataset types that 'Particiapnt Input'  might belong to.",
+              "items": {
+                "type": "string",
+                "format": "term",
+                "ontology": "https://w3id.org/oebDatasets",
+                "ancestors": "https://w3id.org/oebDatasets/dataset",
+                "matchType": "label",
+                "options": {}
+              },
+              "format": "select",
+              "uniqueItems": true,
+              "const": [
+                "https://w3id.org/oebDatasets/validated_participant"
+              ],
+              "default": [
+                "https://w3id.org/oebDatasets/validated_participant"
+              ],
+              "readonly": true,
+              "minItems": 1
+            }
+          },
+          "required": [
+            "name",
+            "data_type",
+            "file_type"
+          ],
+          "additionalProperties": false,
+          "minLength": 1
+        },
+        "exit_code": {
+          "type": "string",
+          "title": "Exit code",
+          "description": "Code to know if the metrics step has to start",
+          "minLength": 1,
+          "readonly": true,
+          "options": {"hidden": true}
+        }
+      },
+      "required": [
+        "validation_results",
+        "exit_code"
+      ],
+      "minLength": 1,
+      "options": {"hidden": true}
+    }
+  },
+  "required": [
+    "title",
+    "name",
+    "type",
+    "owner",
+    "inputs_meta",
+    "outputs_meta",
+    "workflow_manager"
+  ],
+  "additionalProperties": false,
+  "format": "categories",
+  "basicCategoryTitle": "STEP 1: Generic Information",
+  "show_errors": "interaction"
+}
