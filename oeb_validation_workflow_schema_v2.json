@@ -121,17 +121,18 @@
         3,
         4
       ],
+      "default": 3,
+      "const": 3,
       "options": { 
         "enum_titles": 
           ["Coming soon",
             "Public",
             "Private",
             "Testing",
-            "Community available"]
+            "Community available"
+          ]
       },
-      "default": 3,
-      "const": 3,
-      "minLength": 1,
+      "minLength": 2,
       "uniqueItems": true
     },
     "infrastructure": {
