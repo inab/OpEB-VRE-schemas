@@ -383,7 +383,12 @@
               "type": "string",
               "title": "Sample (*)",
               "description": "Write the participant identifier sample",
-              "minLength": 1
+              "minLength": 1,
+              "options": {
+                "inputAttributes": {
+                  "placeholder":  "The value of participant identifier here..."
+                }
+              }
             }
           },
           "required": [
@@ -447,7 +452,12 @@
               "type": "string",
               "title": "Sample (*)",
               "description": "Write the community identifier sample",
-              "minLength": 1
+              "minLength": 1,
+              "options": {
+                "inputAttributes": {
+                  "placeholder":  "The value of community identifier here..."
+                }
+              }
             }
           },
           "required": [
