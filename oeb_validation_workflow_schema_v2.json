@@ -592,13 +592,13 @@
       "properties": {
         "validated_participant": {
           "type": "object",
-          "title": "Validation Result",
+          "title": "Validation Of the Participant",
           "description": "Metrics derivated from the given input data.",
           "properties": {
             "name": {
               "type": "string",
               "title": "Nextflow Parameter Identifier (*)",
-              "description": "Identifier internally used by Nextflow to refer to the 'Validation Results' element.",
+              "description": "Identifier internally used by Nextflow to refer to the 'Validated Participant' element.",
               "const": "validated_participant",
               "default": "validated_participant",
               "minLength": 1,
@@ -643,8 +643,8 @@
             "value": {
               "type": "string",
               "format": "file",
-              "title": "Validation Results Sample (*)",
-              "description": "Upload the validation results sample",
+              "title": "Validated Paticipant Sample (*)",
+              "description": "Upload the validated participant data sample",
               "media": {
                 "binaryEncoding": "base64",
                 "type": "application/x-tar"
