@@ -339,10 +339,11 @@
             "value": {
               "type": "string",
               "format": "file",
-              "title": "Public Reference datasets Sample (*)",
-              "description": "Upload the reference dataset sample",
+              "title": "Public Reference datasets Sample - TAR (*)",
+              "description": "Upload the reference dataset sample in TAR format.",
               "media": {
-                "binaryEncoding": "base64"
+                "binaryEncoding": "base64",
+                "type": "application/x-tar"
               },
               "minLength": 1
             }
@@ -589,7 +590,7 @@
       "title": "Output results",
       "description": "Definition of the different output elements the OEB Validation generate.",
       "properties": {
-        "validation_results": {
+        "validated_participant": {
           "type": "object",
           "title": "Validation Result",
           "description": "Metrics derivated from the given input data.",
@@ -598,10 +599,46 @@
               "type": "string",
               "title": "Nextflow Parameter Identifier (*)",
               "description": "Identifier internally used by Nextflow to refer to the 'Validation Results' element.",
-              "const": "validation_results",
-              "default": "validation_results",
+              "const": "validated_participant",
+              "default": "validated_participant",
               "minLength": 1,
               "readonly": true
+            },
+            "type": {
+              "type": "string",
+              "title": "Type of Output",
+              "description": "Type of output (Validated Participant) feed into the OEB Validation.",
+              "enum": [
+                "user_file",
+                "challenge_file",
+                "user_dir",
+                "challenge_dir",
+                "string",
+                "integer",
+                "number",
+                "boolean",
+                "enum",
+                "enum_mult",
+                "hidden"
+              ],
+              "minLength": 1,
+              "default": "user_file",
+              "const": "user_file",
+              "options": { 
+                "enum_titles": 
+                  ["user file",
+                  "challenge file",
+                  "user dir",
+                  "challenge dir",
+                  "string",
+                  "integer",
+                  "number",
+                  "boolean",
+                  "enum",
+                  "enum mult",
+                  "hidden"],
+                "hidden": true 
+              }
             },
             "value": {
               "type": "string",
@@ -609,7 +646,8 @@
               "title": "Validation Results Sample (*)",
               "description": "Upload the validation results sample",
               "media": {
-                "binaryEncoding": "base64"
+                "binaryEncoding": "base64",
+                "type": "application/x-tar"
               },
               "minLength": 1
             }
@@ -633,6 +671,42 @@
               "readonly": true,
               "minLength": 1
             },
+            "type": {
+              "type": "string",
+              "title": "Type of Output",
+              "description": "Type of output (Exit Code) feed into the OEB Validation.",
+              "enum": [
+                "user_file",
+                "challenge_file",
+                "user_dir",
+                "challenge_dir",
+                "string",
+                "integer",
+                "number",
+                "boolean",
+                "enum",
+                "enum_mult",
+                "hidden"
+              ],
+              "minLength": 1,
+              "default": "string",
+              "const": "string",
+              "options": { 
+                "enum_titles": 
+                  ["user file",
+                  "challenge file",
+                  "user dir",
+                  "challenge dir",
+                  "string",
+                  "integer",
+                  "number",
+                  "boolean",
+                  "enum",
+                  "enum mult",
+                  "hidden"],
+                "hidden": true 
+              }
+            },
             "value": {
               "type": "string",
               "title": "Sample (*)",
@@ -650,7 +724,7 @@
         }
       },
       "required": [
-        "validation_results",
+        "validated_participant",
         "exit_code"
       ],
       "minLength": 1

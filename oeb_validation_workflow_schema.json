@@ -781,7 +781,7 @@
       "title": "Output results",
       "description": "Definition of the different output elements the OEB Validation generate.",
       "properties": {
-        "validation_results": {
+        "validated_participant": {
           "type": "object",
           "title": "Validation Result",
           "description": "Metrics derivated from the given input data.",
@@ -790,8 +790,8 @@
               "type": "string",
               "title": "Internal identifier",
               "description": "Identifier internally used by Nextflow to refer to the 'Validation Results' element.",
-              "const": "validation_results",
-              "default": "validation_results",
+              "const": "validated_participant",
+              "default": "validated_participant",
               "minLength": 1,
               "readonly": true
             },
@@ -860,7 +860,7 @@
         }
       },
       "required": [
-        "validation_results",
+        "validated_participant",
         "exit_code"
       ],
       "minLength": 1,
