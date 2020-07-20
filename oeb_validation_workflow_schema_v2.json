@@ -643,8 +643,8 @@
             "value": {
               "type": "string",
               "format": "file",
-              "title": "Validated Paticipant Sample (*)",
-              "description": "Upload the validated participant data sample",
+              "title": "Validated Paticipant Sample (*) - JSON File",
+              "description": "Upload the validated participant data sample in JSON format.",
               "media": {
                 "binaryEncoding": "base64",
                 "type": "application/x-tar"
