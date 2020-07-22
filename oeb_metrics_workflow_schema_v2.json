@@ -674,18 +674,45 @@
             },
             "type": {
               "type": "string",
-              "title": "Nextflow Parameter Identifier (*)",
-              "description": "Identifier internally used by Nextflow to refer to the 'Metrics Results' element.",
-              "const": "assessment_results",
-              "default": "assessment_results",
+              "title": "Type of Output",
+              "description": "Type of output (Assessment Result) feed into the OEB Metrics.",
+              "enum": [
+                "user_file",
+                "challenge_file",
+                "user_dir",
+                "challenge_dir",
+                "string",
+                "integer",
+                "number",
+                "boolean",
+                "enum",
+                "enum_mult",
+                "hidden"
+              ],
               "minLength": 1,
-              "readonly": true
+              "default": "user_file",
+              "const": "user_file",
+              "options": { 
+                "enum_titles": 
+                  ["user file",
+                  "challenge file",
+                  "user dir",
+                  "challenge dir",
+                  "string",
+                  "integer",
+                  "number",
+                  "boolean",
+                  "enum",
+                  "enum mult",
+                  "hidden"],
+                "hidden": true 
+              }
             },
             "value": {
               "type": "string",
               "format": "file",
-              "title": "Validated Paticipant Sample (*)",
-              "description": "Upload the validated participant data sample",
+              "title": "Assessment Result Sample (*) - JSON File",
+              "description": "Upload the Assessment Result data sample in JSON format.",
               "media": {
                 "binaryEncoding": "base64",
                 "type": "application/x-tar"

@@ -272,7 +272,7 @@
             "value": {
               "type": "string",
               "format": "file",
-              "title": "Validated Participant Sample (*)",
+              "title": "Validated Participant Sample - JSON(*)",
               "description": "Upload the Validated Participant sample",
               "media": {
                 "binaryEncoding": "base64"
@@ -339,7 +339,7 @@
             "value": {
               "type": "string",
               "format": "file",
-              "title": "Assessment Result Sample (*)",
+              "title": "Assessment Result Sample - JSON (*)",
               "description": "Upload the Assessment Result sample",
               "media": {
                 "binaryEncoding": "base64"
