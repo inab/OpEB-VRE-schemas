@@ -505,7 +505,7 @@
         },
         "out_dir": {
           "type": "object",
-          "title": "Exit code (*)",
+          "title": "Output Directory (*)",
           "properties": {
             "name": {
               "type": "string",
