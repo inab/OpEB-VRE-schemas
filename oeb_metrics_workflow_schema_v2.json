@@ -488,7 +488,7 @@
           "required": [
             "name",
             "type",
-            "label"
+            "value"
           ]
         },
         "challenges_ids": {
