@@ -315,70 +315,21 @@
               },
               "minLength": 1
             },
-            "label": {
+            "value": {
               "type": "string",
-              "title": "Label (*)",
-              "description": "Name for the participant input as displayed to the researcher at the web site.",
-              "default": "Participant data to evaluate",
+              "format": "file",
+              "title": "Input Sample (*)",
+              "description": "Upload the Input sample",
+              "media": {
+                "binaryEncoding": "base64"
+              },
               "minLength": 1
-            },
-            "help": {
-              "type": "string",
-              "title": "Help text",
-              "description": "Short informative text explaining the 'Participant Input' element. The text is displayed as a tooltip to the researcher at the web site.",
-              "default": "File containing the results of the method under evaluation"
-            },
-            "file_type": {
-              "type": "array",
-              "title": "Accepted file types (*)",
-              "description": "File formats that might present the 'Participant Input'. Elegible formats: https://w3id.org/oebDataFormats.",
-              "items": {
-                "type": "string",
-                "format": "term",
-                "ontology": "https://w3id.org/oebDataFormats",
-                "ancestors": "https://w3id.org/oebDataFormats/FormatDatasets",
-                "matchType": "label",
-                "options": {}
-              },
-              "default": [
-                "http://edamontology.org/format_1476"
-              ],
-              "format": "select",
-              "uniqueItems": true,
-              "minItems": 1
-            },
-            "data_type": {
-              "type": "array",
-              "title": "Accepted dataset types (*)",
-              "description": "Dataset types that 'Particiapnt Input'  might belong to.",
-              "items": {
-                "type": "string",
-                "format": "term",
-                "ontology": "https://w3id.org/oebDatasets",
-                "ancestors": "https://w3id.org/oebDatasets/dataset",
-                "matchType": "label",
-                "options": {}
-              },
-              "format": "select",
-              "uniqueItems": true,
-              "const": [
-                "https://w3id.org/oebDatasets/participant"
-              ],
-              "default": [
-                "https://w3id.org/oebDatasets/participant"
-              ],
-              "options": {
-                "hidden": true
-              },
-              "minItems": 1
             }
           },
           "required": [
             "name",
             "type",
-            "label",
-            "data_type",
-            "file_type"
+            "value"
           ],
           "additionalProperties": false
         },
@@ -431,74 +382,11 @@
                 "hidden": true
               }
             },
-            "label": {
-              "type": "string",
-              "title": "Label",
-              "description": "Label for the dataset as displayed to the researcher at the web site.",
-              "const": "Gold Standard dataset",
-              "default": "Gold Standard dataset",
-              "minLength": 1,
-              "options": {"hidden": true}
-            },
-            "help": {
-              "type": "string",
-              "title": "Help text",
-              "description": "Short informative text explaining the 'Gold Standard dataset' element. The text is displayed as a tooltip to the researcher at the web site.",
-              "const": "Folder containing the Gold Standard dataset",
-              "default": "Folder containing the Gold Standard dataset",
-              "options": {"hidden": true}
-            },
-            "file_type": {
-              "type": "array",
-              "title": "Accepted file types",
-              "description": "File formats that might present the 'Gold Standard dataset'. Elegible formats: https://w3id.org/oebDataFormats.",
-              "items": {
-                "type": "string",
-                "format": "term",
-                "ontology": "https://w3id.org/oebDataFormats",
-                "ancestors": "https://w3id.org/oebDataFormats/FormatDatasets",
-                "matchType": "label",
-                "options": {}
-              },
-              "format": "select",
-              "uniqueItems": true,
-              "const": [
-                "https://w3id.org/oebDataFormats/TAR"
-              ],
-              "default": [
-                "https://w3id.org/oebDataFormats/TAR"
-              ],
-              "minItems": 1,
-              "options": {"hidden": true}
-            },
-            "data_type": {
-              "type": "array",
-              "title": "Accepted dataset types",
-              "description": "Dataset types that 'Gold Standard dataset'  might belong to.",
-              "items": {
-                "type": "string",
-                "format": "term",
-                "ontology": "https://w3id.org/oebDatasets",
-                "ancestors": "https://w3id.org/oebDatasets/dataset",
-                "matchType": "label",
-                "options": {}
-              },
-              "format": "select",
-              "uniqueItems": true,
-              "const": [
-                "https://w3id.org/oebDatasets/metrics_reference"
-              ],
-              "default": [
-                "https://w3id.org/oebDatasets/metrics_reference"
-              ],
-              "minItems": 1,
-              "options": {"hidden": true}
-            },
             "value": {
               "type": "string",
               "format": "file",
-              "title": "TAR file (*)",
-              "description": "Upload the reference dataset",
+              "title": "Gold Standard dataset Sample - TAR file (*)",
+              "description": "Upload the Gold Standard dataset",
               "media": {
                 "binaryEncoding": "base64",
                 "type": "application/x-tar"
@@ -509,10 +397,7 @@
           "required": [
             "name",
             "type",
-            "label",
-            "value",
-            "data_type",
-            "file_type"
+            "value"
           ],
           "additionalProperties": false
         },
@@ -565,24 +450,22 @@
                 "hidden": true 
               }
             },
-            "label": {
+            "value": {
               "type": "string",
-              "title": "Label (*)",
-              "description": "Label for the argument 'participant_id' as displayed to the researcher at the web site.",
-              "default": "Participant Identifier",
-              "minLength": 1
-            },
-            "help": {
-              "type": "string",
-              "title": "Help text",
-              "description": "Short informative text explaining the 'Participant Identifier' element. The text is displayed as a tooltip to the researcher at the web site.",
-              "default": "Participant identifier as a label for your results (e.g. 'myMethod'). Format: String with no special characters"
+              "title": "Participant Identifier Sample (*)",
+              "description": "Write the participant identifier sample",
+              "minLength": 1,
+              "options": {
+                "inputAttributes": {
+                  "placeholder":  "The value of participant identifier here..."
+                }
+              }
             }
           },
           "required": [
             "name",
             "type",
-            "label"
+            "value"
           ]
         },
         "community_id": {
@@ -636,18 +519,16 @@
               "uniqueItems": true,
               "minLength": 1
             },
-            "label": {
+            "value": {
               "type": "string",
-              "title": "Label (*)",
-              "description": "Label for the argument 'community_id' as displayed to the researcher at the web site.",
-              "default": "OpenEBench community identifier",
-              "minLength": 1
-            },
-            "help": {
-              "type": "string",
-              "title": "Help text",
-              "description": "Short informative text explaining the 'Community Identifier' element. The text is displayed as a tooltip to the researcher at the web site.",
-              "default": "Scientic community Identifier as registered at OpenEbench https://openebench.bsc.es/scientific"
+              "title": "Community Identifier Sample (*)",
+              "description": "Write the community identifier sample",
+              "minLength": 1,
+              "options": {
+                "inputAttributes": {
+                  "placeholder":  "The value of community identifier here..."
+                }
+              }
             }
           },
           "required": [
@@ -706,19 +587,6 @@
                 "hidden": true 
               }
             },
-            "label": {
-              "type": "string",
-              "title": "Label",
-              "description": "Label for the argument 'challenges_ids' as displayed to the researcher at the web site.",
-              "default": "OpenEBench community Identifier",
-              "minLength": 1
-            },
-            "help": {
-              "type": "string",
-              "title": "Help text",
-              "description": "Short informative text explaining the 'Challenge Identifiers' element. The text is displayed as a tooltip to the researcher at the web site.",
-              "default": "List of benchmarking challenges evaluated for the OEB Metrics."
-            },
             "challenges": {
               "type": "array",
               "title": "Benchmarking challenges",
@@ -737,22 +605,10 @@
                         "placeholder":  "The value of challenge identifier here..."
                       }
                     }
-                  },
-                  "description": {
-                    "type": "string",
-                    "title": "Description (*)",
-                    "description": "Challenge name displayed to researcher.",
-                    "minLength": 1,
-                    "options": {
-                      "inputAttributes": {
-                        "placeholder":  "The description of challenge here..."
-                      }
-                    }
                   }
                 },
                 "required": [
-                  "value",
-                  "description"
+                  "value"
                 ]
               },
               "minItems": 1
@@ -760,7 +616,6 @@
           },
           "required": [
             "name",
-            "label",
             "type",
             "challenges"
           ],
@@ -797,64 +652,65 @@
           "properties": {
             "name": {
               "type": "string",
-              "title": "Internal identifier",
+              "title": "Nextflow Parameter Identifier (*)",
               "description": "Identifier internally used by Nextflow to refer to the 'Metrics Results' element.",
               "const": "assessment_results",
               "default": "assessment_results",
               "minLength": 1,
               "readonly": true
             },
-            "file_type": {
-              "type": "array",
-              "title": "Accepted file types",
-              "description": "File formats that might present the 'Participant Input'. Elegible formats: https://w3id.org/oebDataFormats.",
-              "items": {
-                "type": "string",
-                "format": "term",
-                "ontology": "https://w3id.org/oebDataFormats",
-                "ancestors": "https://w3id.org/oebDataFormats/FormatDatasets",
-                "matchType": "label",
-                "options": {}
-              },
-              "format": "select",
-              "uniqueItems": true,
-              "const": [
-                "http://edamontology.org/format_3464"
+            "type": {
+              "type": "string",
+              "title": "Type of Output",
+              "description": "Type of output (Metrics Results) feed into the OEB Metrics.",
+              "enum": [
+                "user_file",
+                "challenge_file",
+                "user_dir",
+                "challenge_dir",
+                "string",
+                "integer",
+                "number",
+                "boolean",
+                "enum",
+                "enum_mult",
+                "hidden"
               ],
-              "default": [
-                "http://edamontology.org/format_3464"
-              ],
-              "readonly": true,
-              "minItems": 1
+              "minLength": 1,
+              "default": "user_file",
+              "const": "user_file",
+              "options": { 
+                "enum_titles": 
+                  ["user file",
+                  "challenge file",
+                  "user dir",
+                  "challenge dir",
+                  "string",
+                  "integer",
+                  "number",
+                  "boolean",
+                  "enum",
+                  "enum mult",
+                  "hidden"],
+                "hidden": true 
+              }
             },
-            "data_type": {
-              "type": "array",
-              "title": "Accepted dataset types",
-              "description": "Dataset types that 'Particiapnt Input'  might belong to.",
-              "items": {
-                "type": "string",
-                "format": "term",
-                "ontology": "https://w3id.org/oebDatasets",
-                "ancestors": "https://w3id.org/oebDatasets/dataset",
-                "matchType": "label",
-                "options": {}
+            "value": {
+              "type": "string",
+              "format": "file",
+              "title": "Validated Paticipant Sample (*)",
+              "description": "Upload the validated participant data sample",
+              "media": {
+                "binaryEncoding": "base64",
+                "type": "application/x-tar"
               },
-              "format": "select",
-              "uniqueItems": true,
-              "const": [
-                "https://w3id.org/oebDatasets/assessment"
-              ],
-              "default": [
-                "https://w3id.org/oebDatasets/assessment"
-              ],
-              "readonly": true,
-              "minItems": 1
+              "minLength": 1
             }
           },
           "required": [
             "name",
-            "data_type",
-            "file_type"
+            "type",
+            "value"
           ],
           "additionalProperties": false,
           "minLength": 1

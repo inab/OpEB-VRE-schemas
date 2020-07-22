@@ -77,17 +77,6 @@
         "hidden": true
       }
     },
-    "title": {
-      "type": "string",
-      "title": "Title (*)",
-      "minLength": 1,
-      "description": "Title for the new Consolidation step.",
-      "options": {
-        "inputAttributes": {
-          "placeholder":  "The title here..."
-        }
-      }
-    },
     "name": {
       "type": "string",
       "title": "Name (*)",
@@ -315,70 +304,21 @@
               },
               "minLength": 1
             },
-            "label": {
+            "value": {
               "type": "string",
-              "title": "Label (*)",
-              "description": "Name for the participant input as displayed to the researcher at the web site.",
-              "default": "Participant data validated",
+              "format": "file",
+              "title": "Validated Participant Sample (*)",
+              "description": "Upload the Validated Participant sample",
+              "media": {
+                "binaryEncoding": "base64"
+              },
               "minLength": 1
-            },
-            "help": {
-              "type": "string",
-              "title": "Help text",
-              "description": "Short informative text explaining the 'Participant Input' element. The text is displayed as a tooltip to the researcher at the web site.",
-              "default": "File containing the results of the method under evaluation"
-            },
-            "file_type": {
-              "type": "array",
-              "title": "Accepted file types (*)",
-              "description": "File formats that might present the 'Validated Participant Data'. Elegible formats: https://w3id.org/oebDataFormats.",
-              "items": {
-                "type": "string",
-                "format": "term",
-                "ontology": "https://w3id.org/oebDataFormats",
-                "ancestors": "https://w3id.org/oebDataFormats/FormatDatasets",
-                "matchType": "label",
-                "options": {}
-              },
-              "default": [
-                "http://edamontology.org/format_1476"
-              ],
-              "format": "select",
-              "uniqueItems": true,
-              "minItems": 1
-            },
-            "data_type": {
-              "type": "array",
-              "title": "Accepted dataset types (*)",
-              "description": "Dataset types that 'Validated Participant Data'  might belong to.",
-              "items": {
-                "type": "string",
-                "format": "term",
-                "ontology": "https://w3id.org/oebDatasets",
-                "ancestors": "https://w3id.org/oebDatasets/dataset",
-                "matchType": "label",
-                "options": {}
-              },
-              "format": "select",
-              "uniqueItems": true,
-              "const": [
-                "https://w3id.org/oebDatasets/validated_participant"
-              ],
-              "default": [
-                "https://w3id.org/oebDatasets/validated_participant"
-              ],
-              "options": {
-                "hidden": true
-              },
-              "minItems": 1
             }
           },
           "required": [
             "name",
             "type",
-            "label",
-            "data_type",
-            "file_type"
+            "value"
           ],
           "additionalProperties": false
         },
@@ -431,70 +371,21 @@
               },
               "minLength": 1
             },
-            "label": {
+            "value": {
               "type": "string",
-              "title": "Label (*)",
-              "description": "Name for the assessment result as displayed to the researcher at the web site.",
-              "default": "Assessment result to evaluate",
+              "format": "file",
+              "title": "Assessment Result Sample (*)",
+              "description": "Upload the Assessment Result sample",
+              "media": {
+                "binaryEncoding": "base64"
+              },
               "minLength": 1
-            },
-            "help": {
-              "type": "string",
-              "title": "Help text",
-              "description": "Short informative text explaining the 'Assessment Result' element. The text is displayed as a tooltip to the researcher at the web site.",
-              "default": "File containing the results of the method under evaluation"
-            },
-            "file_type": {
-              "type": "array",
-              "title": "Accepted file types (*)",
-              "description": "File formats that might present the 'Assessment Results'. Elegible formats: https://w3id.org/oebDataFormats.",
-              "items": {
-                "type": "string",
-                "format": "term",
-                "ontology": "https://w3id.org/oebDataFormats",
-                "ancestors": "https://w3id.org/oebDataFormats/FormatDatasets",
-                "matchType": "label",
-                "options": {}
-              },
-              "default": [
-                "http://edamontology.org/format_1476"
-              ],
-              "format": "select",
-              "uniqueItems": true,
-              "minItems": 1
-            },
-            "data_type": {
-              "type": "array",
-              "title": "Accepted dataset types (*)",
-              "description": "Dataset types that 'Assessment Results'  might belong to.",
-              "items": {
-                "type": "string",
-                "format": "term",
-                "ontology": "https://w3id.org/oebDatasets",
-                "ancestors": "https://w3id.org/oebDatasets/dataset",
-                "matchType": "label",
-                "options": {}
-              },
-              "format": "select",
-              "uniqueItems": true,
-              "const": [
-                "https://w3id.org/oebDatasets/assessment"
-              ],
-              "default": [
-                "https://w3id.org/oebDatasets/assessment"
-              ],
-              "options": {
-                "hidden": true
-              },
-              "minItems": 1
             }
           },
           "required": [
             "name",
             "type",
-            "label",
-            "data_type",
-            "file_type"
+            "value"
           ],
           "additionalProperties": false
         },
@@ -658,52 +549,6 @@
               "default": "data_model_export_dir",
               "minLength": 1,
               "readonly": true
-            },
-            "file_type": {
-              "type": "array",
-              "title": "Accepted file types",
-              "description": "File formats that might present the 'Data Model Export Directory'. Elegible formats: https://w3id.org/oebDataFormats.",
-              "items": {
-                "type": "string",
-                "format": "term",
-                "ontology": "https://w3id.org/oebDataFormats",
-                "ancestors": "https://w3id.org/oebDataFormats/FormatDatasets",
-                "matchType": "label",
-                "options": {}
-              },
-              "format": "select",
-              "uniqueItems": true,
-              "const": [
-                "http://edamontology.org/format_3464"
-              ],
-              "default": [
-                "http://edamontology.org/format_3464"
-              ],
-              "readonly": true,
-              "minItems": 1
-            },
-            "data_type": {
-              "type": "array",
-              "title": "Accepted dataset types",
-              "description": "Dataset types that 'Data Model Export Directory'  might belong to.",
-              "items": {
-                "type": "string",
-                "format": "term",
-                "ontology": "https://w3id.org/oebDatasets",
-                "ancestors": "https://w3id.org/oebDatasets/dataset",
-                "matchType": "label",
-                "options": {}
-              },
-              "format": "select",
-              "uniqueItems": true,
-              "const": [
-                "https://w3id.org/oebDatasets/validated_participant"
-              ],
-              "default": [
-                "https://w3id.org/oebDatasets/validated_participant"
-              ],
-              "readonly": true,
-              "minItems": 1
             }
           },
           "required": [

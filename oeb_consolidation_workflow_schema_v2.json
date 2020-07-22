@@ -40,7 +40,7 @@
       "type": "object",
       "title": "Owner",
       "minLength": 1,
-      "description": "OEB Validation author. Corresponds to a VRE user identifier.",
+      "description": "OEB Consolidation author. Corresponds to a VRE user identifier.",
       "properties": {
         "institution": {
           "type": "string",
@@ -81,7 +81,7 @@
       "type": "string",
       "title": "Name (*)",
       "minLength": 1,
-      "description": "Name for the new Validation step.",
+      "description": "Name for the new Consolidation step.",
       "options": {
         "inputAttributes": {
           "placeholder":  "The name here..."
@@ -91,7 +91,7 @@
     "description": {
       "type": "string",
       "title": "Description",
-      "description": "Short description detailing what the OEB Validation does.",
+      "description": "Short description detailing what the OEB Consolidation does.",
       "options": {
         "inputAttributes": {
           "placeholder":  "The short description here..."
@@ -137,12 +137,12 @@
     "infrastructure": {
       "type": "object",
       "title": "Infrastructure details",
-      "description": "Set the computational resources required by the Valitation step.",
+      "description": "Set the computational resources required by the Consolidation step.",
       "properties": {
         "cpus": {
           "type": "integer",
           "title": "CPUs",
-          "description": "Cores required to run the Validation step.",
+          "description": "Cores required to run the Consolidation step.",
           "minimum": 1,
           "maximum": 12,
           "default": 1
@@ -150,7 +150,7 @@
         "memory": {
           "type": "number",
           "title": "Memory",
-          "description": "RAM memory in GB required to run the Validation step.",
+          "description": "RAM memory in GB required to run the Consolidation step.",
           "minimum": 0,
           "maximum": 24,
           "default": 4
@@ -158,7 +158,7 @@
         "wallTime": {
           "type": "integer",
           "title": "Walltime",
-          "description": "Maximun time in minutes taken to run the Validation step.",
+          "description": "Maximun time in minutes taken to run the Consolidation step.",
           "minimum": 5,
           "maximum": 1440,
           "default": 1440
@@ -176,7 +176,7 @@
     "nextflow_files": {
       "type": "object",
       "title": "Nextflow files",
-      "description": "Location of the nextflow files implementing the Validation step.",
+      "description": "Location of the nextflow files implementing the Consolidation step.",
       "properties": {
         "workflow_file": {
           "type": "object",
@@ -220,24 +220,24 @@
       "title": "Input files & arguments",
       "description": "Definition of the different input elements feed into the OEB Validation.",
       "properties": {
-        "input": {
+        "validated_participant": {
           "type": "object",
-          "title": "File: input (participant's data)",
-          "description": "Metadata for the participant input file containing the data to be validated.",
+          "title": "File: Validated Participant data",
+          "description": "Metadata for the validated participant file containing the data validated.",
           "properties": {
             "name": {
               "type": "string",
               "title": "Nextflow Parameter Identifier",
-              "description": "Identifier internally used by Nextflow to refer to the 'Participant Input' element.",
-              "const": "input",
-              "default": "input",
+              "description": "Identifier internally used by Nextflow to refer to the 'Validated Participant data' element.",
+              "const": "validated_participant",
+              "default": "validated_participant",
               "minLength": 1,
               "readonly": true
             },
             "type": {
               "type": "string",
-              "title": "Type of input",
-              "description": "Type of input feed into the OEB Validation.",
+              "title": "Type of Input",
+              "description": "Type of input feed into the OEB Consolidation.",
               "enum": [
                 "file_user",
                 "file_community",
@@ -272,8 +272,8 @@
             "value": {
               "type": "string",
               "format": "file",
-              "title": "Input Sample (*)",
-              "description": "Upload the Input sample",
+              "title": "Validated Participant Sample (*)",
+              "description": "Upload the Validated Participant sample",
               "media": {
                 "binaryEncoding": "base64"
               },
@@ -287,24 +287,91 @@
           ],
           "additionalProperties": false
         },
-        "public_ref_dir": {
+        "assessment_results": {
           "type": "object",
-          "title": "File: Public Reference dataset",
+          "title": "File: Assessment Results",
+          "description": "Metadata for the assessment results file containing the data to be compared.",
+          "properties": {
+            "name": {
+              "type": "string",
+              "title": "Nextflow Parameter Identifier",
+              "description": "Identifier internally used by Nextflow to refer to the 'Assessment results' element.",
+              "const": "assessment_results",
+              "default": "assessment_results",
+              "minLength": 1,
+              "readonly": true
+            },
+            "type": {
+              "type": "string",
+              "title": "Type of input",
+              "description": "Type of input feed into the OEB Consolidation.",
+              "enum": [
+                "file_user",
+                "file_community",
+                "dir_community",
+                "string",
+                "integer",
+                "number",
+                "boolean",
+                "enum",
+                "enum_mult",
+                "hidden"
+              ],
+              "default": "file_user",
+              "const": "file_user",
+              "options": { 
+                "enum_titles": 
+                  ["user file",
+                  "challenge file",
+                  "user dir",
+                  "challenge dir",
+                  "string",
+                  "integer",
+                  "number",
+                  "boolean",
+                  "enum",
+                  "enum mult",
+                  "hidden"],
+                "hidden": true 
+              },
+              "minLength": 1
+            },
+            "value": {
+              "type": "string",
+              "format": "file",
+              "title": "Assessment Result Sample (*)",
+              "description": "Upload the Assessment Result sample",
+              "media": {
+                "binaryEncoding": "base64"
+              },
+              "minLength": 1
+            }
+          },
+          "required": [
+            "name",
+            "type",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        "assess_dir": {
+          "type": "object",
+          "title": "Directory: Assessment Directory",
           "description": "Metadata for the reference dataset.",
           "properties": {
             "name": {
               "type": "string",
-              "title": "Nextflow Parameter Identifier (*)",
-              "description": "Identifier internally used by Nextflow to refer to the 'Public Reference dataset' element.",
-              "const": "public_ref_dir",
-              "default": "public_ref_dir",
+              "title": "Nextflow Parameter Identifier",
+              "description": "Identifier internally used by Nextflow to refer to the 'Assessment Directory' element.",
+              "const": "assess_dir",
+              "default": "assess_dir",
               "minLength": 1,
               "readonly": true
             },
             "type": {
               "type": "string",
               "title": "Type of Input",
-              "description": "Type of input feed into the OEB Validation",
+              "description": "Type of input feed into the OEB Consolidation",
               "enum": [
                 "file_user",
                 "file_community",
@@ -339,11 +406,10 @@
             "value": {
               "type": "string",
               "format": "file",
-              "title": "Public Reference datasets Sample - TAR (*)",
-              "description": "Upload the reference dataset sample in TAR format.",
+              "title": "Assessment Directory Sample - TAR(*)",
+              "description": "Upload the Assessment Directory sample",
               "media": {
-                "binaryEncoding": "base64",
-                "type": "application/x-tar"
+                "binaryEncoding": "base64"
               },
               "minLength": 1
             }
@@ -352,255 +418,33 @@
             "name",
             "type",
             "value"
-          ],
-          "additionalProperties": false
-        },
-        "participant_id": {
-          "type": "object",
-          "title": "Argument: Participant's Identifier",
-          "description": "Description of the 'Participant Identifier' parameter.",
-          "properties": {
-            "name": {
-              "type": "string",
-              "title": "Nextflow Parameter Identifier (*)",
-              "description": "Identifier internally used by nextflow to refer to the 'Participant's Identifier' element.",
-              "const": "participant_id",
-              "default": "participant_id",
-              "readonly": true,
-              "minLength": 1
-            },
-            "type": {
-              "type": "string",
-              "title": "Type of Input",
-              "description": "Type of input feed into the OEB Validation.",
-              "enum": [
-                "file_user",
-                "file_community",
-                "dir_community",
-                "string",
-                "integer",
-                "number",
-                "boolean",
-                "enum",
-                "enum_mult",
-                "hidden"
-              ],
-              "minLength": 1,
-              "default": "string",
-              "const": "string",
-              "options": { 
-                "enum_titles": 
-                  ["user file",
-                  "challenge file",
-                  "user dir",
-                  "challenge dir",
-                  "string",
-                  "integer",
-                  "number",
-                  "boolean",
-                  "enum",
-                  "enum mult",
-                  "hidden"],
-                "hidden": true 
-              }
-            },
-            "value": {
-              "type": "string",
-              "title": "Sample (*)",
-              "description": "Write the participant identifier sample",
-              "minLength": 1,
-              "options": {
-                "inputAttributes": {
-                  "placeholder":  "The value of participant identifier here..."
-                }
-              }
-            }
-          },
-          "required": [
-            "name",
-            "type",
-            "value"
-          ]
-        },
-        "community_id": {
-          "type": "object",
-          "title": "Argument: Community Identifier",
-          "description": "Description of the 'Community Identifier' parameter.",
-          "properties": {
-            "name": {
-              "type": "string",
-              "title": "Nextflow Parameter Identifier (*)",
-              "description": "Identifier internally used by Nextflow to refer to the 'Community Identifier' element.",
-              "const": "community_id",
-              "default": "community_id",
-              "minLength": 1,
-              "readonly": true
-            },
-            "type": {
-              "type": "string",
-              "title": "Type of Input",
-              "description": "Type of input feed into the OEB Validation.",
-              "enum": [
-                "user_file",
-                "challenge_file",
-                "user_dir",
-                "challenge_dir",
-                "string",
-                "integer",
-                "number",
-                "boolean",
-                "enum",
-                "enum_mult",
-                "hidden"
-              ],
-              "default": "string",
-              "const": "string",
-              "options": { 
-                "enum_titles": 
-                  ["user file",
-                  "challenge file",
-                  "user dir",
-                  "challenge dir",
-                  "string",
-                  "integer",
-                  "number",
-                  "boolean",
-                  "enum",
-                  "enum mult",
-                  "hidden"],
-                "hidden": true 
-              },
-              "uniqueItems": true,
-              "minLength": 1
-            },
-            "value": {
-              "type": "string",
-              "title": "Sample (*)",
-              "description": "Write the community identifier sample",
-              "minLength": 1,
-              "options": {
-                "inputAttributes": {
-                  "placeholder":  "The value of community identifier here..."
-                }
-              }
-            }
-          },
-          "required": [
-            "name",
-            "type",
-            "value"
-          ]
-        },
-        "challenges_ids": {
-          "type": "object",
-          "title": "Challenge Identifiers",
-          "description": "Description of the 'Challenge Identifier' parameter.",
-          "properties": {
-            "name": {
-              "type": "string",
-              "title": "Nextflow Parameter Identifier (*)",
-              "description": "Identifier internally used by Nextflow to refer to the 'Challenge Identifiers' element.",
-              "const": "challenges_ids",
-              "default": "challenges_ids",
-              "readonly": true,
-              "minLength": 1
-            },
-            "type": {
-              "type": "string",
-              "title": "Type of Input",
-              "description": "Type of input feed into the OEB Validation.",
-              "enum": [
-                "user_file",
-                "challenge_file",
-                "user_dir",
-                "challenge_dir",
-                "string",
-                "integer",
-                "number",
-                "boolean",
-                "enum",
-                "enum_mult",
-                "hidden"
-              ],
-              "minLength": 1,
-              "default": "enum_mult",
-              "const": "enum_mult",
-              "options": { 
-                "enum_titles": 
-                  ["user file",
-                  "challenge file",
-                  "user dir",
-                  "challenge dir",
-                  "string",
-                  "integer",
-                  "number",
-                  "boolean",
-                  "enum",
-                  "enum mult",
-                  "hidden"],
-                "hidden": true 
-              }
-            },
-            "challenges": {
-              "type": "array",
-              "title": "Benchmarking challenges",
-              "description": "List of challenge events Validationed by the OEB Validation.",
-              "items": {
-                "type": "object",
-                "title": "Challenge",
-                "properties": {
-                  "value": {
-                    "type": "string",
-                    "title": "Sample (*)",
-                    "description": "Challenge identifier as registered in OpenEBench.",
-                    "minLength": 1,
-                    "options": {
-                      "inputAttributes": {
-                        "placeholder":  "The value of challenge identifier here..."
-                      }
-                    }
-                  }
-                },
-                "required": [
-                  "value"
-                ]
-              },
-              "minItems": 1
-            }
-          },
-          "required": [
-            "name",
-            "type",
-            "challenges"
           ],
           "additionalProperties": false
         }
       },
       "required": [
-        "input",
-        "public_ref_dir",
-        "participant_id",
-        "community_id",
-        "challenges_ids"
+        "validated_participant",
+        "assessment_results",
+        "assess_dir"
       ],
       "minLength": 1
     },
     "outputs_meta": {
       "type": "object",
-      "title": "Output results",
-      "description": "Definition of the different output elements the OEB Validation generate.",
+      "title": "Output Results",
+      "description": "Definition of the different 'Data Model Export Directories' elements the OEB Consolidation generate.",
       "properties": {
-        "validated_participant": {
+        "data_model_export_dir": {
           "type": "object",
-          "title": "Validation Of the Participant",
+          "title": "Data Model Export Directory",
           "description": "Metrics derivated from the given input data.",
           "properties": {
             "name": {
               "type": "string",
               "title": "Nextflow Parameter Identifier (*)",
-              "description": "Identifier internally used by Nextflow to refer to the 'Validated Participant' element.",
-              "const": "validated_participant",
-              "default": "validated_participant",
+              "description": "Identifier internally used by Nextflow to refer to the 'Consolidation Participant' element.",
+              "const": "data_model_export_dir",
+              "default": "data_model_export_dir",
               "minLength": 1,
               "readonly": true
             },
@@ -622,8 +466,8 @@
                 "hidden"
               ],
               "minLength": 1,
-              "default": "user_file",
-              "const": "user_file",
+              "default": "user_dir",
+              "const": "user_dir",
               "options": { 
                 "enum_titles": 
                   ["user file",
@@ -643,8 +487,8 @@
             "value": {
               "type": "string",
               "format": "file",
-              "title": "Validated Paticipant Sample (*)",
-              "description": "Upload the validated participant data sample",
+              "title": "Data Model Export Directory Sample - TAR (*)",
+              "description": "Upload the Data Model Export Directory sample",
               "media": {
                 "binaryEncoding": "base64",
                 "type": "application/x-tar"
@@ -654,27 +498,28 @@
           },
           "required": [
             "name",
+            "type",
             "value"
           ],
           "additionalProperties": false
         },
-        "exit_code": {
+        "out_dir": {
           "type": "object",
           "title": "Exit code (*)",
           "properties": {
             "name": {
               "type": "string",
               "title": "Nextflow Parameter Identifier (*)",
-              "description": "Identifier internally used by nextflow to refer to the 'Exit Code' element.",
-              "const": "exit_code",
-              "default": "exit_code",
+              "description": "Identifier internally used by nextflow to refer to the 'Output Directory' element.",
+              "const": "out_dir",
+              "default": "out_dir",
               "readonly": true,
               "minLength": 1
             },
             "type": {
               "type": "string",
               "title": "Type of Output",
-              "description": "Type of output (Exit Code) feed into the OEB Validation.",
+              "description": "Type of output (Output Directory) feed into the OEB Consolidation.",
               "enum": [
                 "user_file",
                 "challenge_file",
@@ -689,8 +534,8 @@
                 "hidden"
               ],
               "minLength": 1,
-              "default": "string",
-              "const": "string",
+              "default": "user_dir",
+              "const": "user_dir",
               "options": { 
                 "enum_titles": 
                   ["user file",
@@ -709,23 +554,27 @@
             },
             "value": {
               "type": "string",
-              "title": "Sample (*)",
-              "const": "1",
-              "default": "1",
-              "minLength": 1,
-              "readonly": true
+              "format": "file",
+              "title": "Output Directory Sample - TAR (*)",
+              "description": "Upload the Output Directory sample",
+              "media": {
+                "binaryEncoding": "base64",
+                "type": "application/x-tar"
+              },
+              "minLength": 1
             }
           },
           "required": [
             "name",
+            "type",
             "value"
           ],
           "additionalProperties": false
         }
       },
       "required": [
-        "validated_participant",
-        "exit_code"
+        "data_model_export_dir",
+        "out_dir"
       ],
       "minLength": 1
     }
