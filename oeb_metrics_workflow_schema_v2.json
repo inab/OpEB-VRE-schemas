@@ -190,7 +190,7 @@
               "format": "url",
               "options": {
                 "inputAttributes": {
-                  "placeholder":  "Example: https://github.com/user/repo-with-all-necessary-files.git"
+                  "placeholder":  "Example: https://gitlab.bsc.es/user/repo-with-all-necessary-files.git"
                 }
               },
               "minLength": 1
@@ -201,11 +201,18 @@
               "minLength": 1,
               "description": "Git branch/tag where all files are located.",
               "default": "master"
+            },
+            "privateToken": {
+              "type": "string",
+              "title": "Personal Access Token (*)",
+              "minLength": 1,
+              "description": "Gitlab personal access token."
             }
           },
           "required": [ 
             "gitURL", 
-            "gitTag"
+            "gitTag",
+            "privateToken"
           ],
           "minLength": 1
         }
