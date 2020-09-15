@@ -2,12 +2,12 @@
   "$id": "https://openebench.bsc.es/vre/Validation-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
-  "title": "OEB Benchmarking Validation Workflow",
+  "title": "OEB Benchmarking Validation Block",
   "description": "Specify a new OEB validation WF using a Nextflow.",
   "properties": {
     "type": {
       "type": "string",
-      "title": "Benchmarking Workflow Type",
+      "title": "Benchmarking Block Type",
       "description": "Classification of the different benchmarking worflow types.",
       "default": "validation",
       "const": "validation",
@@ -113,7 +113,7 @@
     "publication_status": {
       "type": "integer",
       "title": "Publication Status",
-      "description": "Status to select which users can see the process.",
+      "description": "Status to select which users can see the block.",
       "enum": [
         0,
         1,
@@ -175,7 +175,7 @@
     },
     "nextflow_files": {
       "type": "object",
-      "title": "Nextflow files, Dockerfile and YML file",
+      "title": "Nextflow files",
       "description": "Location of the files implementing the Validation step.",
       "properties": {
         "files": {
