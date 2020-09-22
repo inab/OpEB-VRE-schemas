@@ -1,46 +1,15 @@
 {
-  "$id": "https://openebench.bsc.es/vre/Validation-schema",
+  "$id": "https://openebench.bsc.es/vre/Block-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
-  "title": "OEB Benchmarking Validation Block",
-  "description": "Specify a new OEB validation WF using a Nextflow.",
+  "title": "OEB Benchmarking Block",
+  "description": "Specify a new OEB Block using a Nextflow.",
   "properties": {
-    "type": {
-      "type": "string",
-      "title": "Benchmarking Block Type",
-      "description": "Classification of the different benchmarking worflow types.",
-      "default": "validation",
-      "const": "validation",
-      "minLength": 1,
-      "readonly": true,
-      "item": {
-        "type": "string",
-        "enum": [
-          "validation",
-          "metrics",
-          "consolidation"
-        ]
-      },
-      "uniqueItems": true,
-      "options": {
-        "hidden": true
-      }
-    },
-    "external": {
-      "type": "boolean",
-      "title": "External Benchmarking Workflow",
-      "description": "External WFs are elegible to be run by partipants.",
-      "default": true,
-      "const": true,
-      "options": {
-        "hidden": true
-      }
-    },
     "owner": {
       "type": "object",
       "title": "Owner",
       "minLength": 1,
-      "description": "OEB Validation author. Corresponds to a VRE user identifier.",
+      "description": "OEB Block author. Corresponds to a VRE user identifier.",
       "properties": {
         "institution": {
           "type": "string",
@@ -81,7 +50,7 @@
       "type": "string",
       "title": "Name (*)",
       "minLength": 1,
-      "description": "Name for the new Validation step.",
+      "description": "Name for the new Validation step. https://www.google.es/",
       "options": {
         "inputAttributes": {
           "placeholder":  "The name here..."
@@ -91,7 +60,7 @@
     "description": {
       "type": "string",
       "title": "Description",
-      "description": "Short description detailing what the OEB Validation does.",
+      "description": "Short description detailing what the OEB Block does.",
       "options": {
         "inputAttributes": {
           "placeholder":  "The short description here..."
@@ -137,12 +106,12 @@
     "infrastructure": {
       "type": "object",
       "title": "Infrastructure details",
-      "description": "Set the computational resources required by the Valitation step.",
+      "description": "Set the computational resources required by the OEB Block.",
       "properties": {
         "cpus": {
           "type": "integer",
           "title": "CPUs",
-          "description": "Cores required to run the Validation step.",
+          "description": "Cores required to run the OEB Block.",
           "minimum": 1,
           "maximum": 12,
           "default": 1
@@ -150,7 +119,7 @@
         "memory": {
           "type": "number",
           "title": "Memory",
-          "description": "RAM memory in GB required to run the Validation step.",
+          "description": "RAM memory in GB required to run the OEB Block.",
           "minimum": 0,
           "maximum": 24,
           "default": 4
@@ -158,10 +127,25 @@
         "wallTime": {
           "type": "integer",
           "title": "Walltime",
-          "description": "Maximun time in minutes taken to run the Validation step.",
+          "description": "Maximun time in minutes taken to run the OEB Block.",
           "minimum": 5,
           "maximum": 1440,
           "default": 1440
+        },
+        "clouds": {
+          "type": "array",
+          "title": "Cloud infrastructure",
+          "description": "Cloud infrastructure where the Block is going to be installed.",
+          "items": {
+            "type": "string",
+            "enum": [
+              "life-bsc"
+            ]
+          },
+          "uniqueItems": true,
+          "format": "select",
+          "const": ["life-bsc"],
+          "default": ["life-bsc"]
         }
       },
       "additionalProperties": false,
@@ -176,7 +160,7 @@
     "nextflow_files": {
       "type": "object",
       "title": "Nextflow files",
-      "description": "Location of the files implementing the Validation step.",
+      "description": "Location of the files implementing the OEB Block.",
       "properties": {
         "files": {
           "type": "object",
@@ -202,17 +186,21 @@
               "description": "Git branch/tag where all files are located.",
               "default": "master"
             },
-            "privateToken": {
+            "repositoryToken": {
               "type": "string",
-              "title": "Personal Access Token (*)",
+              "title": "Repository Deploy Token",
               "minLength": 1,
-              "description": "Gitlab personal access token."
+              "description": "Gitlab repository deploy token.",
+              "options": {
+                "inputAttributes": {
+                  "placeholder":  "Example: bHaS234an"
+                }
+              }
             }
           },
           "required": [ 
             "gitURL", 
-            "gitTag",
-            "privateToken"
+            "gitTag"
           ],
           "minLength": 1
         }
@@ -225,7 +213,6 @@
   },
   "required": [
     "name",
-    "type",
     "owner",
     "publication_status",
     "workflow_manager"
