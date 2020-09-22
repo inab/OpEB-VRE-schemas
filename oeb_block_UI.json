@@ -181,9 +181,9 @@
             },
             "gitTag": {
               "type": "string",
-              "title": "Git Tag (*)",
+              "title": "Git Commit Sha / Tag / Branch (*)",
               "minLength": 1,
-              "description": "Git branch/tag where all files are located.",
+              "description": "Git commit_sha/tag/branch where all files are located.",
               "default": "master"
             },
             "repositoryToken": {
