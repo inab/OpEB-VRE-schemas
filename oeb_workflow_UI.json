@@ -1,0 +1,237 @@
+{
+  "$id": "https://openebench.bsc.es/vre/Validation-schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "OEB Benchmarking Validation Block",
+  "description": "Specify a new OEB validation WF using a Nextflow.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "title": "Benchmarking Block Type",
+      "description": "Classification of the different benchmarking worflow types.",
+      "default": "validation",
+      "const": "validation",
+      "minLength": 1,
+      "readonly": true,
+      "item": {
+        "type": "string",
+        "enum": [
+          "validation",
+          "metrics",
+          "consolidation"
+        ]
+      },
+      "uniqueItems": true,
+      "options": {
+        "hidden": true
+      }
+    },
+    "external": {
+      "type": "boolean",
+      "title": "External Benchmarking Workflow",
+      "description": "External WFs are elegible to be run by partipants.",
+      "default": true,
+      "const": true,
+      "options": {
+        "hidden": true
+      }
+    },
+    "owner": {
+      "type": "object",
+      "title": "Owner",
+      "minLength": 1,
+      "description": "OEB Validation author. Corresponds to a VRE user identifier.",
+      "properties": {
+        "institution": {
+          "type": "string",
+          "title": "Institution"
+        },
+        "author": {
+          "type": "string",
+          "title": "Author",
+          "minLength": 1
+        },
+        "contact": {
+          "type": "string",
+          "format": "email",
+          "title": "Contact",
+          "minLength": 1
+        },
+        "user": {
+          "type": "string",
+          "title": "User",
+          "minLength": 1
+        },
+        "oeb_community": {
+          "type": "string",
+          "title": "oeb_community"
+        }
+      },
+      "required": [
+        "author",
+        "contact",
+        "user"
+      ],
+      "additionalProperties": false,
+      "options": {
+        "hidden": true
+      }
+    },
+    "name": {
+      "type": "string",
+      "title": "Name (*)",
+      "minLength": 1,
+      "description": "Name for the new Validation step.",
+      "options": {
+        "inputAttributes": {
+          "placeholder":  "The name here..."
+        }
+      }
+    },
+    "description": {
+      "type": "string",
+      "title": "Description",
+      "description": "Short description detailing what the OEB Validation does.",
+      "options": {
+        "inputAttributes": {
+          "placeholder":  "The short description here..."
+        }
+      }
+    },
+    "workflow_manager": {
+      "type": "string",
+      "title": "Workflow manager",
+      "description": "Select a workflow manager.",
+      "enum": [
+        "Nextflow"
+      ],
+      "default": ["Nextflow"],
+      "const": ["Nextflow"],
+      "minLength": 2,
+      "uniqueItems": true
+    },
+    "publication_status": {
+      "type": "integer",
+      "title": "Publication Status",
+      "description": "Status to select which users can see the block.",
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "default": 3,
+      "minLength": 1,
+      "const": 3,
+      "options": { 
+        "enum_titles": 
+          ["Coming soon",
+            "Public",
+            "Private",
+            "Testing",
+            "Community available"]
+      },
+      "readonly": true
+    },
+    "infrastructure": {
+      "type": "object",
+      "title": "Infrastructure details",
+      "description": "Set the computational resources required by the Valitation step.",
+      "properties": {
+        "cpus": {
+          "type": "integer",
+          "title": "CPUs",
+          "description": "Cores required to run the Validation step.",
+          "minimum": 1,
+          "maximum": 12,
+          "default": 1
+        },
+        "memory": {
+          "type": "number",
+          "title": "Memory",
+          "description": "RAM memory in GB required to run the Validation step.",
+          "minimum": 0,
+          "maximum": 24,
+          "default": 4
+        },
+        "wallTime": {
+          "type": "integer",
+          "title": "Walltime",
+          "description": "Maximun time in minutes taken to run the Validation step.",
+          "minimum": 5,
+          "maximum": 1440,
+          "default": 1440
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "cpus",
+        "memory"
+      ],
+      "options": {
+        "hidden": true
+      }
+    },
+    "nextflow_files": {
+      "type": "object",
+      "title": "Nextflow files",
+      "description": "Location of the files implementing the Validation step.",
+      "properties": {
+        "files": {
+          "type": "object",
+          "title": "Git Files",
+          "description": "The URL of the Git Repository where all files are located.",
+          "properties": {
+            "gitURL": {
+              "type": "string",
+              "title": "Git URL (*)",
+              "description": "Git repository link. There have to be 'main.nf', 'nextflow.config', 'Dockerfile' and '.gitlab-ci.yml'.",
+              "format": "url",
+              "options": {
+                "inputAttributes": {
+                  "placeholder":  "Example: https://gitlab.bsc.es/user/repo-with-all-necessary-files.git"
+                }
+              },
+              "minLength": 1
+            },
+            "gitTag": {
+              "type": "string",
+              "title": "Git Tag (*)",
+              "minLength": 1,
+              "description": "Git branch/tag where all files are located.",
+              "default": "master"
+            },
+            "privateToken": {
+              "type": "string",
+              "title": "Personal Access Token (*)",
+              "minLength": 1,
+              "description": "Gitlab personal access token."
+            }
+          },
+          "required": [ 
+            "gitURL", 
+            "gitTag",
+            "privateToken"
+          ],
+          "minLength": 1
+        }
+      },
+      "required": [
+        "files"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "name",
+    "type",
+    "owner",
+    "publication_status",
+    "workflow_manager"
+  ],
+  "additionalProperties": false,
+  "format": "categories",
+  "basicCategoryTitle": "STEP 1: Generic Information",
+  "show_errors": "interaction"
+}
