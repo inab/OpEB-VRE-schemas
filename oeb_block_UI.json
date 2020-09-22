@@ -50,7 +50,7 @@
       "type": "string",
       "title": "Name (*)",
       "minLength": 1,
-      "description": "Name for the new Validation step. <a href='https://www.google.es/'>GOOGLE</a>",
+      "description": "Name for the new Validation step.",
       "options": {
         "inputAttributes": {
           "placeholder":  "The name here..."
