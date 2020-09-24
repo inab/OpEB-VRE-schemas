@@ -9,6 +9,11 @@
       "type": "string",
       "pattern": "^OpEB_block_[a-zA-Z0-9_]+[.]{1}[a-zA-Z0-9]+$"
     },
+    "_schema": {
+      "type": "string",
+      "format": "uri",
+      "const": "https://openebench.bsc.es/vre/block-schema"
+    },
     "data": {
       "type": "object",
       "properties": {
@@ -82,15 +87,23 @@
               "default": 1440
             },
             "clouds": {
-              "type": "object",
-              "properties": {
-                "life-bsc": {
-                  "$ref": "#/definitions/cloud"
-                }
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "life-bsc"
+                ],
+                "uniqueItems": true
               },
               "additionalProperties": false
             }
-          }
+          },
+          "required": [
+            "cpus",
+            "memory",
+            "wallTime",
+            "clouds"
+          ]
         },
         "nextflow_files": {
           "type": "object",
@@ -98,13 +111,26 @@
             "files": {
               "type": "object",
               "properties": {
-                "life-bsc": {
-                  "$ref": "#/definitions/cloud"
+                "gitURL": {
+                  "type": "string"
+                },
+                "gitTag": {
+                  "type": "string"
+                },
+                "repositoryToken": {
+                  "type": "string"
                 }
               },
+              "required": [
+                "gitURL",
+                "gitTag"
+              ],
               "additionalProperties": false
             }
-          }
+          },
+          "required": [
+            "files"
+          ]
         },
         "type": {
           "type": "string",
@@ -140,81 +166,9 @@
   },
   "required": [
     "_id",
+    "_schema",
     "data",
     "validation_status"
   ],
-  "additionalProperties": false,
-  "definitions": {
-    "cloud": {
-      "oneOf": [
-        {
-          "$ref": "#/definitions/SGE"
-        },
-        {
-          "$ref": "#/definitions/PMES"
-        }
-      ]
-    },
-    "SGE": {
-      "type": "object",
-      "properties": {
-        "launcher": {
-          "type": "string",
-          "pattern": "^SGE$"
-        },
-        "default_cloud": {
-          "type": "boolean",
-          "default": false
-        },
-        "queue": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "launcher",
-        "queue"
-      ],
-      "additionalProperties": false
-    },
-    "PMES": {
-      "type": "object",
-      "properties": {
-        "launcher": {
-          "type": "string",
-          "pattern": "^PMES$"
-        },
-        "workflowType": {
-          "type": "string",
-          "enum": [
-            "Single",
-            "COMPSs"
-          ],
-          "default": "Single"
-        },
-        "default_cloud": {
-          "type": "boolean",
-          "default": false
-        },
-        "minimumVMs": {
-          "type": "integer",
-          "default": 1
-        },
-        "initialVMs": {
-          "type": "integer",
-          "default": 1
-        },
-        "imageName": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "launcher",
-        "workflowType",
-        "minimumVMs",
-        "initialVMs",
-        "imageName"
-      ],
-      "additionalProperties": false
-    }
-  }
+  "additionalProperties": false
 }
