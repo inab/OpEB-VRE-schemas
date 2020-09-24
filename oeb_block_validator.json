@@ -154,13 +154,11 @@
       "additionalProperties": false
     },
     "validation_status": {
-      "type": "integer",
+      "type": "string",
       "enum": [
-        0,
-        1,
-        2,
-        3,
-        4
+        "rejected",
+        "registered",
+        "under_validation"
       ]
     }
   },
