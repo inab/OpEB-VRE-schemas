@@ -189,7 +189,6 @@
             "repositoryToken": {
               "type": "string",
               "title": "Repository Deploy Token",
-              "minLength": 1,
               "description": "Gitlab repository deploy token.",
               "options": {
                 "inputAttributes": {
