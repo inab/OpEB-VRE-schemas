@@ -1,9 +1,9 @@
 {
-  "$id": "https://openebench.bsc.es/vre/tool-schema",
+  "$id": "https://openebench.bsc.es/vre/workflow-schema",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
-  "title": "OEB tool definition schema",
-  "description": "Specification of OEB tools as required for VRE",
+  "title": "OEB workflow definition schema",
+  "description": "Specification of OEB workflows as required for VRE",
   "properties": {
     "_id": {
       "type": "string",
@@ -12,7 +12,7 @@
     "_schema": {
       "type": "string",
       "format": "uri",
-      "const": "https://openebench.bsc.es/vre/tool-schema"
+      "const": "https://openebench.bsc.es/vre/workflow-schema"
     },
     "name": {
       "type": "string"
@@ -30,14 +30,6 @@
       "type": "string",
       "default": "null",
       "maximum": 500
-    },
-    "url": {
-      "type": "string",
-      "format": "uri",
-      "pattern": "^http(s)?://.+/file[^/]*$"
-    },
-    "publication": {
-      "type": "string"
     },
     "owner": {
       "type": "object",
@@ -93,50 +85,7 @@
       "items": {
         "type": "string"
       }
-    },
-    "external": {
-      "type": "boolean",
-      "default": true
-    },
-    "infrastructure": {
-      "type": "object",
-      "properties": {
-        "executable": {
-          "type": "string"
-        },
-        "cpus": {
-          "type": "integer",
-          "minimum": 1,
-          "maximum": 12,
-          "default": 1
-        },
-        "memory": {
-          "type": "number",
-          "minimum": 0,
-          "maximum": 24,
-          "default": 0
-        },
-        "wallTime": {
-          "type": "integer",
-          "minimum": 5,
-          "maximum": 1440,
-          "default": 1440
-        },
-        "clouds": {
-          "type": "object",
-          "properties": {
-            "life-bsc": {
-              "$ref": "#/definitions/cloud"
-            }
-          },
-          "additionalProperties": false
-        }
-      }
-    },
-    "has_custom_viewer": {
-      "type": "boolean",
-      "default": true
-    },   
+    },  
     "input_files": {
       "type": "array",
       "items": {
@@ -448,112 +397,6 @@
   ],
   "additionalProperties": false,
   "definitions": {
-    "cloud": {
-      "oneOf": [
-        {
-          "$ref": "#/definitions/SGE"
-        },
-        {
-          "$ref": "#/definitions/PMES"
-        }
-      ]
-    },
-    "SGE": {
-      "type": "object",
-      "properties": {
-        "launcher": {
-          "type": "string",
-          "pattern": "^SGE$"
-        },
-        "default_cloud": {
-          "type": "boolean",
-          "default": false
-        },
-        "queue": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "launcher",
-        "queue"
-      ],
-      "additionalProperties": false
-    },
-    "PMES": {
-      "type": "object",
-      "properties": {
-        "launcher": {
-          "type": "string",
-          "pattern": "^PMES$"
-        },
-        "workflowType": {
-          "type": "string",
-          "enum": [
-            "Single",
-            "COMPSs"
-          ],
-          "default": "Single"
-        },
-        "default_cloud": {
-          "type": "boolean",
-          "default": false
-        },
-        "minimumVMs": {
-          "type": "integer",
-          "default": 1
-        },
-        "initialVMs": {
-          "type": "integer",
-          "default": 1
-        },
-        "imageName": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "launcher",
-        "workflowType",
-        "minimumVMs",
-        "initialVMs",
-        "imageName"
-      ],
-      "additionalProperties": false
-    },
-    "restrictions":
-    {
-      "allOf": [
-        {
-          "if": { "properties": {"type": {"enum": ["integer"]}}},
-          "then": {"properties": {"default": {"type": ["integer"]}}}
-        },
-        {
-          "if": {"properties": {"type": {"enum": ["string"]}}},
-          "then": {"properties": {"default": {"type": ["string"]}}}
-        },
-        {
-          "if": {"properties": {"type": {"enum": ["boolean"]}}},
-          "then": {"properties": {"default": {"type": ["boolean"]}}}
-        },
-        {
-          "if": {"properties": {"type": {"enum": ["number"]}}},
-          "then": {"properties": {"default": {"type": ["number"]}}}
-        },
-        {
-          "if": {"properties": {"type": {"enum": ["enum_mult"]}}},
-          "then": {"properties": {"default": {"type": ["array"]}}}
-        },
-        {
-          "if": {"properties": {"type": {"enum": ["hidden"]}}},
-          "then": {"required":["value"]},
-          "else": {"not": {"required": ["value"]}}
-        },
-        {
-          "if": {"properties": {"type": {"enum": ["enum", "enum_mult"]}}},
-          "then": {"required":["enum_items"]},
-          "else": {"not": {"required": ["enum_items"]}}
-        }
-      ]
-    },
     "properties_input": {
       "type": "object",
         "properties": {
