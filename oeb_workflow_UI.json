@@ -5,6 +5,28 @@
   "title": "OEB Benchmarking Workflow",
   "description": "Specify a new OEB WF using a Nextflow.",
   "properties": {
+    "title": {
+      "type": "string",
+      "title": "Title (*)",
+      "minLength": 1,
+      "description": "Title for the Workflow.",
+      "options": {
+        "inputAttributes": {
+          "placeholder":  "The title here..."
+        }
+      }
+    },
+    "name": {
+      "type": "string",
+      "title": "Name (*)",
+      "minLength": 1,
+      "description": "Name for the Workflow.",
+      "options": {
+        "inputAttributes": {
+          "placeholder":  "The name here..."
+        }
+      }
+    },
     "owner": {
       "type": "object",
       "title": "Owner",
@@ -44,28 +66,6 @@
       "additionalProperties": false,
       "options": {
         "hidden": true
-      }
-    },
-    "title": {
-      "type": "string",
-      "title": "Title (*)",
-      "minLength": 1,
-      "description": "Title for the Workflow.",
-      "options": {
-        "inputAttributes": {
-          "placeholder":  "The title here..."
-        }
-      }
-    },
-    "name": {
-      "type": "string",
-      "title": "Name (*)",
-      "minLength": 1,
-      "description": "Name for the Workflow.",
-      "options": {
-        "inputAttributes": {
-          "placeholder":  "The name here..."
-        }
       }
     },
     "description": {
@@ -766,144 +766,6 @@
       "title": "Output results",
       "description": "Definition of the different output elements the OEB Workflow generate.",
       "properties": {
-        "validated_participant": {
-          "type": "object",
-          "title": "Validation Result",
-          "description": "Metrics derivated from the given input data.",
-          "properties": {
-            "name": {
-              "type": "string",
-              "title": "Internal identifier",
-              "description": "Identifier internally used by Nextflow to refer to the 'Validation Results' element.",
-              "const": "validated_participant",
-              "default": "validated_participant",
-              "minLength": 1,
-              "readonly": true
-            },
-            "file_type": {
-              "type": "array",
-              "title": "Accepted file types",
-              "description": "File formats that might present the 'Participant Input'. Elegible formats: https://w3id.org/oebDataFormats.",
-              "items": {
-                "type": "string",
-                "format": "term",
-                "ontology": "https://w3id.org/oebDataFormats",
-                "ancestors": "https://w3id.org/oebDataFormats/FormatDatasets",
-                "matchType": "label",
-                "options": {}
-              },
-              "format": "select",
-              "uniqueItems": true,
-              "const": [
-                "http://edamontology.org/format_3464"
-              ],
-              "default": [
-                "http://edamontology.org/format_3464"
-              ],
-              "readonly": true,
-              "minItems": 1
-            },
-            "data_type": {
-              "type": "array",
-              "title": "Accepted dataset types",
-              "description": "Dataset types that 'Particiapnt Input'  might belong to.",
-              "items": {
-                "type": "string",
-                "format": "term",
-                "ontology": "https://w3id.org/oebDatasets",
-                "ancestors": "https://w3id.org/oebDatasets/dataset",
-                "matchType": "label",
-                "options": {}
-              },
-              "format": "select",
-              "uniqueItems": true,
-              "const": [
-                "https://w3id.org/oebDatasets/validated_participant"
-              ],
-              "default": [
-                "https://w3id.org/oebDatasets/validated_participant"
-              ],
-              "readonly": true,
-              "minItems": 1
-            }
-          },
-          "required": [
-            "name",
-            "data_type",
-            "file_type"
-          ],
-          "additionalProperties": false,
-          "minLength": 1
-        },
-        "assessment_results": {
-          "type": "object",
-          "title": "Validation Of the Participant",
-          "description": "Metrics derivated from the given input data.",
-          "properties": {
-            "name": {
-              "type": "string",
-              "title": "Nextflow Parameter Identifier (*)",
-              "description": "Identifier internally used by Nextflow to refer to the 'Metrics Results' element.",
-              "const": "assessment_results",
-              "default": "assessment_results",
-              "minLength": 1,
-              "readonly": true
-            },
-            "type": {
-              "type": "string",
-              "title": "Type of Output",
-              "description": "Type of output (Assessment Result) feed into the OEB Workflow.",
-              "enum": [
-                "user_file",
-                "challenge_file",
-                "user_dir",
-                "challenge_dir",
-                "string",
-                "integer",
-                "number",
-                "boolean",
-                "enum",
-                "enum_mult",
-                "hidden"
-              ],
-              "minLength": 1,
-              "default": "user_file",
-              "const": "user_file",
-              "options": { 
-                "enum_titles": 
-                  ["user file",
-                  "challenge file",
-                  "user dir",
-                  "challenge dir",
-                  "string",
-                  "integer",
-                  "number",
-                  "boolean",
-                  "enum",
-                  "enum mult",
-                  "hidden"],
-                "hidden": true 
-              }
-            },
-            "value": {
-              "type": "string",
-              "format": "file",
-              "title": "Assessment Result Sample (*) - JSON File",
-              "description": "Upload the Assessment Result data sample in JSON format.",
-              "media": {
-                "binaryEncoding": "base64",
-                "type": "application/x-tar"
-              },
-              "minLength": 1
-            }
-          },
-          "required": [
-            "name",
-            "type",
-            "value"
-          ],
-          "additionalProperties": false
-        },
         "data_model_export_dir": {
           "type": "object",
           "title": "Consolidation Result",
