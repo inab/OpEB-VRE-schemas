@@ -779,6 +779,52 @@
               "default": "data_model_export_dir",
               "minLength": 1,
               "readonly": true
+            },
+            "file_type": {
+              "type": "array",
+              "title": "Accepted file types",
+              "description": "File formats that might present the 'Output Directory'. Elegible formats: https://w3id.org/oebDataFormats.",
+              "items": {
+                "type": "string",
+                "format": "term",
+                "ontology": "https://w3id.org/oebDataFormats",
+                "ancestors": "https://w3id.org/oebDataFormats/FormatDatasets",
+                "matchType": "label",
+                "options": {}
+              },
+              "format": "select",
+              "uniqueItems": true,
+              "const": [
+                "https://w3id.org/oebDataFormats/TAR"
+              ],
+              "default": [
+                "https://w3id.org/oebDataFormats/TAR"
+              ],
+              "readonly": true,
+              "minItems": 1
+            },
+            "data_type": {
+              "type": "array",
+              "title": "Accepted dataset types",
+              "description": "Dataset types that 'Workflow Statistics'  might belong to.",
+              "items": {
+                "type": "string",
+                "format": "term",
+                "ontology": "https://w3id.org/oebDatasets",
+                "ancestors": "https://w3id.org/oebDatasets/dataset",
+                "matchType": "label",
+                "options": {}
+              },
+              "format": "select",
+              "uniqueItems": true,
+              "const": [
+                "https://w3id.org/oebDatasets/tool_statistics"
+              ],
+              "default": [
+                "https://w3id.org/oebDatasets/tool_statistics"
+              ],
+              "readonly": true,
+              "minItems": 1
             }
           },
           "required": [
