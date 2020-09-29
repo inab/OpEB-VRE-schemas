@@ -875,8 +875,6 @@
         }
       },
       "required": [
-        "assessment_results",
-        "validated_participant",
         "data_model_export_dir",
         "out_dir"
       ],
