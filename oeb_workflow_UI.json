@@ -924,6 +924,9 @@
         "data_model_export_dir",
         "out_dir"
       ],
+      "options": {
+        "hidden": true
+      },
       "minLength": 1
     }
   },
