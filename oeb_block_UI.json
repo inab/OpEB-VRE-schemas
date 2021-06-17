@@ -75,7 +75,6 @@
         "Nextflow"
       ],
       "default": ["Nextflow"],
-      "const": ["Nextflow"],
       "minLength": 2,
       "uniqueItems": true
     },
