@@ -160,13 +160,17 @@
         "registered",
         "under_validation"
       ]
+    },
+    "creation_date": {
+      "type": "string"
     }
   },
   "required": [
     "_id",
     "_schema",
     "data",
-    "validation_status"
+    "validation_status",
+    "creation_date"
   ],
   "additionalProperties": false
 }
