@@ -60,6 +60,7 @@
     "description": {
       "type": "string",
       "title": "Description",
+      "minLength": 1,
       "description": "Short description detailing what the OEB Block does.",
       "options": {
         "inputAttributes": {
@@ -210,6 +211,7 @@
   },
   "required": [
     "name",
+    "description",
     "owner",
     "publication_status",
     "workflow_manager"
