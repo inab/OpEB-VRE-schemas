@@ -9,6 +9,9 @@
       "type": "string",
       "pattern": "^OpEB_block_[a-zA-Z0-9_]+[.]{1}[a-zA-Z0-9]+$"
     },
+    "workflows_in_use": {
+      "type": "number"
+    },
     "_schema": {
       "type": "string",
       "format": "uri",
@@ -167,6 +170,7 @@
   },
   "required": [
     "_id",
+    "workflows_in_use",
     "_schema",
     "data",
     "validation_status",
