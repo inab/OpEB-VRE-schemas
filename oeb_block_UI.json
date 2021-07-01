@@ -185,6 +185,16 @@
               "description": "Git commit_sha/tag/branch where all files are located.",
               "default": "master"
             },
+            "folderName": {
+              "type": "string",
+              "title": "Name of GitHub's Folder",
+              "description": "Name of the subfolder that have the files of the block. If block's information are not in a subfolder, DO NOT FILL IT.",
+              "options": {
+                "inputAttributes": {
+                  "placeholder":  "DO NOT FILL IT if files are not in a subfolder."
+                }
+              }
+            },
             "repositoryToken": {
               "type": "string",
               "title": "Repository Deploy Token",
