@@ -187,7 +187,6 @@
             },
             "folderName": {
               "type": "string",
-              "pattern": "[^-\s]",
               "title": "Name of GitHub's Folder",
               "description": "Name of the subfolder that have the files of the block. If block's information are not in a subfolder, DO NOT FILL IT.",
               "options": {
