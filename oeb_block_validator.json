@@ -120,6 +120,10 @@
                 "gitTag": {
                   "type": "string"
                 },
+                "folderName": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9_-]*$"
+                },
                 "repositoryToken": {
                   "type": "string"
                 }
