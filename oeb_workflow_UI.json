@@ -851,7 +851,6 @@
               },
               "format": "select",
               "uniqueItems": true,
-              "readOnly": true,
               "default": [
                 "https://w3id.org/oebDataFormats/TAR"
               ],
@@ -876,7 +875,6 @@
               "default": [
                 "https://w3id.org/oebDatasets/tool_statistics"
               ],
-              "readonly": true,
               "minItems": 1
             },
             "compressed": {
