@@ -272,10 +272,8 @@
                 "options": {}
               },
               "format": "select",
+              "readOnly": true,
               "uniqueItems": true,
-              "const": [
-                "https://w3id.org/oebDataFormats/TAR"
-              ],
               "default": [
                 "https://w3id.org/oebDataFormats/TAR"
               ],
@@ -295,10 +293,8 @@
                 "options": {}
               },
               "format": "select",
+              "readOnly": true,
               "uniqueItems": true,
-              "const": [
-                "https://w3id.org/oebDatasets/public_reference"
-              ],
               "default": [
                 "https://w3id.org/oebDatasets/public_reference"
               ],
@@ -695,9 +691,7 @@
               },
               "format": "select",
               "uniqueItems": true,
-              "const": [
-                "https://w3id.org/oebDataFormats/TAR"
-              ],
+              "readOnly": true,
               "default": [
                 "https://w3id.org/oebDataFormats/TAR"
               ],
@@ -718,9 +712,7 @@
               },
               "format": "select",
               "uniqueItems": true,
-              "const": [
-                "https://w3id.org/oebDatasets/assessment"
-              ],
+              "readOnly": true,
               "default": [
                 "https://w3id.org/oebDatasets/assessment"
               ],
@@ -794,9 +786,7 @@
               },
               "format": "select",
               "uniqueItems": true,
-              "const": [
-                "https://w3id.org/oebDataFormats/TAR"
-              ],
+              "readOnly": true,
               "default": [
                 "https://w3id.org/oebDataFormats/TAR"
               ],
@@ -817,9 +807,7 @@
               },
               "format": "select",
               "uniqueItems": true,
-              "const": [
-                "https://w3id.org/oebDatasets/tool_statistics"
-              ],
+              "readOnly": true,
               "default": [
                 "https://w3id.org/oebDatasets/tool_statistics"
               ],
@@ -863,9 +851,7 @@
               },
               "format": "select",
               "uniqueItems": true,
-              "const": [
-                "https://w3id.org/oebDataFormats/TAR"
-              ],
+              "readOnly": true,
               "default": [
                 "https://w3id.org/oebDataFormats/TAR"
               ],
@@ -886,9 +872,7 @@
               },
               "format": "select",
               "uniqueItems": true,
-              "const": [
-                "https://w3id.org/oebDatasets/tool_statistics"
-              ],
+              "readOnly": true,
               "default": [
                 "https://w3id.org/oebDatasets/tool_statistics"
               ],
