@@ -1,0 +1,111 @@
+{
+	"$id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Reference",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "Bibliographic reference concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
+	"$comment": "allOf and placeholders inspired by https://stackoverflow.com/a/24365393",
+	"allOf": [
+		{
+			"$ref": "_shared#/definitions/CommonKeys"
+		}
+	],
+	"type": "object",
+	"properties": {
+		"_id": {
+			"$ref": "_shared#/definitions/ReferenceCanonicalId"
+		},
+		"_schema": {
+			"title": "The JSON schema absolute URI. It must match the value of 'id' in the JSON schema",
+			"type": "string",
+			"format": "uri",
+			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Reference" ]
+		},
+		
+		"@canonical_id": {
+			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys",
+			"$ref": "_shared#/definitions/ReferenceCanonicalId"
+		},
+		"_metadata": {
+			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
+		},
+		"@revision": {
+			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
+		},
+		"@updated": {
+			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
+		},
+		"@deleted": {
+			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
+		},
+		"@created": {
+			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
+		},
+		
+		"title": {
+			"title": "The title of the referenced material",
+			"type": "string"
+		},
+		"bibliographic_ids": {
+			"title": "The recorded bibliographic ids of the referenced material, as CURIE/identifiers.org format or a bare link",
+			"type": "array",
+			"minItems": 1,
+			"items": {
+				"title": "Currently, the accepted ids are pmid, doi and pmc",
+				"type": "string",
+				"format": "uri",
+				"pattern": "^(pmid|doi|pmc|isbn|issn|http(s)?):.+$"
+			}
+		},
+		"abstract": {
+			"title": "Optionally, the abstract of the referenced material",
+			"type": "string"
+		},
+		"authors": {
+			"title": "Optional list of authors of the referenced material",
+			"type": "array",
+			"minItems": 1,
+			"items": {
+				"type": "object",
+				"properties": {
+					"givenName": {
+						"title": "First / given name (or initials)",
+						"type": "array",
+						"minItems": 1,
+						"items": {
+							"type": "string",
+							"minLength": 1
+						}
+					},
+					"surname": {
+						"title": "Surname(s)",
+						"type": "array",
+						"minItems": 1,
+						"items": {
+							"type": "string",
+							"minLength": 1
+						}
+					},
+					"contact_id": {
+						"title": "If it is a known contact, its contact id",
+						"type": "string",
+						"foreign_keys": [
+							{
+								"schema_id": "Contact",
+								"members": [ "." ]
+							}
+						],
+						"minLength": 1
+					}
+				},
+				"additionalProperties": false,
+				"required": [
+					"givenName",
+					"surname"
+				]
+			}
+		}
+	},
+	"additionalProperties": false,
+	"required": ["_id","_schema","title","bibliographic_ids"],
+	"primary_key": ["_id"],
+	"dependencies": {}
+}
