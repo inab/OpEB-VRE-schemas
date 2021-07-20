@@ -11,7 +11,8 @@
       "firstName": {
         "type": "string",
         "title": "Firsst name",
-        "default": "Chuck"
+        "default": "Chuck",
+        "readonly": true
       },
       "lastName": {
         "type": "string",
