@@ -10,7 +10,7 @@
     "properties": {
       "firstName": {
         "type": "string",
-        "title": "Firsst name",
+        "title": "Firstt name",
         "default": "Chuck",
         "readonly": true
       },
