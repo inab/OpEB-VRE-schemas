@@ -1,90 +1,112 @@
 {
 	"schema": {
-        "title": "Bibliographic reference concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
-        "type": "object",
-        "required": [
-            "_id",
-            "_schema",
-            "title",
-            "bibliographic_ids"
-        ],
-        "properties": {
-            "_id": {
-                "$ref": "_shared#/definitions/ReferenceCanonicalId"
-            },
-            "_schema": {
-                "title": "The JSON schema absolute URI. It must match the value of 'id' in the JSON schema",
-                "type": "string",
-                "format": "uri",
-                "default": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Reference"
-            },
-            "title": {
-                "title": "The title of the referenced material",
-                "type": "string"
-            },
-            "bibliographic_ids": {
-                "title": "The recorded bibliographic ids of the referenced material, as CURIE/identifiers.org format or a bare link",
-                "type": "array",
-                "minItems": 1,
-                "items": {
-                    "title": "Currently, the accepted ids are pmid, doi and pmc",
-                    "type": "string",
-                    "format": "uri",
-                    "pattern": "^(pmid|doi|pmc|isbn|issn|http(s)?):.+$"
-                }
-            },
-            "abstract": {
-                "title": "Optionally, the abstract of the referenced material",
-                "type": "string"
-            },
-            "authors": {
-                "title": "Optional list of authors of the referenced material",
-                "type": "array",
-                "minItems": 1,
-                "items": {
-                    "type": "object",
-                    "properties": {
-                        "givenName": {
-                            "title": "First / given name (or initials)",
-                            "type": "array",
-                            "minItems": 1,
-                            "items": {
-                                "type": "string",
-                                "minLength": 1
-                            }
-                        },
-                        "surname": {
-                            "title": "Surname(s)",
-                            "type": "array",
-                            "minItems": 1,
-                            "items": {
-                                "type": "string",
-                                "minLength": 1
-                            }
-                        },
-                        "contact_id": {
-                            "title": "If it is a known contact, its contact id",
-                            "type": "string",
-                            "foreign_keys": [
-                                {
-                                    "schema_id": "Contact",
-                                    "members": [ "." ]
-                                }
-                            ],
-                            "minLength": 1
-                        }
-                    },
-                    "additionalProperties": false,
-                    "required": [
-                        "givenName",
-                        "surname"
-                    ]
-                }
-            }
+		"title": "Bibliographic reference concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
+        	"type": "object",
+        	"required": [
+			"_id",
+            		"_schema",
+            		"title",
+            		"bibliographic_ids"
+        	],
+		"properties": {
+		    "_id": {
+			    "title": "Event ID (*)",
+			    "minLength": 1,
+			    "default": "pepito",
+			    //"$ref": "_shared#/definitions/ReferenceCanonicalId", -> no se como funciona
+			    "widget": {
+				    "formlyConfig": {
+					    "templateOptions": {
+						    "readonly": true
+					    }
+				    }
+			    }
+		    },
+		    "title": {
+			    "title": "Title of the referenced material (*)",
+			    "type": "string",
+			    "widget": {
+				    "formlyConfig": {
+					    "templateOptions": {
+						    "placeholder": "The title here..."
+					    }
+				    }
+			    }
+		    },
+		    "bibliographic_ids": {
+			    "title": "Recorded bibliographic IDs of the referenced material (*)",
+			    "description": "Examples: CURIE/identifiers.org format or a bare link",
+			    "type": "array",
+			    "minItems": 1,
+			    "items": {
+				    "title": "Currently, the accepted ids are pmid, doi and pmc",
+				    "type": "string",
+				    //"format": "uri", -> no funciona
+				    "pattern": "^(pmid|doi|pmc|isbn|issn|http(s)?):.+$"
+			    }
+		    },
+		    "abstract": {
+			    "title": "Abstract of the referenced material",
+			    "type": "string",
+			    "widget": {
+				    "formlyConfig": {
+					    "templateOptions": {
+						    "placeholder": "The abstract here..."
+					    }
+				    }
+			    }
+		    },
+		    "authors": {
+			"title": "Optional list of authors of the referenced material",
+			"type": "array",
+			"minItems": 1,
+			"items": {
+			    "type": "object",
+			    "properties": {
+				"givenName": {
+				    "title": "First / given name (or initials)",
+				    "type": "array",
+				    "minItems": 1,
+				    "items": {
+					"type": "string",
+					"minLength": 1
+				    }
+				},
+				"surname": {
+				    "title": "Surname(s)",
+				    "type": "array",
+				    "minItems": 1,
+				    "items": {
+					"type": "string",
+					"minLength": 1
+				    }
+				},
+				"contact_id": {
+				    "title": "If it is a known contact, its contact id",
+				    "type": "string",
+				    "foreign_keys": [
+					{
+					    "schema_id": "Contact",
+					    "members": [ "." ]
+					}
+				    ],
+				    "minLength": 1
+				}
+			    },
+			    "additionalProperties": false,
+			    "required": [
+				"givenName",
+				"surname"
+			    ]
+			}
+            	}
         },
         "additionalProperties": false,
         
         "primary_key": ["_id"],
         "dependencies": {}
     }
+	"model": {
+		"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Reference",
+  	}
 }
