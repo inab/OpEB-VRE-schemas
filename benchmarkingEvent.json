@@ -15,7 +15,7 @@
 				"title": "Benchmarking Event ID (*)",
 				"description": "The unique id of the benchmarking event, according to the rules. For submissions there are temporary identifiers. This identifier cannot begin by OEB",
 				"type": "string",
-				"pattern": "^(?!(?i)OEB).+$",
+				"pattern": "^!(OEB)*$",
 				"widget": {
 					"formlyConfig": {
 						"templateOptions": {
@@ -24,24 +24,6 @@
 					}
 				}
 			},
-			"references": {
-				"$comment": "Placeholder covered by _shared#/definitions/ReferencesProp",
-				"title": "Benchmarking event reference ID(s) (if any)",
-				"description": "There might not be any"
-			},
-			"links": {
-				"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
-				"title": "Ways to contact the benchmarking event responsible. It can be many different ones: public page, a social media link, some public chat, a public mailing list, ..."
-			},
-			"name": {
-				"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
-				"title": "Short benchmarking event name (*)"
-			},
-			"description": {
-				"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
-				"title": "Long benchmarking event description, written in Markdown"
-			},
-
 			"is_automated": {
 				"title": "Is this an automated event?",
 				"type": "boolean",
@@ -111,6 +93,6 @@
 			"modification": "",
 			"public": ""
 		}
-		
+
 	}
 }
