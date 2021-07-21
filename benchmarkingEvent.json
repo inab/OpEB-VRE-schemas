@@ -35,7 +35,7 @@
 			},
 			"name": {
 				"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
-				"title": "Short benchmarking event name (*)
+				"title": "Short benchmarking event name (*)"
 			},
 			"description": {
 				"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
