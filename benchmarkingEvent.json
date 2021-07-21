@@ -1,6 +1,5 @@
 {
 	"schema": {
-		"title": "Benchmarking Event concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
 		"required": [
 			"_id",
 			"_schema",
