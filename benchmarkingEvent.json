@@ -3,7 +3,6 @@
 		"required": [
 			"_id",
 			"_schema",
-			"name",
 			"dates",
 			"community_id",
 			"bench_contact_ids"
