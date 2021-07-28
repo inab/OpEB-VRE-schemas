@@ -1,88 +1,4 @@
 {
-	"schema": {
-		"required": [
-			"_id",
-			"_schema",
-			"dates",
-			"community_id",
-			"bench_contact_ids"
-		],
-		"type": "object",
-		"properties": {
-			"_id": {
-				"title": "Benchmarking Event ID (*)",
-				"description": "The unique id of the benchmarking event, according to the rules. For submissions there are temporary identifiers. This identifier cannot begin by OEB",
-				"type": "string",
-				"pattern": "^!(OEB)*$",
-				"widget": {
-					"formlyConfig": {
-						"templateOptions": {
-							"placeholder": "The id here..."
-						}
-					}
-				}
-			},
-			"is_automated": {
-				"title": "Is this an automated event?",
-				"type": "boolean",
-				"default": "false"
-			},
-			"dates": {
-				"title": "Benchmarking event Dates (*)",
-				"description": "Relevant dates for this benchmarking event",
-				"type": "object",
-				"properties": {
-					"benchmark_start": {
-						"title": "Start date benchmarking event",
-						"description": "When starts the benchmarking event?",
-						"type": "string",
-						"format": "date-time"
-					},
-					"benchmark_stop": {
-						"title": "End date benchmarking event",
-						"description": "When stops the benchmarking event?",
-						"type": "string",
-						"format": "date-time"
-					}
-				},
-				"required": ["creation","modification"],
-				"dependencies": {
-					"benchmark_start": ["benchmark_stop"],
-					"benchmark_stop": ["benchmark_start"]
-				}
-			},
-			"community_id": {
-				"title": "Community ID (*)",
-				"description": "The community id where this benchmarking event belongs",
-				"type": "string",
-				"foreign_keys": [
-					{
-						"schema_id": "Community",
-						"members": [ "." ]
-					}
-				],
-				"minLength": 1
-			},
-			"bench_contact_ids": {
-				"title": "The benchmarking event contact id(s) (*)",
-				"type": "array",
-				"minItems": 1,
-				"items": {
-					"type": "string",
-					"foreign_keys": [
-						{
-							"schema_id": "Contact",
-							"members": [ "." ]
-						}
-					],
-					"minLength": 1
-				}
-			}
-		},
-		"additionalProperties": false,
-		"primary_key": ["_id"],
-		"dependencies": {}
-	},
 	"model": {
 		"_schema": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/BenchmarkingEvent",
 		"orig_id": "",
@@ -91,6 +7,8 @@
 			"modification": "",
 			"public": ""
 		}
-
+	},
+	"schema": {
+		"$ref": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/BenchmarkingEvent"
 	}
 }
