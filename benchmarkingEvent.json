@@ -43,12 +43,20 @@
 		},
 		"name": {
 			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
-			"title": "Name"
+			"title": "Name",
+			"format":"hidden"
 		},
 		"description": {
 			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
 			"title": "Description",
-			"description": "Long benchmarking event description, written in Markdown"
+			"description": "Long benchmarking event description, written in Markdown",
+			"widget": {
+				"formlyConfig": {
+					"templateOptions": {
+						"placeholder": "The description here..."
+					}
+				}
+			}
 		},
 		"community_id": {
 			"title": "Community ID",
@@ -60,7 +68,14 @@
 					"members": [ "." ]
 				}
 			],
-			"minLength": 1
+			"minLength": 1,
+			"widget": {
+				"formlyConfig": {
+					"templateOptions": {
+						"placeholder": "The community id here..."
+					}
+				}
+			}
 		},
 		"is_automated": {
 			"title": "Is this an automated event?",
