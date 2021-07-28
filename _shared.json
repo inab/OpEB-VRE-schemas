@@ -327,7 +327,8 @@
 						"type": "object",
 						"properties": {
 							"uri": {
-								"title": "The helpdesk mail, main website, social media URL (LinkedIn, Twitter, etc...), public chat URL, etc...",
+								"title": "uri",
+								"description": "The helpdesk mail, main website, social media URL (LinkedIn, Twitter, etc...), public chat URL, etc...",
 								"type": "string",
 								"pattern": "^(?:mailto|http|https|data|ftp):.*$",
 								"format": "uri"
@@ -344,11 +345,14 @@
 									"Icon",
 									"Wallpaper",
 									"other"
-								]
+								],
+								"default": ["other"],
+								"readOnly": true
 							},
 							"comment": {
 								"title": "Internal comment about this URI (useful when the type of URI is other)",
-								"type": "string"
+								"type": "string",
+								"hidden": true
 							}
 						},
 						"additionalProperties": false,
