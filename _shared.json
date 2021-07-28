@@ -346,15 +346,8 @@
 									"Wallpaper",
 									"other"
 								],
-								"default": "other",
+								"default": "Icon",
 								"readOnly": true
-							},
-							"comment": {
-								"title": "Internal comment about this URI (useful when the type of URI is other)",
-								"type": "string",
-								"options": {
-									"hidden": true
-								 }
 							}
 						},
 						"additionalProperties": false,
