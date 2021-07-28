@@ -34,19 +34,21 @@
 		},
 		"references": {
 			"$comment": "Placeholder covered by _shared#/definitions/ReferencesProp",
-			"title": "The benchmarking event reference id(s) (if any)"
+			"title": "Reference id(s)"
 		},
 		"links": {
 			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
-			"title": "Ways to contact the benchmarking event responsible. It can be many different ones: public page, a social media link, some public chat, a public mailing list, ..."
+			"title": "Links",
+			"description": "Ways to contact the benchmarking event responsible. It can be many different ones: public page, a social media link, some public chat, a public mailing list, ..."
 		},
 		"name": {
 			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
-			"title": "Short benchmarking event name"
+			"title": "Name (*)"
 		},
 		"description": {
 			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
-			"title": "Long benchmarking event description, written in Markdown"
+			"title": "Description",
+			"description": "Long benchmarking event description, written in Markdown"
 		},
 		"is_automated": {
 			"title": "Is this an automated event?",
