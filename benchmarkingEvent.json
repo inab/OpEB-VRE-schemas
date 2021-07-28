@@ -157,7 +157,7 @@
 			"options": {
 				"hidden": true
 			}
-		},
+		}
 	},
 	"additionalProperties": false,
 	"required": [
