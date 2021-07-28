@@ -44,7 +44,7 @@
 		"name": {
 			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
 			"title": "Name",
-			"format":"hidden"
+			"options": {"hidden": true}
 		},
 		"description": {
 			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
