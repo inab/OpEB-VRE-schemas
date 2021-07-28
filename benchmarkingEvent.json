@@ -114,7 +114,50 @@
 				],
 				"minLength": 1
 			}
-		}
+		},
+		"@canonical_id": {
+			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys",
+			"options": {
+				"hidden": true
+			}
+		},
+		"_metadata": {
+			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys",
+			"options": {
+				"hidden": true
+			}
+		},
+		"@revision": {
+			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys",
+			"options": {
+				"hidden": true
+			}
+		},
+		"@updated": {
+			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys",
+			"options": {
+				"hidden": true
+			}
+		},
+		"@deleted": {
+			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys",
+			"options": {
+				"hidden": true
+			}
+		},
+		"@created": {
+			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys",
+			"options": {
+				"hidden": true
+			}
+		},
+		"orig_id": {
+			"$comment": "Placeholder covered by _shared#/definitions/OrigIdProp",
+			"title": "The benchmarking event original id",
+			"options": {
+				"hidden": true
+			}
+		},
 	},
 	"additionalProperties": false,
 	"required": [
