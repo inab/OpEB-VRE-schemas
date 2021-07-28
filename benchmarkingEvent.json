@@ -19,7 +19,7 @@
 	"type": "object",
 	"properties": {
 		"_id": {
-			"title": "Benchmarking Event ID (*)",
+			"title": "Benchmarking Event ID",
 			"description": "The unique id of the benchmarking event, according to the rules. For submissions there are temporary identifiers. This identifier cannot begin by OEB",
 			"type": "string",
 			"pattern": "^!(OEB)*$",
@@ -31,6 +31,31 @@
 				}
 			}
 		},
+		"name": {
+			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
+			"title": "Name"
+		},
+		"description": {
+			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
+			"title": "Description",
+			"description": "Long benchmarking event description, written in Markdown"
+		},
+		"community_id": {
+			"title": "Community ID",
+			"description": "The community id where this benchmarking event belongs",
+			"type": "string",
+			"foreign_keys": [
+				{
+					"schema_id": "Community",
+					"members": [ "." ]
+				}
+			],
+			"minLength": 1
+		},
+		"is_automated": {
+			"title": "Is this an automated event?",
+			"type": "boolean"
+		},
 		"references": {
 			"$comment": "Placeholder covered by _shared#/definitions/ReferencesProp",
 			"title": "Reference id(s)",
@@ -41,21 +66,8 @@
 			"title": "Links",
 			"description": "Ways to contact the benchmarking event responsible. It can be many different ones: public page, a social media link, some public chat, a public mailing list, ..."
 		},
-		"name": {
-			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
-			"title": "Name (*)"
-		},
-		"description": {
-			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
-			"title": "Description",
-			"description": "Long benchmarking event description, written in Markdown"
-		},
-		"is_automated": {
-			"title": "Is this an automated event?",
-			"type": "boolean"
-		},
 		"dates": {
-			"title": "Benchmarking event Dates (*)",
+			"title": "Benchmarking event Dates",
 			"description": "Relevant dates for this benchmarking event",
 			"type": "object",
 			"properties": {
@@ -77,18 +89,6 @@
 				"benchmark_start": ["benchmark_stop"],
 				"benchmark_stop": ["benchmark_start"]
 			}
-		},
-		"community_id": {
-			"title": "Community ID (*)",
-			"description": "The community id where this benchmarking event belongs",
-			"type": "string",
-			"foreign_keys": [
-				{
-					"schema_id": "Community",
-					"members": [ "." ]
-				}
-			],
-			"minLength": 1
 		},
 		"bench_contact_ids": {
 			"title": "The benchmarking event contact id(s) (*)",
