@@ -161,7 +161,6 @@
 			"pattern": "^OEBM[0-9]{3}[A-Z0-9]{7}\\.[1-9][0-9]*$",
 			"readOnly": true
 		},
-		
 		"ReferenceCanonicalId": {
 			"title": "The unique id of the bibliographic reference. It is either its DOI or its PubMedId",
 			"type": "string",
@@ -221,7 +220,6 @@
 			"pattern": "^OEBT[0-9]{3}[A-Z0-9]{7}\\.[1-9][0-9]*$",
 			"readOnly": true
 		},
-		
 		"CommonKeys": {
 			"properties": {
 				"_metadata": {
@@ -302,12 +300,12 @@
 								"members": [ "." ]
 							}
 						],
-						"minLength": 1
-					},
-					"widget": {
-					  "formlyConfig": {
-					    "id": "custom_id"
-					  }
+						"minLength": 1,
+						"widget": {
+						  "formlyConfig": {
+						    "id": "custom_id"
+						  }
+						}
 					}
 				}
 			}
@@ -320,7 +318,7 @@
 					"type": "string",
 					"widget": {
 					  "formlyConfig": {
-					    "id": "name_id"
+					    "id": "idddd_name"
 					  }
 					}
 				},
