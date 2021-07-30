@@ -43,12 +43,7 @@
 		},
 		"name": {
 			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
-			"title": "Name",
-			"widget": {
-			  "formlyConfig": {
-			    "id": "custom_id"
-			  }
-			}
+			"title": "Name"
 		},
 		"description": {
 			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
