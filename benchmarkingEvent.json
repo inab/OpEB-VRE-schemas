@@ -83,12 +83,7 @@
 		"references": {
 			"$comment": "Placeholder covered by _shared#/definitions/ReferencesProp",
 			"title": "Reference id(s)",
-			"description": "The related reference id(s) (if any)",
-			"widget": {
-			  "formlyConfig": {
-			    "id": "hola"
-			  }
-			}
+			"description": "The related reference id(s) (if any)"
 		},
 		"links": {
 			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
