@@ -43,8 +43,7 @@
 		},
 		"name": {
 			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
-			"title": "Name",
-			"name": "custom_name"
+			"title": "Name"
 		},
 		"description": {
 			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
@@ -85,7 +84,11 @@
 			"$comment": "Placeholder covered by _shared#/definitions/ReferencesProp",
 			"title": "Reference id(s)",
 			"description": "The related reference id(s) (if any)",
-			"classNames": "claseref"
+			"widget": {
+			  "formlyConfig": {
+			    "id": "hola"
+			  }
+			}
 		},
 		"links": {
 			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
