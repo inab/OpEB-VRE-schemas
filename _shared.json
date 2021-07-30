@@ -303,6 +303,11 @@
 							}
 						],
 						"minLength": 1
+					},
+					"widget": {
+					  "formlyConfig": {
+					    "id": "custom_id"
+					  }
 					}
 				}
 			}
@@ -312,12 +317,7 @@
 				"name": {
 					"title": "Short community name",
 					"minLength": 1,
-					"type": "string",
-					"widget": {
-					  "formlyConfig": {
-					    "id": "custom_id"
-					  }
-					}
+					"type": "string"
 				},
 				"description": {
 					"title": "Long community, benchmarking event or challenge description, written in Markdown",
