@@ -372,7 +372,14 @@
 								"description": "The helpdesk mail, main website, social media URL (LinkedIn, Twitter, etc...), public chat URL, etc...",
 								"type": "string",
 								"pattern": "^(?:mailto|http|https|data|ftp):.*$",
-								"format": "uri"
+								"format": "uri",
+								"widget": {
+									"formlyConfig": {
+										"templateOptions": {
+											"placeholder": "Ej: https://www.google.es/"
+										}
+									}
+								}
 							},
 							"label": {
 								"title": "The type of URI",
