@@ -36,7 +36,7 @@
 			"widget": {
 				"formlyConfig": {
 					"templateOptions": {
-						"placeholder": "Example: benchmarking_event_322"
+						"placeholder": "Example: Benchmarking_event_322"
 					}
 				}
 			}
@@ -59,7 +59,7 @@
 			"widget": {
 				"formlyConfig": {
 					"templateOptions": {
-						"placeholder": "Example: this is the description about the benchmarking event"
+						"placeholder": "Example: This is the description about the benchmarking event"
 					}
 				}
 			}
