@@ -10,6 +10,11 @@
 			"additionalProperties": true,
 			"propertyNames": {
 				"pattern": "^(?:[A-Za-z][A-Za-z0-9_-]*:|_)[A-Za-z][A-Za-z0-9_-]*$"
+			},
+			"widget": {
+			  "formlyConfig": {
+			    "hide": true
+			  }
 			}
 		},
 		"OriginalId": {
@@ -18,7 +23,12 @@
 			"readOnly": true,
 			"pattern": "^(?!(?i)OEB).+$",
 			"type": "string",
-			"minLength": 1
+			"minLength": 1,
+			"widget": {
+			  "formlyConfig": {
+			    "hide": true
+			  }
+			}
 		},
 		"OriginalIdOnSub": {
 			"pattern": "^(?!(?i)OEB).+$",
@@ -42,23 +52,37 @@
 			"description": "date-time",
 			"readOnly": true,
 			"type": "string",
-			"format": "date-time"
+			"format": "date-time",
+			"widget": {
+			  "formlyConfig": {
+			    "hide": true
+			  }
+			}
 		},
 		"Deleted": {
 			"title": "Entries' deletion timestamp (internal to the database)",
 			"description": "date-time",
 			"readOnly": true,
 			"type": "string",
-			"format": "date-time"
+			"format": "date-time",
+			"widget": {
+			  "formlyConfig": {
+			    "hide": true
+			  }
+			}
 		},
 		"Updated": {
 			"title": "Entries' last update's timestamp (internal to the database)",
 			"description": "date-time",
 			"readOnly": true,
 			"type": "string",
-			"format": "date-time"
+			"format": "date-time",
+			"widget": {
+			  "formlyConfig": {
+			    "hide": true
+			  }
+			}
 		},
-		
 		"BenchmarkingEventTemporaryId":	{
 			"title": "The temporary id of a benchmarking event entry",
 			"type": "string",
@@ -117,7 +141,6 @@
 			"pattern": "^orcid:\\d{4}-\\d{4}-\\d{4}-\\d{3}(\\d|X)$",
 			"readOnly": true
 		},
-		
 		"DatasetTemporaryId": {
 			"title": "The temporary id of a dataset",
 			"type": "string",
@@ -139,14 +162,12 @@
 			"pattern": "^OEBD[0-9]{3}[A-Z0-9]{7}\\.[1-9][0-9]*$",
 			"readOnly": true
 		},
-		
 		"SchemeCanonicalId": {
 			"title": "Namespace acronym, corresponds to the namespace part of Curie (ns:id), so it should not contain invalid patterns",
 			"type": "string",
 			"$comment": "As it was described at https://www.ietf.org/rfc/rfc2396.html#section-3.1",
 			"pattern": "^[a-z][a-z0-9+.-]*$"
 		},
-		
 		"MetricsTemporaryId": {
 			"title": "The temporary id of a metrics definition",
 			"description": "Temporary identifiers internally used must follow this pattern",
@@ -181,7 +202,6 @@
 			],
 			"readOnly": true
 		},
-		
 		"TestActionTemporaryId": {
 			"title": "The temporary id of a test action",
 			"type": "string",
@@ -270,7 +290,12 @@
 						{
 							"$ref": "#/definitions/ToolCanonicalId"
 						}
-					]
+					],
+					"widget": {
+					  "formlyConfig": {
+					    "hide": true
+					  }
+					}
 				},
 				"@updated": {
 					"$ref": "#/definitions/Updated"
