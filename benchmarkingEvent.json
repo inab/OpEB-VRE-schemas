@@ -87,10 +87,21 @@
 			"title": "Is this an automated event?",
 			"type": "boolean"
 		},
-		"references": {
+		/*"references": {
 			"$comment": "Placeholder covered by _shared#/definitions/ReferencesProp",
 			"title": "Reference id(s)",
 			"description": "The related reference id(s) (if any)"
+		},*/
+		"references": {
+			"title": "Reference id(s)",
+			"description": "The related reference id(s) (if any)"
+			"type": "string",
+			"widget": {
+				"templateOptions": { 
+					"url": "https:\/\/en.wikipedia.org\/wiki\/Chuck_Norris",
+					"desc": "Description" 
+				}
+			}
 		},
 		"links": {
 			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
