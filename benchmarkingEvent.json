@@ -108,9 +108,10 @@
 					"type": "string",
 					"format": "date-time",
 					"widget": {
-					"formlyConfig": {
-						"templateOptions": {
-							"placeholder": "Ej: 2018-11-13T20:20:39+00:00"
+						"formlyConfig": {
+							"templateOptions": {
+								"placeholder": "Ej: 2018-11-13T20:20:39+00:00"
+							}
 						}
 					}
 				},
@@ -119,9 +120,11 @@
 					"description": "When stops the benchmarking event?",
 					"type": "string",
 					"format": "date-time",
-					"formlyConfig": {
-						"templateOptions": {
-							"placeholder": "Ej: 2018-11-13T20:20:39+00:00"
+					"widget": {
+						"formlyConfig": {
+							"templateOptions": {
+								"placeholder": "Ej: 2018-11-13T20:20:39+00:00"
+							}
 						}
 					}
 				}
