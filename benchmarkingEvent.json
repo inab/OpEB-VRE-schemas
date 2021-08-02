@@ -47,7 +47,7 @@
 			"widget": {
 				"formlyConfig": {
 					"templateOptions": {
-						"placeholder": "Ej: Some Event Name"
+						"placeholder": "Example: Some Event Name"
 					}
 				}
 			}
@@ -78,7 +78,7 @@
 			"widget": {
 				"formlyConfig": {
 					"templateOptions": {
-						"placeholder": "Ej: Community12"
+						"placeholder": "Example: Community12"
 					}
 				}
 			}
@@ -110,7 +110,7 @@
 					"widget": {
 						"formlyConfig": {
 							"templateOptions": {
-								"placeholder": "Ej: 2018-11-13T20:20:39+00:00"
+								"placeholder": "Example: 2018-11-13T20:20:39+00:00"
 							}
 						}
 					}
@@ -123,7 +123,7 @@
 					"widget": {
 						"formlyConfig": {
 							"templateOptions": {
-								"placeholder": "Ej: 2018-11-13T20:20:39+00:00"
+								"placeholder": "Example: 2018-11-13T20:20:39+00:00"
 							}
 						}
 					}
@@ -151,7 +151,7 @@
 				"widget": {
 					"formlyConfig": {
 						"templateOptions": {
-							"placeholder": "Ej: Contact11"
+							"placeholder": "Example: Contact11"
 						}
 					}
 				}
