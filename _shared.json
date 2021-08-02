@@ -335,7 +335,7 @@
 						  "formlyConfig": {
 						    "id": "custom_id",
 						    "templateOptions": {
-							"placeholder": "Ej: Reference34"
+							"placeholder": "Example: Reference34"
 						    }
 						  }
 						}
@@ -376,7 +376,7 @@
 								"widget": {
 									"formlyConfig": {
 										"templateOptions": {
-											"placeholder": "Ej: https://www.google.es/"
+											"placeholder": "Example: https://www.google.es/"
 										}
 									}
 								}
