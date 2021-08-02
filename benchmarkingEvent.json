@@ -147,12 +147,12 @@
 						"members": [ "." ]
 					}
 				],
-				"minLength": 1
-			},
-			"widget": {
-				"formlyConfig": {
-					"templateOptions": {
-						"placeholder": "Ej: Contact11"
+				"minLength": 1,
+				"widget": {
+					"formlyConfig": {
+						"templateOptions": {
+							"placeholder": "Ej: Contact11"
+						}
 					}
 				}
 			}
