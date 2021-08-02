@@ -36,7 +36,7 @@
 			"widget": {
 				"formlyConfig": {
 					"templateOptions": {
-						"placeholder": "The id here..."
+						"placeholder": "Example: benchmarking_event_322"
 					}
 				}
 			}
@@ -59,7 +59,7 @@
 			"widget": {
 				"formlyConfig": {
 					"templateOptions": {
-						"placeholder": "The description here..."
+						"placeholder": "Example: this is the description about the benchmarking event"
 					}
 				}
 			}
