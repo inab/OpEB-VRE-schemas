@@ -92,11 +92,14 @@
 			"description": "The related reference id(s) (if any)",
 			"type": "string",
 			"widget": {
-				"templateOptions": { 
-					"url": "https:\/\/en.wikipedia.org\/wiki\/Chuck_Norris",
-					"desc": "Description" 
+				"formlyConfig": {
+					"type": "link",
+					"templateOptions": { 
+						"url": "https:\/\/en.wikipedia.org\/wiki\/Chuck_Norris",
+						"desc": "Description"
+					}
 				}
-			}
+			  }
 		},
 		"links": {
 			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
