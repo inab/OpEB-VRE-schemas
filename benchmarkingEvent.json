@@ -95,7 +95,7 @@
 				"formlyConfig": {
 					"type": "link",
 					"templateOptions": { 
-						"url": "references",
+						"url": "reference",
 						"desc": "Reference id(s)"
 					}
 				}
