@@ -87,11 +87,6 @@
 			"title": "Is this an automated event?",
 			"type": "boolean"
 		},
-		/*"references": {
-			"$comment": "Placeholder covered by _shared#/definitions/ReferencesProp",
-			"title": "Reference id(s)",
-			"description": "The related reference id(s) (if any)"
-		},*/
 		"references": {
 			"title": "Reference id(s)",
 			"description": "The related reference id(s) (if any)",
