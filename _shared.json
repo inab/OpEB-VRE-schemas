@@ -30,7 +30,12 @@
 			"description": "This is a monotonic, incremental counter which changes only when the entry has changed",
 			"readOnly": true,
 			"type": "integer",
-			"minimum": 1
+			"minimum": 1,
+			"widget": {
+			  "formlyConfig": {
+			    "hide": true
+			  }
+			}
 		},
 		"Created": {
 			"title": "Entries' creation timestamp (internal to the database)",
