@@ -46,7 +46,7 @@
 			}
 		},
 		"bibliographic_ids": {
-			"title": "Bibliographic IDs",
+			"title": "Bibliographic IDs*",
 			"description": "The recorded bibliographic ids of the referenced material, as CURIE/identifiers.org format or a bare link",
 			"type": "array",
 			"minItems": 1,
