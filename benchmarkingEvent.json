@@ -128,28 +128,6 @@
 				],
 				"minLength": 1
 			}
-		},
-		"@canonical_id": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"_metadata": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"@revision": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"@updated": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"@deleted": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"@created": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"orig_id": {
-			"$comment": "Placeholder covered by _shared#/definitions/OrigIdProp",
-			"title": "The benchmarking event original id"
 		}
 	},
 	"additionalProperties": false,
