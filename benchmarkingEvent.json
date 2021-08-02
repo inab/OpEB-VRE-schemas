@@ -95,7 +95,7 @@
 				"formlyConfig": {
 					"type": "link",
 					"templateOptions": { 
-						"url": "https:\/\/en.wikipedia.org\/wiki\/Chuck_Norris",
+						"url": "references",
 						"desc": "Reference id(s)"
 					}
 				}
