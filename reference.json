@@ -46,7 +46,7 @@
 			}
 		},
 		"bibliographic_ids": {
-			"title": "Bibliographic IDs*",
+			"title": "Bibliographic IDs *",
 			"description": "The recorded bibliographic ids of the referenced material, as CURIE/identifiers.org format or a bare link",
 			"type": "array",
 			"minItems": 1,
@@ -75,21 +75,11 @@
 				"properties": {
 					"givenName": {
 						"title": "First / given name (or initials)",
-						"type": "array",
-						"minItems": 1,
-						"items": {
-							"type": "string",
-							"minLength": 1
-						}
+						"type": "string"
 					},
 					"surname": {
 						"title": "Surname(s)",
-						"type": "array",
-						"minItems": 1,
-						"items": {
-							"type": "string",
-							"minLength": 1
-						}
+						"type": "string"
 					},
 					"contact_id": {
 						"title": "Contact ID",
