@@ -94,7 +94,7 @@
 		},*/
 		"references": {
 			"title": "Reference id(s)",
-			"description": "The related reference id(s) (if any)"
+			"description": "The related reference id(s) (if any)",
 			"type": "string",
 			"widget": {
 				"templateOptions": { 
