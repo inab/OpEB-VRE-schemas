@@ -333,7 +333,10 @@
 						"minLength": 1,
 						"widget": {
 						  "formlyConfig": {
-						    "id": "custom_id"
+						    "id": "custom_id",
+						    "templateOptions": {
+							"placeholder": "Ej: Reference34"
+						    }
 						  }
 						}
 					}
