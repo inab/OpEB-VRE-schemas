@@ -12,7 +12,7 @@
 		"_id": {
 			"title": "Reference ID (*)",
 			"description": "The unique id of the bibliographic reference. It is either its DOI or its PubMedId",
-			"$ref": "_shared#/definitions/ReferenceCanonicalId"
+			"$ref": "_shared#/definitions/ReferenceCanonicalId",
 			"widget": {
 				"formlyConfig": {
 					"templateOptions": {
