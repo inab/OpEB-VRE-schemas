@@ -43,7 +43,14 @@
 		},
 		"name": {
 			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
-			"title": "Name"
+			"title": "Name",
+			"widget": {
+				"formlyConfig": {
+					"templateOptions": {
+						"placeholder": "Ej: Some Event Name"
+					}
+				}
+			}
 		},
 		"description": {
 			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
@@ -71,7 +78,7 @@
 			"widget": {
 				"formlyConfig": {
 					"templateOptions": {
-						"placeholder": "The community id here..."
+						"placeholder": "Ej: Community12"
 					}
 				}
 			}
@@ -99,13 +106,24 @@
 					"title": "Start date benchmarking event",
 					"description": "When starts the benchmarking event?",
 					"type": "string",
-					"format": "date-time"
+					"format": "date-time",
+					"widget": {
+					"formlyConfig": {
+						"templateOptions": {
+							"placeholder": "Ej: 2018-11-13T20:20:39+00:00"
+						}
+					}
 				},
 				"benchmark_stop": {
 					"title": "End date benchmarking event",
 					"description": "When stops the benchmarking event?",
 					"type": "string",
-					"format": "date-time"
+					"format": "date-time",
+					"formlyConfig": {
+						"templateOptions": {
+							"placeholder": "Ej: 2018-11-13T20:20:39+00:00"
+						}
+					}
 				}
 			},
 			"required": ["creation","modification"],
