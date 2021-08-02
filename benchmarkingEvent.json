@@ -96,7 +96,7 @@
 					"type": "link",
 					"templateOptions": { 
 						"url": "https:\/\/en.wikipedia.org\/wiki\/Chuck_Norris",
-						"desc": "Description"
+						"desc": "Reference id(s)"
 					}
 				}
 			  }
