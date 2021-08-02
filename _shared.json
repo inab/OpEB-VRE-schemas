@@ -188,7 +188,7 @@
 			"readOnly": true
 		},
 		"ReferenceCanonicalId": {
-			"title": "The unique id of the bibliographic reference. It is either its DOI or its PubMedId",
+			"title": "Reference ID",
 			"type": "string",
 			"oneOf": [
 				{
