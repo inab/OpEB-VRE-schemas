@@ -95,8 +95,8 @@
 				"formlyConfig": {
 					"type": "BDMLoader",
 					"templateOptions": { 
-						"url": "reference",
-						"desc": "Reference id(s)"
+						"BDMLoaderShortName": "reference",
+						"BDMLoaderTitle": "Reference id(s)"
 					}
 				}
 			  }
