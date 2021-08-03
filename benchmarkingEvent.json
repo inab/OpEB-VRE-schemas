@@ -93,7 +93,7 @@
 			"type": "string",
 			"widget": {
 				"formlyConfig": {
-					"type": "link",
+					"type": "BDMLoader",
 					"templateOptions": { 
 						"url": "reference",
 						"desc": "Reference id(s)"
