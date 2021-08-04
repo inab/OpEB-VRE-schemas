@@ -330,6 +330,10 @@
 							}
 						],
 						"minLength": 1,
+						"enum": [
+							"hola",
+							"hello"
+						],
 						"widget": {
 							"formlyConfig": {
 								"type": "BDMLoader",
