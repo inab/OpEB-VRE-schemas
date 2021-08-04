@@ -90,16 +90,7 @@
 		"references": {
 			"title": "Reference id(s)",
 			"description": "The related reference id(s) (if any)",
-			"type": "string",
-			"widget": {
-				"formlyConfig": {
-					"type": "BDMLoader",
-					"templateOptions": { 
-						"short_name": "reference",
-						"title": "Reference id(s)"
-					}
-				}
-			  }
+			"$comment": "Placeholder covered by _shared#/definitions/ReferencesProp"
 		},
 		"links": {
 			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
