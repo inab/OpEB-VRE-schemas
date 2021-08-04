@@ -331,13 +331,14 @@
 						],
 						"minLength": 1,
 						"widget": {
-						  "formlyConfig": {
-						    "id": "custom_id",
-						    "templateOptions": {
-							"placeholder": "Example: Reference34"
-						    }
+							"formlyConfig": {
+								"type": "BDMLoader",
+								"templateOptions": { 
+									"short_name": "reference",
+									"title": "Reference id(s)"
+								}
+							}
 						  }
-						}
 					}
 				}
 			}
