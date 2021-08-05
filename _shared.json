@@ -339,7 +339,8 @@
 								"type": "BDMLoader",
 								"templateOptions": { 
 									"short_name": "reference",
-									"title": "Reference id(s)"
+									"title": "Reference id(s)",
+									"BDMType": "references"
 								}
 							}
 						  }
