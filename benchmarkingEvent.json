@@ -141,6 +141,11 @@
 			"minItems": 1,
 			"items": {
 				"type": "string",
+				"enum": [
+					"a",
+					"b", 
+					"c"
+				],
 				"foreign_keys": [
 					{
 						"schema_id": "Contact",
