@@ -319,7 +319,7 @@
 			"properties": {
 				"references": {
 					"title": "The related reference id(s) (if any)",
-					"type": "array",
+					"type": "string",
 					"minItems": 1,
 					"items": {
 						"type": "string",
@@ -330,10 +330,6 @@
 							}
 						],
 						"minLength": 1,
-						"enum": [
-							"hola",
-							"hello"
-						],
 						"widget": {
 							"formlyConfig": {
 								"type": "BDMLoader",
