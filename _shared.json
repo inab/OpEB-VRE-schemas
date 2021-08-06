@@ -318,29 +318,18 @@
 		"ReferencesProp": {
 			"properties": {
 				"references": {
-					"title": "The related reference id(s) (if any)",
-					"type": "string",
-					"minItems": 1,
-					"items": {
-						"type": "string",
-						"foreign_keys": [
-							{
-								"schema_id": "Reference",
-								"members": [ "." ]
+					"title": "Reference idd(s)",
+					"type": "array",
+					"widget": {
+						"formlyConfig": {
+							"type": "BDMLoader",
+							"templateOptions": { 
+								"short_name": "reference",
+								"title": "Reference id(s)",
+								"BDMType": "references"
 							}
-						],
-						"minLength": 1,
-						"widget": {
-							"formlyConfig": {
-								"type": "BDMLoader",
-								"templateOptions": { 
-									"short_name": "reference",
-									"title": "Reference id(s)",
-									"BDMType": "references"
-								}
-							}
-						  }
-					}
+						}
+					  }
 				}
 			}
 		},
