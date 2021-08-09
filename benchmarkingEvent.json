@@ -139,14 +139,8 @@
 			"title": "The benchmarking event contact id(s) (*)",
 			"type": "array",
 			"minItems": 1,
-			"uniqueItems" : true,
 			"items": {
 				"type": "string",
-				"enum": [
-					"a",
-					"b", 
-					"c"
-				],
 				"foreign_keys": [
 					{
 						"schema_id": "Contact",
