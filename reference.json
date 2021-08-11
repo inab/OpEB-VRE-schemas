@@ -39,8 +39,10 @@
 			"type": "string",
 			"widget": {
 				"formlyConfig": {
+					"type": "textarea",
 					"templateOptions": {
-						"placeholder": "Example: Some abstract referenced material"
+					      "placeholder": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquet ut urna non aliquam. In ullamcorper mi diam, et posuere nibh ultricies sit amet. Sed quis egestas tortor. Pellentesque tristique, lorem at feugiat egestas, tellus quam rhoncus sem, ut blandit tortor lectus eget purus. Donec felis ipsum, aliquam in egestas et, fringilla a ex. Vestibulum sodales lacinia dui, at convallis purus. Nunc pulvinar ligula mauris, quis ullamcorper diam suscipit a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque porta eget mi vitae varius. Vestibulum sed varius velit.",
+					      "rows": 5
 					}
 				}
 			}
@@ -69,7 +71,6 @@
 			"title": "Authors of Referenced material",
 			"description": "Optional list of authors of the referenced material",
 			"type": "array",
-			"minItems": 1,
 			"items": {
 				"type": "object",
 				"properties": {
@@ -90,8 +91,7 @@
 								"schema_id": "Contact",
 								"members": [ "." ]
 							}
-						],
-						"minLength": 1
+						]
 					}
 				},
 				"additionalProperties": false,
