@@ -146,8 +146,8 @@
 						"short_name": "contact",
 						"title": "Contact id(s)",
 						"BDMType": "bench_contact_ids",
-						"url_staged": "https://dev2-openebench.bsc.es/api/scientific/staged/Reference",
-						"url_submission": "https://dev2-openebench.bsc.es/api/scientific/submission/Reference"
+						"url_staged": "https://dev2-openebench.bsc.es/api/scientific/staged/Contact",
+						"url_submission": "https://dev2-openebench.bsc.es/api/scientific/submission/Contact"
 					}
 				}
 			  }
