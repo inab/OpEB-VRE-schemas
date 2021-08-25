@@ -138,8 +138,7 @@
 			"title": "The canonical id of a contact. It must be a valid ORCID",
 			"type": "string",
 			"description": "Canonical contact identifiers returned by the APIs must follow this pattern, and they do not include the revision",
-			"pattern": "^orcid:\\d{4}-\\d{4}-\\d{4}-\\d{3}(\\d|X)$",
-			"readOnly": true
+			"pattern": "^orcid:\\d{4}-\\d{4}-\\d{4}-\\d{3}(\\d|X)$"
 		},
 		"DatasetTemporaryId": {
 			"title": "The temporary id of a dataset",
