@@ -16,37 +16,10 @@
 		"_id": {
 			"$ref": "_shared#/definitions/ContactCanonicalId"
 		},
-		"_schema": {
-			"title": "The JSON schema absolute URI. It must match the value of '$id' in the JSON schema",
-			"type": "string",
-			"format": "uri",
-			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Contact" ]
-		},
-		
-		"@canonical_id": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys",
-			"$ref": "_shared#/definitions/ContactCanonicalId"
-		},
-		"_metadata": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"@revision": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"@updated": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"@deleted": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"@created": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
 		"links": {
 			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
 			"title": "Optional links related to the contact"
 		},
-		
 		"givenName": {
 			"title": "First / given name",
 			"type": "string",
