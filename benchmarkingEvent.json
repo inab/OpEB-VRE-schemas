@@ -139,23 +139,16 @@
 			"title": "The benchmarking event contact id(s) (*)",
 			"type": "array",
 			"minItems": 1,
-			"items": {
-				"type": "string",
-				"foreign_keys": [
-					{
-						"schema_id": "Contact",
-						"members": [ "." ]
-					}
-				],
-				"minLength": 1,
-				"widget": {
-					"formlyConfig": {
-						"templateOptions": {
-							"placeholder": "Example: Contact11"
-						}
+			"widget": {
+				"formlyConfig": {
+					"type": "BDMLoader",
+					"templateOptions": { 
+						"short_name": "contact",
+						"title": "Contact id(s)",
+						"BDMType": "bench_contact_ids"
 					}
 				}
-			}
+			  }
 		}
 	},
 	"additionalProperties": false,
