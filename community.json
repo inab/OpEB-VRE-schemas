@@ -1,7 +1,6 @@
 {
 	"$id": "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Community",
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"title": "Community concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
 	"$comment": "allOf and placeholders inspired by https://stackoverflow.com/a/24365393",
 	"allOf": [
 		{
@@ -19,32 +18,6 @@
 		"_id": {
 			"$ref": "_shared#/definitions/CommunityCanonicalId"
 		},
-		"_schema": {
-			"title": "The JSON schema absolute URI. It must match the value of '$id' in the JSON schema",
-			"type": "string",
-			"format": "uri",
-			"enum": [ "https://www.elixir-europe.org/excelerate/WP2/json-schemas/2.0/Community" ]
-		},
-		
-		"@canonical_id": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys",
-			"$ref": "_shared#/definitions/CommunityCanonicalId"
-		},
-		"_metadata": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"@revision": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"@updated": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"@deleted": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
-		"@created": {
-			"$comment": "Placeholder covered by _shared#/definitions/CommonKeys"
-		},
 		"references": {
 			"$comment": "Placeholder covered by _shared#/definitions/ReferencesProp",
 			"title": "The community reference id(s) (if any)"
@@ -61,7 +34,6 @@
 			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
 			"title": "Long community description, written in Markdown"
 		},
-		
 		"acronym": {
 			"title": "Unique community acronym",
 			"minLength": 1,
