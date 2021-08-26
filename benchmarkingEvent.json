@@ -64,6 +64,10 @@
 				}
 			}
 		},
+		"is_automated": {
+			"title": "Is this an automated event?",
+			"type": "boolean"
+		},
 		"community_id": {
 			"title": "Community ID",
 			"description": "The community id where this benchmarking event belongs",
@@ -86,10 +90,6 @@
 					}
 				}
 			}
-		},
-		"is_automated": {
-			"title": "Is this an automated event?",
-			"type": "boolean"
 		},
 		"references": {
 			"title": "Reference id(s)",
