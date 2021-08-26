@@ -77,8 +77,12 @@
 			"minLength": 1,
 			"widget": {
 				"formlyConfig": {
-					"templateOptions": {
-						"placeholder": "Example: Community12"
+					"type": "BDMLoader",
+					"templateOptions": { 
+						"short_name": "community",
+						"title": "Community ID",
+						"BDMType": "community_id",
+						"url_staged": "https://dev2-openebench.bsc.es/api/scientific/staged/Community"
 					}
 				}
 			}
