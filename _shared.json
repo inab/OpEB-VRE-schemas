@@ -103,7 +103,6 @@
 			"pattern": "^OEBE[0-9]{3}[A-Z0-9]{7}\\.[1-9][0-9]*$",
 			"readOnly": true
 		},
-		
 		"ChallengeTemporaryId": {
 			"title": "The temporary id of a challenge",
 			"type": "string",
