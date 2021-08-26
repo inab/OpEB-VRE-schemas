@@ -130,8 +130,7 @@
 			"title": "The canonical id of a community",
 			"type": "string",
 			"description": "Canonical community identifiers returned by the APIs must follow this pattern, and they do not include the revision",
-			"pattern": "^OEBC[0-9]{3}$",
-			"readOnly": true
+			"pattern": "^OEBC[0-9]{3}$"
 		},
 		
 		"ContactCanonicalId": {
