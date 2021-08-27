@@ -327,7 +327,7 @@
 								"BDMType": "references",
 								"url_staged": "https://dev2-openebench.bsc.es/api/scientific/staged/Reference",
 								"url_submission": "https://dev2-openebench.bsc.es/api/scientific/submission/Reference",
-								"url_submit": "https://dev2-openebench.bsc.es/api/scientific/staged/Reference/"
+								"url_submit": "https://dev2-openebench.bsc.es/api/scientific/staged/Reference"
 							}
 						}
 					  }
