@@ -339,12 +339,7 @@
 				"name": {
 					"title": "Short community name",
 					"minLength": 1,
-					"type": "string",
-					"widget": {
-					  "formlyConfig": {
-					    "id": "idddd_name"
-					  }
-					}
+					"type": "string"
 				},
 				"description": {
 					"title": "Long community, benchmarking event or challenge description, written in Markdown",
