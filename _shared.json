@@ -188,7 +188,7 @@
 			"title": "The unique id of the bibliographic reference. It is either its DOI or its PubMedId",
 			"type": "string",
 			"description": "DOI or PubMed bibliographic identifiers must follow this pattern, and they do not include the revision",
-			"pattern": "^(doi:[0-9]{2}\\.[0-9]{4,}/.*)|(pubmed:[1-9][0-9]*)$"
+			"pattern": "^orcid:\\d{4}-\\d{4}-\\d{4}-\\d{3}(\\d|X)$"
 		},
 		"TestActionTemporaryId": {
 			"title": "The temporary id of a test action",
