@@ -22,7 +22,7 @@
 			"title": "Benchmarking Event ID",
 			"description": "The unique id of the benchmarking event, according to the rules. For submissions there are temporary identifiers. This identifier cannot begin by OEB",
 			"type": "string",
-			"pattern": "^(OEBE[0-9]{3}[A-Z0-9]{7})|(OEBE[0-9]{3}t[A-Z0-9]{6})$",
+			"pattern": "^(OEBE[0-9]{3}[A-Z0-9]{7})|(OEBE[0-9]{3}t[A-Z0-9]{6})|((?!OEB).+)$",
 			"widget": {
 				"formlyConfig": {
 					"templateOptions": {
