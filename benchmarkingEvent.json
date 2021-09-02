@@ -22,17 +22,7 @@
 			"title": "Benchmarking Event ID",
 			"description": "The unique id of the benchmarking event, according to the rules. For submissions there are temporary identifiers. This identifier cannot begin by OEB",
 			"type": "string",
-			"oneOf": [
-				{
-					"$ref": "_shared#/definitions/OriginalIdOnSub"
-				},
-				{
-					"$ref": "_shared#/definitions/BenchmarkingEventTemporaryId"
-				},
-				{
-					"$ref": "_shared#/definitions/BenchmarkingEventId"
-				}
-			],
+			"pattern": "^((?!(?i)OEB).+)|(OEBE[0-9]{3}t[A-Z0-9]{6})|(OEBE[0-9]{3}[A-Z0-9]{7})$"
 			"widget": {
 				"formlyConfig": {
 					"templateOptions": {
