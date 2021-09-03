@@ -296,19 +296,9 @@
 		"ReferencesProp": {
 			"properties": {
 				"references": {
-					"title": "The related reference id(s) (if any)",
+					"title": "Reference id(s)",
 					"type": "array",
 					"minItems": 1,
-					"items": {
-						"type": "string",
-						"foreign_keys": [
-							{
-								"schema_id": "Reference",
-								"members": [ "." ]
-							}
-						],
-						"minLength": 1
-					},
 					"widget": {
 						"formlyConfig": {
 							"type": "BDMLoader",
@@ -345,10 +335,18 @@
 						"type": "object",
 						"properties": {
 							"uri": {
-								"title": "The helpdesk mail, main website, social media URL (LinkedIn, Twitter, etc...), public chat URL, etc...",
+								"title": "uri",
 								"type": "string",
 								"pattern": "^(?:mailto|http|https|data|ftp):.*$",
-								"format": "uri"
+								"format": "uri",
+								"format": "uri",
+								"widget": {
+									"formlyConfig": {
+										"templateOptions": {
+											"placeholder": "Example: https://www.google.es/"
+										}
+									}
+								}
 							},
 							"label": {
 								"title": "The type of URI",
@@ -362,7 +360,9 @@
 									"Icon",
 									"Wallpaper",
 									"other"
-								]
+								],
+								"default": "Icon",
+								"readOnly": true
 							},
 							"comment": {
 								"title": "Internal comment about this URI (useful when the type of URI is other)",
