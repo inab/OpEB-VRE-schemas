@@ -31,6 +31,10 @@
 				}
 			}
 		},
+		"orig_id": {
+			"$comment": "Placeholder covered by _shared#/definitions/OrigIdProp",
+			"title": "The benchmarking event original id"
+		},
 		"name": {
 			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
 			"title": "Name",
@@ -97,6 +101,42 @@
 			"description": "Relevant dates for this benchmarking event",
 			"type": "object",
 			"properties": {
+				"creation": {
+					"title": "Creation date of the benchmarking event",
+					"type": "string",
+					"format": "date-time",
+					"widget": {
+						"formlyConfig": {
+							"templateOptions": {
+								"placeholder": "Example: 2018-11-13T20:20:39+00:00"
+							}
+						}
+					}
+				},
+				"modification": {
+					"title": "Last modification date of the benchmarking event",
+					"type": "string",
+					"format": "date-time",
+					"widget": {
+						"formlyConfig": {
+							"templateOptions": {
+								"placeholder": "Example: 2018-11-13T20:20:39+00:00"
+							}
+						}
+					}
+				},
+				"public": {
+					"title": "The date when this benchmarking event becomes public",
+					"type": "string",
+					"format": "date-time",
+					"widget": {
+						"formlyConfig": {
+							"templateOptions": {
+								"placeholder": "Example: 2018-11-13T20:20:39+00:00"
+							}
+						}
+					}
+				},
 				"benchmark_start": {
 					"title": "Start date benchmarking event",
 					"description": "When starts the benchmarking event?",
