@@ -10,29 +10,20 @@
 			"additionalProperties": true,
 			"propertyNames": {
 				"pattern": "^(?:[A-Za-z][A-Za-z0-9_-]*:|_)[A-Za-z][A-Za-z0-9_-]*$"
-			},
-			"widget": {
-			  "formlyConfig": {
-			    "hide": true
-			  }
 			}
 		},
 		"OriginalId": {
 			"title": "The original id of the entry",
 			"description": "The field is filled in on server side, and it contains the original id in '_id' used on data submission, used by the community",
-			"readOnly": true,
-			"pattern": "^(?!(?i)OEB).+$",
+			"pattern": "^(?![Oo][Ee][Bb]).+$",
 			"type": "string",
-			"minLength": 1,
-			"widget": {
-			  "formlyConfig": {
-			    "hide": true
-			  }
-			}
+			"minLength": 1
 		},
 		"OriginalIdOnSub": {
-			"pattern": "^(?!(?i)OEB).+$",
+			"pattern": "^(?![Oo][Ee][Bb]).+$",
 			"description": "Identifiers used on submission must not begin with OEB. Client tools must use always this pattern to validate",
+			"type": "string",
+			"minLength": 1,
 			"writeOnly": true
 		},
 		"Revision": {
@@ -40,89 +31,66 @@
 			"description": "This is a monotonic, incremental counter which changes only when the entry has changed",
 			"readOnly": true,
 			"type": "integer",
-			"minimum": 1,
-			"widget": {
-			  "formlyConfig": {
-			    "hide": true
-			  }
-			}
+			"minimum": 1
 		},
 		"Created": {
 			"title": "Entries' creation timestamp (internal to the database)",
 			"description": "date-time",
 			"readOnly": true,
 			"type": "string",
-			"format": "date-time",
-			"widget": {
-			  "formlyConfig": {
-			    "hide": true
-			  }
-			}
+			"format": "date-time"
 		},
 		"Deleted": {
 			"title": "Entries' deletion timestamp (internal to the database)",
 			"description": "date-time",
 			"readOnly": true,
 			"type": "string",
-			"format": "date-time",
-			"widget": {
-			  "formlyConfig": {
-			    "hide": true
-			  }
-			}
+			"format": "date-time"
 		},
 		"Updated": {
 			"title": "Entries' last update's timestamp (internal to the database)",
 			"description": "date-time",
 			"readOnly": true,
 			"type": "string",
-			"format": "date-time",
-			"widget": {
-			  "formlyConfig": {
-			    "hide": true
-			  }
-			}
+			"format": "date-time"
 		},
+		
 		"BenchmarkingEventTemporaryId":	{
 			"title": "The temporary id of a benchmarking event entry",
 			"type": "string",
 			"description": "Temporary identifiers internally used must follow this pattern",
-			"pattern": "^OEBE[0-9]{3}t[A-Z0-9]{6}$",
-			"readOnly": true
+			"pattern": "^OEBE[0-9]{3}t[A-Z0-9]{6}$"
 		},
 		"BenchmarkingEventId": {
 			"title": "The id of a benchmarking event entry",
+			"type": "string",
 			"pattern": "^OEBE[0-9]{3}[A-Z0-9]{7}$",
-			"description": "Identifiers returned by the APIs must follow this pattern",
-			"readOnly": true
+			"description": "Identifiers returned by the APIs must follow this pattern"
 		},
 		"BenchmarkingEventCanonicalId": {
 			"title": "The canonical id of a benchmarking event entry",
 			"type": "string",
 			"description": "Canonical benchmarking event identifiers returned by the APIs must follow this pattern",
-			"pattern": "^OEBE[0-9]{3}[A-Z0-9]{7}\\.[1-9][0-9]*$",
-			"readOnly": true
+			"pattern": "^OEBE[0-9]{3}[A-Z0-9]{7}\\.[1-9][0-9]*$"
 		},
+		
 		"ChallengeTemporaryId": {
 			"title": "The temporary id of a challenge",
 			"type": "string",
 			"pattern": "^OEBX[0-9]{3}t[A-Z0-9]{6}$",
-			"description": "Temporary identifiers internally used must follow this pattern",
-			"readOnly": true
+			"description": "Temporary identifiers internally used must follow this pattern"
 		},
 		"ChallengeId": {
 			"title": "The id of a challenge",
 			"type": "string",
 			"pattern": "^OEBX[0-9]{3}[A-Z0-9]{7}$",
-			"description": "Identifiers returned by the APIs must follow this pattern",
-			"readOnly": true
+			"description": "Identifiers returned by the APIs must follow this pattern"
 		},
 		"ChallengeCanonicalId": {
 			"title": "The canonical id of a challenge",
 			"type": "string",
 			"description": "Canonical challenge identifiers returned by the APIs must follow this pattern",
-			"pattern": "^OEBX[0-9]{3}[A-Z0-9]{7}\\.[1-9][0-9]*$",
-			"readOnly": true
+			"pattern": "^OEBX[0-9]{3}[A-Z0-9]{7}\\.[1-9][0-9]*$"
 		},
 		
 		"CommunityCanonicalId": {
@@ -138,101 +106,97 @@
 			"description": "Canonical contact identifiers returned by the APIs must follow this pattern, and they do not include the revision",
 			"pattern": "^orcid:\\d{4}-\\d{4}-\\d{4}-\\d{3}(\\d|X)$"
 		},
+		
 		"DatasetTemporaryId": {
 			"title": "The temporary id of a dataset",
 			"type": "string",
 			"description": "Temporary identifiers internally used must follow this pattern",
-			"pattern": "^OEBD[0-9]{3}t[A-Z0-9]{6}$",
-			"readOnly": true
+			"pattern": "^OEBD[0-9]{3}t[A-Z0-9]{6}$"
 		},
 		"DatasetId": {
 			"title": "The id of a dataset",
 			"type": "string",
 			"description": "Identifiers returned by the APIs must follow this pattern",
-			"pattern": "^OEBD[0-9]{3}[A-Z0-9]{7}$",
-			"readOnly": true
+			"pattern": "^OEBD[0-9]{3}[A-Z0-9]{7}$"
 		},
 		"DatasetCanonicalId": {
 			"title": "The canonical id of a dataset",
 			"type": "string",
 			"description": "Canonical dataset identifiers returned by the APIs must follow this pattern",
-			"pattern": "^OEBD[0-9]{3}[A-Z0-9]{7}\\.[1-9][0-9]*$",
-			"readOnly": true
+			"pattern": "^OEBD[0-9]{3}[A-Z0-9]{7}\\.[1-9][0-9]*$"
 		},
+		
 		"SchemeCanonicalId": {
 			"title": "Namespace acronym, corresponds to the namespace part of Curie (ns:id), so it should not contain invalid patterns",
 			"type": "string",
 			"$comment": "As it was described at https://www.ietf.org/rfc/rfc2396.html#section-3.1",
 			"pattern": "^[a-z][a-z0-9+.-]*$"
 		},
+		
 		"MetricsTemporaryId": {
 			"title": "The temporary id of a metrics definition",
 			"description": "Temporary identifiers internally used must follow this pattern",
-			"pattern": "^OEBM[0-9]{3}t[A-Z0-9]{6}$",
-			"readOnly": true
+			"type": "string",
+			"pattern": "^OEBM[0-9]{3}t[A-Z0-9]{6}$"
 		},
 		"MetricsId": {
 			"title": "The id of a metrics definition",
 			"description": "Identifiers returned by the APIs must follow this pattern",
-			"pattern": "^OEBM[0-9]{3}[A-Z0-9]{7}$",
-			"readOnly": true
+			"type": "string",
+			"pattern": "^OEBM[0-9]{3}[A-Z0-9]{7}$"
 		},
 		"MetricsCanonicalId": {
 			"title": "The canonical id of a metrics definition",
 			"type": "string",
 			"description": "Canonical metrics identifiers returned by the APIs must follow this pattern",
-			"pattern": "^OEBM[0-9]{3}[A-Z0-9]{7}\\.[1-9][0-9]*$",
-			"readOnly": true
+			"pattern": "^OEBM[0-9]{3}[A-Z0-9]{7}\\.[1-9][0-9]*$"
 		},
+		
 		"ReferenceCanonicalId": {
 			"title": "The unique id of the bibliographic reference. It is either its DOI or its PubMedId",
 			"type": "string",
 			"description": "DOI or PubMed bibliographic identifiers must follow this pattern, and they do not include the revision",
 			"pattern": "^(doi:[0-9]{2}\\.[0-9]{4,}/.*)|(pubmed:[1-9][0-9]*)$"
 		},
+		
 		"TestActionTemporaryId": {
 			"title": "The temporary id of a test action",
 			"type": "string",
 			"pattern": "^OEBA[0-9]{3}t[A-Z0-9]{6}$",
-			"description": "Temporary identifiers internally used must follow this pattern",
-			"readOnly": true
+			"description": "Temporary identifiers internally used must follow this pattern"
 		},
 		"TestActionId": {
 			"title": "The id of a test action",
 			"type": "string",
 			"pattern": "^OEBA[0-9]{3}[A-Z0-9]{7}$",
-			"description": "Identifiers returned by the APIs must follow this pattern",
-			"readOnly": true
+			"description": "Identifiers returned by the APIs must follow this pattern"
 		},
 		"TestActionCanonicalId": {
 			"title": "The canonical id of a test action",
 			"type": "string",
 			"description": "Canonical test action identifiers returned by the APIs must follow this pattern",
-			"pattern": "^OEBA[0-9]{3}[A-Z0-9]{7}\\.[1-9][0-9]*$",
-			"readOnly": true
+			"pattern": "^OEBA[0-9]{3}[A-Z0-9]{7}\\.[1-9][0-9]*$"
 		},
 		
 		"ToolTemporaryId": {
 			"title": "The temporary id of a tool",
 			"type": "string",
 			"description": "Temporary identifiers internally used must follow this pattern",
-			"pattern": "^OEBT[0-9]{3}t[A-Z0-9]{6}$",
-			"readOnly": true
+			"pattern": "^OEBT[0-9]{3}t[A-Z0-9]{6}$"
 		},
 		"ToolId": {
 			"title": "The id of a tool",
 			"type": "string",
 			"description": "Identifiers returned by the APIs must follow this pattern",
-			"pattern": "^OEBT[0-9]{3}[A-Z0-9]{7}$",
-			"readOnly": true
+			"pattern": "^OEBT[0-9]{3}[A-Z0-9]{7}$"
 		},
 		"ToolCanonicalId": {
 			"title": "The canonical id of a tool",
 			"type": "string",
 			"description": "Canonical tool identifiers returned by the APIs must follow this pattern",
-			"pattern": "^OEBT[0-9]{3}[A-Z0-9]{7}\\.[1-9][0-9]*$",
-			"readOnly": true
+			"pattern": "^OEBT[0-9]{3}[A-Z0-9]{7}\\.[1-9][0-9]*$"
 		},
+		
 		"CommonKeys": {
 			"properties": {
 				"_metadata": {
@@ -278,12 +242,7 @@
 						{
 							"$ref": "#/definitions/ToolCanonicalId"
 						}
-					],
-					"widget": {
-					  "formlyConfig": {
-					    "hide": true
-					  }
-					}
+					]
 				},
 				"@updated": {
 					"$ref": "#/definitions/Updated"
@@ -307,22 +266,19 @@
 		"ReferencesProp": {
 			"properties": {
 				"references": {
-					"title": "Reference idd(s)",
+					"title": "The related reference id(s) (if any)",
 					"type": "array",
 					"minItems": 1,
-					"widget": {
-						"formlyConfig": {
-							"type": "BDMLoader",
-							"templateOptions": { 
-								"short_name": "reference",
-								"title": "Reference id(s)",
-								"BDMType": "references",
-								"url_staged": "https://dev2-openebench.bsc.es/api/scientific/staged/Reference",
-								"url_submission": "https://dev2-openebench.bsc.es/api/scientific/submission/Reference",
-								"url_submit": "https://dev2-openebench.bsc.es/api/scientific/staged/Reference"
+					"items": {
+						"type": "string",
+						"foreign_keys": [
+							{
+								"schema_id": "Reference",
+								"members": [ "." ]
 							}
-						}
-					  }
+						],
+						"minLength": 1
+					}
 				}
 			}
 		},
@@ -341,22 +297,15 @@
 				"links": {
 					"title": "Ways to contact the community. It can be many different ones: public page, a social media link, some public chat, a public mailing list, ...",
 					"type": "array",
+					"minItems": 1,
 					"items": {
 						"type": "object",
 						"properties": {
 							"uri": {
-								"title": "uri",
-								"description": "The helpdesk mail, main website, social media URL (LinkedIn, Twitter, etc...), public chat URL, etc...",
+								"title": "The helpdesk mail, main website, social media URL (LinkedIn, Twitter, etc...), public chat URL, etc...",
 								"type": "string",
 								"pattern": "^(?:mailto|http|https|data|ftp):.*$",
-								"format": "uri",
-								"widget": {
-									"formlyConfig": {
-										"templateOptions": {
-											"placeholder": "Example: https://www.google.es/"
-										}
-									}
-								}
+								"format": "uri"
 							},
 							"label": {
 								"title": "The type of URI",
@@ -370,9 +319,11 @@
 									"Icon",
 									"Wallpaper",
 									"other"
-								],
-								"default": "Icon",
-								"readOnly": true
+								]
+							},
+							"comment": {
+								"title": "Internal comment about this URI (useful when the type of URI is other)",
+								"type": "string"
 							}
 						},
 						"additionalProperties": false,
