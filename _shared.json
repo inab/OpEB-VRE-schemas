@@ -289,6 +289,7 @@
 			"properties": {
 				"orig_id": {
 					"title": "The original id of the entry",
+					"pattern": "^(?![Oo][Ee][Bb]).+$",
 					"$ref": "#/definitions/OriginalId"
 				}
 			}
