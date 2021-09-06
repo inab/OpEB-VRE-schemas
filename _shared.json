@@ -310,6 +310,7 @@
 								"title": "Reference id(s)",
 								"BDMType": "references",
 								"new_button": true,
+								"title": "Bibliographic reference concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
 								"url_select": {
 									"url_staged": "https://dev2-openebench.bsc.es/api/scientific/staged/Reference"
 								},
