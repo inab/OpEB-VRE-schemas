@@ -366,7 +366,12 @@
 							},
 							"comment": {
 								"title": "Internal comment about this URI (useful when the type of URI is other)",
-								"type": "string"
+								"type": "string",
+								"widget": {
+								   "formlyConfig": {
+								     "hide": true
+								   }
+								 }
 							}
 						},
 						"additionalProperties": false,
