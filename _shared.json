@@ -293,7 +293,6 @@
 					"pattern": "^(?![Oo][Ee][Bb]).+$",
 					"type": "string",
 					"minLength": 1
-					"pattern": "^(?![Oo][Ee][Bb]).+$"
 				}
 			}
 		},
