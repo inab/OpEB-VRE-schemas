@@ -289,8 +289,11 @@
 			"properties": {
 				"orig_id": {
 					"title": "The original id of the entry",
+					"description": "The field is filled in on server side, and it contains the original id in '_id' used on data submission, used by the community",
 					"pattern": "^(?![Oo][Ee][Bb]).+$",
-					"$ref": "#/definitions/OriginalId"
+					"type": "string",
+					"minLength": 1
+					"pattern": "^(?![Oo][Ee][Bb]).+$"
 				}
 			}
 		},
