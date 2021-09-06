@@ -33,7 +33,14 @@
 		},
 		"orig_id": {
 			"$comment": "Placeholder covered by _shared#/definitions/OrigIdProp",
-			"title": "The benchmarking event original id"
+			"title": "The benchmarking event original id",
+			"widget": {
+				"formlyConfig": {
+					"templateOptions": {
+						"placeholder": "Example: ORIG_ID_1999"
+					}
+				}
+			}
 		},
 		"name": {
 			"$comment": "Placeholder covered by _shared#/definitions/LinksDescProp",
