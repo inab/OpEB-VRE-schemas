@@ -309,6 +309,7 @@
 								"short_name": "reference",
 								"title": "Reference id(s)",
 								"BDMType": "references",
+								"new_button": true,
 								"url_select": {
 									"url_staged": "https://dev2-openebench.bsc.es/api/scientific/staged/Reference"
 								},
