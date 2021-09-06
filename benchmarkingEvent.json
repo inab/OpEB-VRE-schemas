@@ -87,10 +87,10 @@
 						"short_name": "community",
 						"title": "Community ID",
 						"BDMType": "community_id",
-						"url_select": [
+						"url_select": {
 							"url_kk": "https://dev2-openebench.bsc.es/api/scientific/staged/kk",
 							"url_pp": "https://dev2-openebench.bsc.es/api/scientific/staged/pp",
-						],
+						},
 						"url_staged": "https://dev2-openebench.bsc.es/api/scientific/staged/Community",
 						"url_submit": "https://dev2-openebench.bsc.es/api/scientific/staged/Community"
 					}
