@@ -87,6 +87,7 @@
 						"short_name": "community",
 						"title": "Community ID",
 						"BDMType": "community_id",
+						"multiple": false,
 						"url_select": {
 							"url_staged": "https://dev2-openebench.bsc.es/api/scientific/staged/Community"
 						}
@@ -189,6 +190,7 @@
 						"short_name": "contact",
 						"title": "Contact id(s)",
 						"BDMType": "bench_contact_ids",
+						"multiple": true,
 						"url_select": {
 							"url_staged": "https://dev2-openebench.bsc.es/api/scientific/staged/Contact"
 						}
