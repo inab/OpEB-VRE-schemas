@@ -309,6 +309,7 @@
 								"short_name": "reference",
 								"title": "Reference id(s)",
 								"BDMType": "references",
+								"multiple": true,
 								"new_button": true,
 								"title": "Bibliographic reference concept (ELIXIR-EXCELERATE WP2 Benchmarking schemas)",
 								"url_select": {
