@@ -89,7 +89,7 @@
 						"BDMType": "community_id",
 						"multiple": false,
 						"url_select": {
-							"url_staged": "https://dev2-openebench.bsc.es/api/scientific/staged/Community"
+							"url_staged": "https://dev2-openebench.bsc.es/api/scientific/staged/Community?privileged=true"
 						}
 					}
 				}
