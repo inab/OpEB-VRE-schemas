@@ -3,13 +3,17 @@
 Web: https://dev2-openebench.bsc.es/
 
 Login (para hacer pruebas → test):
-    * Username: test@bsc.es
-    * Password: -
+* Username: test@bsc.es
+* Password: -
 
 Abrir la VM en Visual Studio en tu ordenador:
-    * ssh -f -N -L 2249:10.32.1.249:22 user@oeb-login.bsc.es
-    * sshfs -o port=2249 user@localhost:/home/CARPETA_EN_LOCAL
-    * Una vez tenemos esto en local, accedemos a la carpeta “openEbench-frontend/src/app” y tenemos todos los componentes.
+* ```sh
+   ssh -f -N -L 2249:10.32.1.249:22 user@oeb-login.bsc.es
+   ```
+* ```sh
+   sshfs -o port=2249 user@localhost:/home/CARPETA_EN_LOCAL
+   ```
+* Una vez tenemos esto en local, accedemos a la carpeta “openEbench-frontend/src/app” y tenemos todos los componentes.
 
 Para hacer build y que se vea todo en la web: npm run build-raw -- --optimization=false
       ![image](https://user-images.githubusercontent.com/51945891/133595485-0d73ea97-2157-472e-9588-d8591ccf0c2e.png)
