@@ -38,12 +38,12 @@ https://formly.dev/
 https://formly.dev/examples/advanced/json-schema → ejemplos de JSON Schemas con formulario y la librería correspondiente.
 
 El formulario crea todo menos los selects con información de la API.
-Donde está el código en el que se crea el formulario? src/app/BDMCreator
+Donde está el código en el que se crea el formulario? https://github.com/inab/openEbench-frontend/tree/development/src/app/BDMCreator
 El código está comentado.
 
-El formulario tiene types. Es decir, si el schema tiene que X elemento es type=object, este tiene una estructura concreta; con array lo mismo, etc. Estos types están en src/app/BDMCreator/schema-types
+El formulario tiene types. Es decir, si el schema tiene que X elemento es type=object, este tiene una estructura concreta; con array lo mismo, etc. Estos types están en https://github.com/inab/openEbench-frontend/tree/development/src/app/BDMCreator/schema-types
 
-Donde se crea el select y el botón new? src/app/BDMCreator/schema-types/BDMLoader
+Donde se crea el select y el botón new? https://github.com/inab/openEbench-frontend/tree/development/src/app/BDMCreator/schema-types/BDMLoader
 
 
 ### BDMLoader:
