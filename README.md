@@ -52,14 +52,14 @@ Donde se crea el select y el botón new? src/app/BDMCreator/schema-types/BDMLoad
 ![image](https://user-images.githubusercontent.com/51945891/133595573-4aaeec34-68dd-46b0-84ce-87e457b728c5.png)
 
 #### templateOptions de BDMLoader (JSON Schema):
-**1. short_name:** Ha de ser igual al nombre correspondiente que tenga el archivo de https://github.com/inab/OpEB-VRE-schemas/tree/frontend-mode-schema
-**2. title:** Titulo que quiero que aparezca al abrir el formulario correspondiente (si tiene new button).
-**3. BDMType:** Ha de coincidir con el nombre de ese atributo, en este caso es community_id.
-**4. multiple:** Si quiero que el select sea de tipo multiple o solo una única opción.
-**5. new_button:** Si es = true, existe un botón “New” para poder crear un elemento de ese tipo. Si es = false o simplemente no existe, no crea ese botón.
-**6. url_select:** Sirve para coger la información haciendo un GET a la API, es la URL que usará. Pueden haber objetos que puedan tener información tanto en staged como en sandbox. “url_select” permite que dentro haya tanto staged cómo sandbox, si alguno de los dos no está, simplemente no los lee. 
-   **1. url_staged:** Si es de la base de datos staged.
-   **2. url_sandbox:** Si es de la base de datos sandbox.
+1. **short_name:** Ha de ser igual al nombre correspondiente que tenga el archivo de https://github.com/inab/OpEB-VRE-schemas/tree/frontend-mode-schema
+2. **title:** Titulo que quiero que aparezca al abrir el formulario correspondiente (si tiene new button).
+3. **BDMType:** Ha de coincidir con el nombre de ese atributo, en este caso es community_id.
+4. **multiple:** Si quiero que el select sea de tipo multiple o solo una única opción.
+5. **new_button:** Si es = true, existe un botón “New” para poder crear un elemento de ese tipo. Si es = false o simplemente no existe, no crea ese botón.
+6. **url_select:** Sirve para coger la información haciendo un GET a la API, es la URL que usará. Pueden haber objetos que puedan tener información tanto en staged como en sandbox. “url_select” permite que dentro haya tanto staged cómo sandbox, si alguno de los dos no está, simplemente no los lee. 
+   1. **url_staged:** Si es de la base de datos staged.
+   2. **url_sandbox:** Si es de la base de datos sandbox.
 
 ## Apartado Usuario → Show sandbox
 Aparece una tabla con la información de los elementos que están en la base de datos sandbox.
