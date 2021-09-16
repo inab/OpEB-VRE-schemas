@@ -14,18 +14,18 @@ Abrir la VM en Visual Studio en tu ordenador:
 Para hacer build y que se vea todo en la web: npm run build-raw -- --optimization=false
       ![image](https://user-images.githubusercontent.com/51945891/133595485-0d73ea97-2157-472e-9588-d8591ccf0c2e.png)
       
-### Apartado Usuario → New Benchmarking Event
+## Apartado Usuario → New Benchmarking Event
 Crea un formulario a partir de unos JSON Schemas para crear un nuevo benchmarking event (todo automático).
 
 ![image](https://user-images.githubusercontent.com/51945891/133595611-1df11f14-a890-4cac-9ced-987f71181a4a.png)
 
-#### Donde están los JSON Schemas?
+### Donde están los JSON Schemas?
 https://github.com/inab/OpEB-VRE-schemas/tree/frontend-schema
 
 https://github.com/inab/OpEB-VRE-schemas/tree/frontend-mode-schema
 Estos segundos schemas se necesitan para que el formulario se cree correctamente ya que tiene muchas $ref a otros ficheros. José María hizo un parser para que funcionara correctamente. Este parser necesita esta estructura entre schemas. 
 
-#### Que librería se usa para el formulario? 
+### Que librería se usa para el formulario? 
 https://formly.dev/
 
 https://formly.dev/examples/advanced/json-schema → ejemplos de JSON Schemas con formulario y la librería correspondiente.
@@ -39,7 +39,7 @@ El formulario tiene types. Es decir, si el schema tiene que X elemento es type=o
 Donde se crea el select y el botón new? src/app/BDMCreator/schema-types/BDMLoader
 
 
-BDMLoader:
+### BDMLoader:
     • Como sabe el formulario que tiene que aparecer un select? Para que aparezca un select en medio del formulario es con type=BDMLoader dentro del apartado widget y formlyConfig, como en la siguiente imagen:
 
 ![image](https://user-images.githubusercontent.com/51945891/133595573-4aaeec34-68dd-46b0-84ce-87e457b728c5.png)
@@ -54,9 +54,9 @@ templateOptions de BDMLoader (JSON Schema):
         1. url_staged: Si es de la base de datos staged.
         2. url_sandbox: Si es de la base de datos sandbox.
 
-### Apartado Usuario → Show sandbox
+## Apartado Usuario → Show sandbox
 Aparece una tabla con la información de los elementos que están en la base de datos sandbox.
 
 ![image](https://user-images.githubusercontent.com/51945891/133595633-6e62b630-aa7d-4155-834a-ac26a6638084.png)
 
-#### Donde está el código? En src/app/sandbox-selector/
+### Donde está el código? En src/app/sandbox-selector/
