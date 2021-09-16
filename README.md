@@ -15,7 +15,10 @@ Abrir la VM en Visual Studio en tu ordenador:
    ```
 * Una vez tenemos esto en local, accedemos a la carpeta “openEbench-frontend/src/app” y tenemos todos los componentes.
 
-Para hacer build y que se vea todo en la web: npm run build-raw -- --optimization=false
+Para hacer build y que se vea todo en la web: 
+```sh
+npm run build-raw -- --optimization=false
+```
       ![image](https://user-images.githubusercontent.com/51945891/133595485-0d73ea97-2157-472e-9588-d8591ccf0c2e.png)
       
 ## Apartado Usuario → New Benchmarking Event
@@ -44,7 +47,7 @@ Donde se crea el select y el botón new? src/app/BDMCreator/schema-types/BDMLoad
 
 
 ### BDMLoader:
-    • Como sabe el formulario que tiene que aparecer un select? Para que aparezca un select en medio del formulario es con type=BDMLoader dentro del apartado widget y formlyConfig, como en la siguiente imagen:
+* Como sabe el formulario que tiene que aparecer un select? Para que aparezca un select en medio del formulario es con type=BDMLoader dentro del apartado widget y formlyConfig, como en la siguiente imagen:
 
 ![image](https://user-images.githubusercontent.com/51945891/133595573-4aaeec34-68dd-46b0-84ce-87e457b728c5.png)
 
