@@ -13,7 +13,7 @@ Login (para hacer pruebas → test):
 * ```sh
    sshfs -o port=2249 user@localhost:/home/CARPETA_EN_LOCAL
    ```
-* Una vez tenemos esto en local, accedemos a la carpeta “openEbench-frontend/src/app” y tenemos todos los componentes.
+* Una vez tenemos esto en local, accedemos a la carpeta https://github.com/inab/openEbench-frontend/tree/development/src/app y tenemos todos los componentes.
 
 **Para hacer build y que se vea todo en la web:** 
 ```sh
@@ -67,4 +67,4 @@ Aparece una tabla con la información de los elementos que están en la base de 
 ![image](https://user-images.githubusercontent.com/51945891/133595633-6e62b630-aa7d-4155-834a-ac26a6638084.png)
 
 ### Donde está el código? 
-En src/app/sandbox-selector/
+En https://github.com/inab/openEbench-frontend/tree/development/src/app/sandbox-selector
