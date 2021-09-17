@@ -192,7 +192,7 @@
 						"BDMType": "bench_contact_ids",
 						"multiple": true,
 						"url_select": {
-							"url_staged": "https://dev2-openebench.bsc.es/api/scientific/staged/Contact"
+							"url_staged": "https://dev2-openebench.bsc.es/api/scientific/staged/Contact?privileged=true"
 						}
 					}
 				}
