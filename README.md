@@ -19,7 +19,7 @@ Login (para hacer pruebas → test):
 ```sh
 npm run build-raw -- --optimization=false
 ```
-      ![image](https://user-images.githubusercontent.com/51945891/133595485-0d73ea97-2157-472e-9588-d8591ccf0c2e.png)
+![image](https://user-images.githubusercontent.com/51945891/133595485-0d73ea97-2157-472e-9588-d8591ccf0c2e.png)
       
 ## Apartado Usuario → New Benchmarking Event
 Crea un formulario a partir de unos JSON Schemas para crear un nuevo benchmarking event (todo automático).
